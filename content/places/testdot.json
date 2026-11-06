@@ -1,5 +1,8 @@
 {
   "slug": "testdot",
+  "status": "published",
+  "publishedAt": "2026-11-06T19:30:22",
+  "archived": false,
   "categories": [
     "integration",
     "culture"
@@ -38,5 +41,11 @@
     "tips": [
       "Test Location"
     ]
+  },
+  "meta": {
+    "createdAt": "2026-11-06T19:30:22",
+    "createdBy": "urkisse",
+    "updatedAt": "2026-11-06T19:30:22",
+    "updatedBy": "urkisse"
   }
 }
