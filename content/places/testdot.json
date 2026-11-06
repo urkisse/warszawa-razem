@@ -2,7 +2,7 @@
   "slug": "testdot",
   "status": "published",
   "publishedAt": "2026-11-06T19:30:22",
-  "archived": false,
+  "archived": true,
   "categories": [
     "integration",
     "culture"
