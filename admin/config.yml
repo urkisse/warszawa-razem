@@ -9,6 +9,9 @@ backend:
 
 site_url: https://urkisse.github.io/warszawa-razem/
 display_url: https://urkisse.github.io/warszawa-razem/
+logo:
+  src: ./logo.svg
+  show_in_header: true
 
 # New photos are stored next to the existing ones in content/photos/.
 media_folder: content/photos
@@ -36,8 +39,17 @@ collections:
     delete: true
     identifier_field: slug
     slug: "{{slug}}"
-    summary: "{{slug}} — {{address}}"
-    sortable_fields: [slug]
+    summary: "{{pl.name}}"
+    thumbnail: photos.0.image
+    editor:
+      preview: false # the raw-values preview is not a real preview of the site; a wider form is easier to use
+    sortable_fields: [slug, pl.name, address]
+    view_filters:
+      - { label: "Integracja / Integration", field: categories, pattern: integration }
+      - { label: "Kultura / Culture", field: categories, pattern: culture }
+      - { label: "Sport", field: categories, pattern: sport }
+      - { label: "Muzyka / Music", field: categories, pattern: music }
+      - { label: "Ze znajomymi / With friends", field: categories, pattern: friends }
     fields:
       - label: "Adres strony (slug) / Page address"
         name: slug
@@ -81,7 +93,8 @@ collections:
         name: photos
         widget: list
         required: false
-        summary: "{{author}} — {{image}}"
+        collapsed: true
+        summary: "{{author}} — {{license}}"
         hint: "Pierwsze zdjęcie jest okładką. Pokazywane są trzy pierwsze. Podaj autora i licencję. / The first photo is the cover; the first three are shown. Always credit the author and licence."
         fields:
           - { label: "Plik / Image", name: image, widget: image }

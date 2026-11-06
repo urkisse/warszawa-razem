@@ -47,6 +47,14 @@ and photos (with author and licence). **Save = a commit to the repository; the s
 automatically within about a minute.** Uploaded photos are resized to 1600 px. The panel is Sveltia CMS
 (Decap-CMS-compatible); its fields are defined in `admin/config.yml`.
 
+The panel is themed to match the website (colours, fonts and corner radius are set with Sveltia's own variables
+in `admin/index.html`; the logo is `admin/logo.svg`) and shows places as a photo list/gallery with a category filter.
+
+**Changing the panel safely:** `node tools/admin-test.mjs`, then `python3 -m http.server 4190 -d .admin-test`
+and open http://localhost:4190/ -> *Start Demo*. This is a login-free sandbox of the panel with the real places and
+photos (edits stay in the browser, nothing is sent anywhere), so changes to `admin/config.yml` or the theme can be
+checked, including a save, before they are published. A configuration error is shown on the login screen.
+
 Not editable in the panel yet: interface texts (`content/ui.json`), the About page and the category
 definitions (`content/categories.json`). Edit those files directly or add them to `admin/config.yml`.
 

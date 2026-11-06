@@ -4,8 +4,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#faf8f4">
     <title>Panel edycji – Warszawa Razem</title>
+    <link rel="icon" href="./logo.svg" type="image/svg+xml">
     <link href="./config.yml" type="text/yaml" rel="cms-config-url">
+    <!-- Theme: only Sveltia CMS's own colour/font/radius variables are set here (matching the website),
+         no internal selectors are overridden, so CMS updates cannot break the layout. -->
+    <style>
+      html:root[data-theme="light"] {
+        --sui-base-hue: 348;
+        --sui-primary-accent-color: #d92b4b;
+        --sui-primary-accent-color-light: #e0415f;
+        --sui-primary-accent-color-dark: #b8203d;
+        --sui-primary-accent-color-text: #c4223f;
+        --sui-primary-background-color: #faf8f4;
+        --sui-secondary-background-color: #f3efe8;
+        --sui-tertiary-background-color: #ebe6dc;
+        --sui-textbox-background-color: #ffffff;
+        --sui-textbox-border-color: #d9d3c6;
+        --sui-secondary-foreground-color: #596070;
+        --sui-selected-background-color: #f6dfe3;
+        --sui-hover-background-color: #f1ebe0;
+      }
+      html:root {
+        --sui-font-family-default: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        --sui-control-font-family: var(--sui-font-family-default);
+        --sui-heading-font-family: var(--sui-font-family-default);
+        --sui-tab-font-family: var(--sui-font-family-default);
+        --sui-textbox-font-family: var(--sui-font-family-default);
+        --sui-textbox-placeholder-font-family: var(--sui-font-family-default);
+        --sui-control-medium-border-radius: 10px;
+        --sui-textbox-border-radius: 10px;
+        --sui-button-medium-border-radius: 10px;
+        --sui-dialog-content-border-radius: 18px;
+      }
+      body { font-family: var(--sui-font-family-default); }
+    </style>
   </head>
   <body>
     <!-- Sveltia CMS: the editing panel. It edits content/places/*.json and content/photos/* in the
