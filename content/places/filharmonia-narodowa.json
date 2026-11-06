@@ -1,0 +1,74 @@
+{
+  "slug": "filharmonia-narodowa",
+  "categories": [
+    "music",
+    "culture"
+  ],
+  "lat": 52.23441,
+  "lng": 21.01125,
+  "address": "ul. Jasna 5, 00-950 Warszawa",
+  "website": "https://www.filharmonia.pl",
+  "photos": [
+    {
+      "image": "content/photos/filharmonia-narodowa-01.jpg",
+      "author": "geo573",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Bry%C5%82a_z_lewej_-_Filharmonia_Narodowa_-_panoramio.jpg"
+    },
+    {
+      "image": "content/photos/filharmonia-narodowa-02.jpg",
+      "author": "Unknown",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Gmach_Filharmonii_Warszawskiej_-_Front_od_ulicy_Nowo-Jasnej_(80012).jpg"
+    },
+    {
+      "image": "content/photos/filharmonia-narodowa-03.jpg",
+      "author": "nieznany/unknown",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Sala_koncertowa_Filharmonii_w_Warszawie_1901.jpg"
+    }
+  ],
+  "pl": {
+    "name": "Filharmonia Narodowa",
+    "summary": "Najważniejsza sala koncertowa w Warszawie i dom Konkursu Chopinowskiego – muzyka klasyczna na najwyższym poziomie.",
+    "article": [
+      "Filharmonia Narodowa, otwarta pierwotnie w 1901 roku i odbudowana po zniszczeniach II wojny światowej, to najważniejsza sala koncertowa Warszawy. Mieści się w niej Sala Koncertowa, w której co pięć lat odbywa się Międzynarodowy Konkurs Pianistyczny im. Fryderyka Chopina.",
+      "Repertuar obejmuje nie tylko muzykę klasyczną – są koncerty symfoniczne, kameralne, festiwale i wydarzenia dla młodych słuchaczy. To idealne miejsce, jeśli chcesz zacząć przygodę z muzyką na żywo albo zabrać znajomych na wyjątkowy wieczór."
+    ],
+    "doHere": [
+      "Wybierz się na koncert symfoniczny lub kameralny",
+      "Sprawdź wydarzenia dla młodych słuchaczy",
+      "Posłuchaj artystów związanych z Konkursem Chopinowskim",
+      "Po koncercie przejdź się po pobliskim centrum"
+    ],
+    "getThere": "Najbliżej jest do stacji Świętokrzyska (M1/M2) – stamtąd to krótki spacer.",
+    "bestTime": "Wieczorem, gdy odbywają się koncerty. Program znajdziesz na stronie filharmonii.",
+    "tips": [
+      "Na koncerty warto kupić bilety z wyprzedzeniem – popularne wydarzenia szybko się wyprzedają.",
+      "Zwróć uwagę na ulgi dla młodzieży i studentów."
+    ]
+  },
+  "en": {
+    "name": "National Philharmonic",
+    "summary": "Warsaw's most important concert hall and home of the Chopin Competition – classical music at the highest level.",
+    "article": [
+      "The National Philharmonic, originally opened in 1901 and rebuilt after the destruction of the Second World War, is Warsaw's most important concert hall. Its Concert Hall hosts the International Chopin Piano Competition every five years.",
+      "The programme goes beyond classical music – symphonic and chamber concerts, festivals and events for young listeners. It is an ideal place if you want to start discovering live music or take friends out for a special evening."
+    ],
+    "doHere": [
+      "Go to a symphonic or chamber concert",
+      "Check events for young listeners",
+      "Hear artists associated with the Chopin Competition",
+      "After the concert, take a walk around the nearby city centre"
+    ],
+    "getThere": "The closest station is Świętokrzyska (M1/M2) – from there it is a short walk.",
+    "bestTime": "In the evening, when concerts take place. You will find the programme on the philharmonic's website.",
+    "tips": [
+      "Buy tickets in advance for concerts – popular events sell out quickly.",
+      "Look out for concessions for young people and students."
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "centrum-nauki-kopernik",
+  "categories": [
+    "culture",
+    "friends"
+  ],
+  "lat": 52.24178,
+  "lng": 21.0286,
+  "address": "ul. Wybrzeże Kościuszkowskie 20, 00-390 Warszawa",
+  "website": "https://www.kopernik.org.pl",
+  "photos": [
+    {
+      "image": "content/photos/centrum-nauki-kopernik-01.jpg",
+      "author": "Kapitel",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Warszawa_Centrum_Nauki_Kopernik_(dron).jpg"
+    },
+    {
+      "image": "content/photos/centrum-nauki-kopernik-02.jpg",
+      "author": "Wojciech Surdziel",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Planetarium_Niebo_Kopernika_-_Centrum_Nauki_Kopernik_fot._Wojciech_Surdziel_01.jpg"
+    },
+    {
+      "image": "content/photos/centrum-nauki-kopernik-03.jpg",
+      "author": "Robert Kowalewski",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Laboratorium_fizyczne,_Centrum_Nauki_Kopernik,_dioda_%C5%9Bwiec%C4%85ca._Fot._Robert_Kowalewski.jpg"
+    }
+  ],
+  "pl": {
+    "name": "Centrum Nauki Kopernik",
+    "summary": "Interaktywne muzeum nauki nad Wisłą – setki eksponatów, które chce się dotykać, i planetarium pod jednym dachem.",
+    "article": [
+      "Centrum Nauki Kopernik, otwarte w 2010 roku, to jedno z największych miejsc tego typu w Polsce. W nowoczesnym budynku nad Wisłą czekają setki interaktywnych eksponatów, laboratoria, pokazy naukowe i Planetarium Niebo Kopernika.",
+      "Wystawy są zaprojektowane tak, żeby wszystkiego dotknąć i samemu sprawdzić, jak działa świat – od fizyki i chemii po psychologię. To świetny pomysł na wspólne wyjście z przyjaciółmi lub grupą z klasy, szczególnie gdy pogoda nie sprzyja spacerom."
+    ],
+    "doHere": [
+      "Wypróbuj interaktywne eksponaty w poszczególnych strefach",
+      "Obejrzyj seans w planetarium",
+      "Weź udział w pokazie naukowym lub warsztacie",
+      "Po wizycie przejdź się pobliskimi bulwarami"
+    ],
+    "getThere": "Stacja metra Centrum Nauki Kopernik (M2) znajduje się tuż obok wejścia.",
+    "bestTime": "W dni powszednie rano bywa spokojniej; w weekendy i podczas ferii warto być wcześnie.",
+    "tips": [
+      "Bilety na seanse w planetarium i wybrane pokazy warto kupić wcześniej online.",
+      "Na zwiedzanie zarezerwuj co najmniej 2–3 godziny."
+    ]
+  },
+  "en": {
+    "name": "Copernicus Science Centre",
+    "summary": "A hands-on science museum by the Vistula – hundreds of exhibits you want to touch, plus a planetarium, all under one roof.",
+    "article": [
+      "The Copernicus Science Centre, opened in 2010, is one of the largest venues of its kind in Poland. In a modern building by the Vistula you will find hundreds of interactive exhibits, laboratories, science shows and the Heavens of Copernicus Planetarium.",
+      "The exhibitions are designed so that you can touch everything and test for yourself how the world works – from physics and chemistry to psychology. It is a great idea for a day out with friends or classmates, especially when the weather is not great for walking."
+    ],
+    "doHere": [
+      "Try the interactive exhibits in each zone",
+      "Watch a show in the planetarium",
+      "Join a science show or workshop",
+      "Afterwards take a walk along the nearby boulevards"
+    ],
+    "getThere": "The Centrum Nauki Kopernik metro station (M2) is right next to the entrance.",
+    "bestTime": "Weekday mornings tend to be calmer; on weekends and during school holidays, arrive early.",
+    "tips": [
+      "Buy tickets for planetarium shows and selected demonstrations online in advance.",
+      "Set aside at least 2–3 hours for your visit."
+    ]
+  }
+}

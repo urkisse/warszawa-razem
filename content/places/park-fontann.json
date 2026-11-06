@@ -1,0 +1,75 @@
+{
+  "slug": "park-fontann",
+  "categories": [
+    "friends",
+    "culture",
+    "music"
+  ],
+  "lat": 52.25397,
+  "lng": 21.01128,
+  "address": "Podzamcze, Stare Miasto, Warszawa",
+  "website": "",
+  "photos": [
+    {
+      "image": "content/photos/park-fontann-01.jpg",
+      "author": "Adrian Grycuk",
+      "license": "CC BY-SA 3.0 pl",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/pl/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Multimedialny_Park_Fontann_Warszawa.JPG"
+    },
+    {
+      "image": "content/photos/park-fontann-02.jpg",
+      "author": "Wistula",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Multimedia_Fountain_Park_at_Podzamcze_Warsaw.jpg"
+    },
+    {
+      "image": "content/photos/park-fontann-03.jpg",
+      "author": "Mister No",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Multimedialny_Park_Fontann_-_panoramio.jpg"
+    }
+  ],
+  "pl": {
+    "name": "Multimedialny Park Fontann",
+    "summary": "Wieczorne pokazy wody, światła i muzyki tuż przy Starym Mieście – idealne na spontaniczne wyjście ze znajomymi.",
+    "article": [
+      "Multimedialny Park Fontann to jedna z najpopularniejszych letnich atrakcji w Warszawie. Wieczorami, w sezonie, setki strumieni wody tańczą w rytm muzyki, a kolorowe światła i projekcje tworzą pokaz, który przyciąga zarówno mieszkańców, jak i turystów.",
+      "Park leży w sąsiedztwie Starego Miasta, więc łatwo połączyć wizytę ze spacerem po Rynku, kolacją lub lodami w pobliżu. To świetny pomysł na spontaniczne wyjście z przyjaciółmi i klimatyczny finał dnia w centrum."
+    ],
+    "doHere": [
+      "Obejrzyj wieczorny pokaz fontann w sezonie",
+      "Połącz wizytę ze spacerem po Starym Mieście",
+      "Zjedzcie razem kolację lub lody w okolicy",
+      "Zrób zdjęcia kolorowych wodotrysków"
+    ],
+    "getThere": "Park znajduje się przy Starym Mieście, kilkanaście minut spaceru od stacji metra Ratusz Arsenał (M1).",
+    "bestTime": "Wieczorami po zmroku, w sezonie letnim. Dokładne terminy pokazów sprawdź przed wizytą.",
+    "tips": [
+      "W ciepłe wieczory bywa tłoczno – wybierz miejsce z dobrym widokiem wcześniej.",
+      "Terminy pokazów zależą od sezonu i pogody – sprawdź aktualne informacje."
+    ]
+  },
+  "en": {
+    "name": "Multimedia Fountain Park",
+    "summary": "Evening shows of water, light and music right by the Old Town – ideal for a spontaneous outing with friends.",
+    "article": [
+      "The Multimedia Fountain Park is one of Warsaw's most popular summer attractions. In the evenings, in season, hundreds of jets of water dance to music, and coloured lights and projections create a show that draws locals and tourists alike.",
+      "The park lies next to the Old Town, so it is easy to combine a visit with a walk around the Market Square, dinner or ice cream nearby. It is a great idea for a spontaneous outing with friends and an atmospheric end to a day in the centre."
+    ],
+    "doHere": [
+      "Watch the evening fountain show in season",
+      "Combine the visit with a walk around the Old Town",
+      "Have dinner or ice cream together nearby",
+      "Take photos of the colourful water jets"
+    ],
+    "getThere": "The park is next to the Old Town, about a 15-minute walk from the Ratusz Arsenał metro station (M1).",
+    "bestTime": "In the evenings after dark, during the summer season. Check exact show dates before you visit.",
+    "tips": [
+      "On warm evenings it can be crowded – pick a spot with a good view early.",
+      "Show dates depend on the season and weather – check current information."
+    ]
+  }
+}

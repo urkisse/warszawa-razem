@@ -1,0 +1,74 @@
+{
+  "slug": "teatr-wielki",
+  "categories": [
+    "music",
+    "culture"
+  ],
+  "lat": 52.24326,
+  "lng": 21.00937,
+  "address": "Plac Teatralny 1, 00-950 Warszawa",
+  "website": "https://teatrwielki.pl",
+  "photos": [
+    {
+      "image": "content/photos/teatr-wielki-01.jpg",
+      "author": "Fred Romero from Paris, France",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Warszawa_-_Teatr_Wielki_Opera_Narodowa.jpg"
+    },
+    {
+      "image": "content/photos/teatr-wielki-02.jpg",
+      "author": "Scotch Mist",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Warsaw_2023_194_Grand_Theatre_Relief.jpg"
+    },
+    {
+      "image": "content/photos/teatr-wielki-03.jpg",
+      "author": "Chris Olszewski",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Grand_Theatre_in_Warsaw,_2022,_02.jpg"
+    }
+  ],
+  "pl": {
+    "name": "Teatr Wielki – Opera Narodowa",
+    "summary": "Monumentalny gmach z 1833 roku, w którym od dziesięcioleci wystawia się opery i balety na światowym poziomie.",
+    "article": [
+      "Teatr Wielki – Opera Narodowa stoi przy Placu Teatralnym od 1833 roku. Klasycystyczny gmach zaprojektował Antonio Corazzi; po zniszczeniach wojennych został odbudowany i dziś jest jedną z największych scen operowych na świecie.",
+      "W repertuarze znajdziesz opery, balety i koncerty, a także wydarzenia dla młodzieży i rodzin. Wizyta w Teatrze Wielkim to dobry sposób na wyjątkowy wieczór, a sam gmach – nawet z zewnątrz – robi wrażenie."
+    ],
+    "doHere": [
+      "Zobacz spektakl operowy lub baletowy",
+      "Zajrzyj do foyer i podziwiaj wnętrza",
+      "Sprawdź wydarzenia dla młodzieży",
+      "Przejdź się po Placu Teatralnym i Starym Mieście"
+    ],
+    "getThere": "Stacja metra Ratusz Arsenał (M1) leży w pobliżu Placu Teatralnego.",
+    "bestTime": "Wieczorem, podczas spektakli. Sprawdź repertuar na stronie teatru.",
+    "tips": [
+      "Bilety w niższych cenach często są dostępne na mniej popularne spektakle.",
+      "Zadbaj o elegancki, wygodny strój – wiele osób traktuje wyjście do opery jako wydarzenie."
+    ]
+  },
+  "en": {
+    "name": "Grand Theatre – National Opera",
+    "summary": "A monumental 1833 building where world-class opera and ballet have been staged for decades.",
+    "article": [
+      "The Grand Theatre – National Opera has stood on Teatralny Square since 1833. The neoclassical building was designed by Antonio Corazzi; after wartime destruction it was rebuilt and today is one of the largest opera stages in the world.",
+      "The repertoire includes opera, ballet and concerts, as well as events for young people and families. A visit to the Grand Theatre is a good way to spend a special evening, and the building itself – even from the outside – is impressive."
+    ],
+    "doHere": [
+      "See an opera or ballet performance",
+      "Look into the foyer and admire the interiors",
+      "Check events for young people",
+      "Walk around Teatralny Square and the Old Town"
+    ],
+    "getThere": "The Ratusz Arsenał metro station (M1) is close to Teatralny Square.",
+    "bestTime": "In the evening, during performances. Check the repertoire on the theatre's website.",
+    "tips": [
+      "Lower-priced tickets are often available for less popular performances.",
+      "Dress smart but comfortable – many people treat a night at the opera as an event."
+    ]
+  }
+}

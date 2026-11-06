@@ -1,0 +1,61 @@
+{
+  "slug": "fabryka-trzciny",
+  "categories": [
+    "music",
+    "culture",
+    "friends"
+  ],
+  "lat": 52.26038,
+  "lng": 21.0573,
+  "address": "ul. Otwocka 14, 03-759 Warszawa",
+  "website": "",
+  "photos": [
+    {
+      "image": "content/photos/fabryka-trzciny-01.jpg",
+      "author": "Adrian Grycuk",
+      "license": "CC BY-SA 3.0 pl",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/pl/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Fabryka_Trzciny_w_Warszawie.JPG"
+    }
+  ],
+  "pl": {
+    "name": "Fabryka Trzciny",
+    "summary": "Poprzemysłowa przestrzeń na Pradze Północ, w której odbywają się koncerty, festiwale, targi i wydarzenia kulturalne.",
+    "article": [
+      "Fabryka Trzciny to poprzemysłowy kompleks na Pradze Północ, który stał się jedną z ważniejszych alternatywnych przestrzeni kulturalnych Warszawy. Surowe, ceglane wnętrza i plac między budynkami tworzą klimat, w którym świetnie sprawdzają się koncerty i festiwale.",
+      "W kalendarzu pojawiają się wydarzenia muzyczne, targi, spektakle i spotkania, a program zmienia się z miesiąca na miesiąc. To dobre miejsce, jeśli szukasz nieoczywistych wydarzeń i chcesz poczuć inną, mniej turystyczną stronę miasta."
+    ],
+    "doHere": [
+      "Idź na koncert lub festiwal",
+      "Odwiedź targi i wydarzenia kreatywne",
+      "Spędź wieczór w postindustrialnej przestrzeni",
+      "Poznaj okoliczne zakątki Pragi"
+    ],
+    "getThere": "Dojedziesz autobusami i tramwajami na Pragę Północ; sprawdź połączenia w aplikacji ZTM lub Jakdojade.",
+    "bestTime": "Wieczorami i w weekendy – zależnie od programu wydarzeń.",
+    "tips": [
+      "Przed wyjściem sprawdź program – obiekt jest otwarty głównie podczas wydarzeń.",
+      "Po zmroku wracaj z grupą znajomych lub wybierz sprawdzony transport."
+    ]
+  },
+  "en": {
+    "name": "Fabryka Trzciny",
+    "summary": "A post-industrial space in Praga Północ hosting concerts, festivals, fairs and cultural events.",
+    "article": [
+      "Fabryka Trzciny is a post-industrial complex in Praga Północ that has become one of Warsaw's key alternative cultural spaces. Raw brick interiors and the yard between the buildings create an atmosphere in which concerts and festivals work perfectly.",
+      "The calendar features music events, fairs, performances and meetups, and the programme changes from month to month. It is a good place if you are looking for off-the-beaten-path events and want to feel a different, less touristy side of the city."
+    ],
+    "doHere": [
+      "Go to a concert or festival",
+      "Visit fairs and creative events",
+      "Spend an evening in a post-industrial setting",
+      "Explore the surrounding corners of Praga"
+    ],
+    "getThere": "Take buses and trams to Praga Północ; check connections in the ZTM or Jakdojade app.",
+    "bestTime": "Evenings and weekends – depending on the event programme.",
+    "tips": [
+      "Check the programme before you go – the venue is open mainly during events.",
+      "After dark, go back with a group of friends or choose reliable transport."
+    ]
+  }
+}

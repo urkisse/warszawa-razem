@@ -1,0 +1,75 @@
+{
+  "slug": "bulwary-wislane",
+  "categories": [
+    "friends",
+    "integration",
+    "sport"
+  ],
+  "lat": 52.2432,
+  "lng": 21.0316,
+  "address": "Bulwary Wiślane, Wybrzeże Kościuszkowskie, Warszawa",
+  "website": "",
+  "photos": [
+    {
+      "image": "content/photos/bulwary-wislane-01.jpg",
+      "author": "Qkiel",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Bulwary_Wi%C5%9Blane,_Warszawa_(1).jpg"
+    },
+    {
+      "image": "content/photos/bulwary-wislane-02.jpg",
+      "author": "Qkiel",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Bulwary_Wi%C5%9Blane,_Warszawa_(2).jpg"
+    },
+    {
+      "image": "content/photos/bulwary-wislane-03.jpg",
+      "author": "Qkiel",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Mural,_Bulwary_Wi%C5%9Blane,_Warszawa_(4).jpg"
+    }
+  ],
+  "pl": {
+    "name": "Bulwary Wiślane",
+    "summary": "Nadrzeczna promenada z widokiem na Wisłę – spacery, rower, letnie wieczory ze znajomymi i spotkania nad wodą.",
+    "article": [
+      "Bulwary wiślane to promenada wzdłuż lewego brzegu Wisły, która w ostatnich latach stała się jednym z ulubionych miejsc spotkań warszawiaków. Szeroki deptak, ścieżki rowerowe i schody do wody tworzą przestrzeń, w której zawsze coś się dzieje.",
+      "Latem nad rzeką działają sezonowe bary, odbywają się koncerty i wydarzenia plenerowe, a po drugiej stronie rzeki – na Pradze – znajdziesz dzikie plaże i zieleń. To dobry pomysł na spontaniczny wieczór, trening albo spokojny spacer o zachodzie słońca."
+    ],
+    "doHere": [
+      "Przejdź się lub przejedź rowerem wzdłuż rzeki",
+      "Usiądźcie na schodach nad wodą i obejrzyjcie zachód słońca",
+      "Zajrzyj do sezonowych barów i na wydarzenia plenerowe",
+      "Połącz spacer z wizytą w pobliskim Centrum Nauki Kopernik"
+    ],
+    "getThere": "Najwygodniej dojechać metrem (M2) do stacji Centrum Nauki Kopernik – bulwary są tuż obok.",
+    "bestTime": "Najlepiej latem, od późnego popołudnia do wieczora. Rano bulwary są ciche i dobre na bieganie.",
+    "tips": [
+      "Wieczorem trzymaj się oświetlonych odcinków promenady.",
+      "Zabierz coś ciepłego – nad wodą bywa chłodniej, niż się wydaje."
+    ]
+  },
+  "en": {
+    "name": "Vistula Boulevards",
+    "summary": "A riverside promenade with views of the Vistula – walks, cycling, summer evenings with friends and hanging out by the water.",
+    "article": [
+      "The Vistula Boulevards are a promenade along the left bank of the river that has become one of Varsovians' favourite meeting places. A wide walkway, bike paths and steps down to the water make a space where something is always going on.",
+      "In summer seasonal bars open by the river, with concerts and open-air events, while on the opposite bank in Praga you will find wild beaches and greenery. It is a great idea for a spontaneous evening, a workout or a quiet walk at sunset."
+    ],
+    "doHere": [
+      "Walk or cycle along the river",
+      "Sit on the steps by the water and watch the sunset",
+      "Check out the seasonal bars and open-air events",
+      "Combine your walk with a visit to the nearby Copernicus Science Centre"
+    ],
+    "getThere": "The easiest way is the metro (M2) to Centrum Nauki Kopernik station – the boulevards are right next to it.",
+    "bestTime": "Best in summer, from late afternoon to evening. In the morning the boulevards are quiet and good for running.",
+    "tips": [
+      "In the evening stick to the well-lit parts of the promenade.",
+      "Bring something warm – it can be cooler by the water than you expect."
+    ]
+  }
+}

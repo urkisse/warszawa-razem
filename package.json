@@ -1,0 +1,16 @@
+{
+  "name": "warszawa-razem",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Interactive map of places for young people in Warsaw (PL/EN) - static site, no site builders.",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs --serve"
+  },
+  "dependencies": {
+    "@sveltia/cms": "0.261.0",
+    "leaflet": "1.9.4",
+    "protomaps-leaflet": "5.1.0"
+  }
+}

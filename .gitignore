@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.claude/
+.DS_Store
+# generated single-file demo for the Claude artifact viewer (rebuild with: node tools/build-artifact.mjs)
+artifact/index.html
+artifact/test.html

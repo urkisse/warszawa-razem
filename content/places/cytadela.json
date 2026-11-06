@@ -1,0 +1,74 @@
+{
+  "slug": "cytadela",
+  "categories": [
+    "sport",
+    "culture"
+  ],
+  "lat": 52.26448,
+  "lng": 20.99983,
+  "address": "ul. Skazańców 25, Żoliborz, Warszawa",
+  "website": "",
+  "photos": [
+    {
+      "image": "content/photos/cytadela-01.jpg",
+      "author": "Fallaner",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Warsaw_Citadel_aerial_photographs_2019_P03.jpg"
+    },
+    {
+      "image": "content/photos/cytadela-02.jpg",
+      "author": "Adrian Grycuk",
+      "license": "CC BY-SA 3.0 pl",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/pl/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Cytadela_Warszawska_2017h.jpg"
+    },
+    {
+      "image": "content/photos/cytadela-03.jpg",
+      "author": "Jolanta Dyr",
+      "license": "CC BY-SA 3.0 pl",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/pl/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:%C5%BBoliborz_-_Zesp%C3%B3%C5%82_cytadeli_-_poterna.jpg"
+    }
+  ],
+  "pl": {
+    "name": "Cytadela Warszawska",
+    "summary": "XIX-wieczna twierdza nad Wisłą: zielone fosy i wały do biegania oraz muzeum w dawnym więzieniu X Pawilonu.",
+    "article": [
+      "Cytadela Warszawska to twierdza zbudowana w latach 1832–1834 przez władze rosyjskie po powstaniu listopadowym. Dziś jej mury, bramy i fosy otacza zieleń, a kompleks jest jednym z najciekawszych terenów rekreacyjnych i historycznych w stolicy.",
+      "Na terenie Cytadeli działa Muzeum X Pawilonu, poświęcone więźniom politycznym, a rozległe tereny zielone zachęcają do biegania, spacerów i pikników. To dobre miejsce, by połączyć aktywność fizyczną z lekcją historii."
+    ],
+    "doHere": [
+      "Pobiegaj po wałach i alejach wokół fortu",
+      "Odwiedź Muzeum X Pawilonu",
+      "Zorganizuj piknik na terenach zielonych",
+      "Zrób zdjęcia ceglanych bram i murów"
+    ],
+    "getThere": "Dojedziesz metrem (M1) na Dworzec Gdański lub Plac Wilsona, a stamtąd tramwajem lub pieszo.",
+    "bestTime": "Wiosną i latem – zieleń jest najładniejsza, a wieczory długie.",
+    "tips": [
+      "Niektóre fragmenty terenu są dostępne w określonych godzinach – sprawdź zasady przed wizytą.",
+      "Weź wygodne buty – powierzchnie bywają nierówne."
+    ]
+  },
+  "en": {
+    "name": "Warsaw Citadel",
+    "summary": "A 19th-century fortress by the Vistula: green moats and ramparts for running, and a museum in the former X Pavilion prison.",
+    "article": [
+      "The Warsaw Citadel is a fortress built in 1832–1834 by the Russian authorities after the November Uprising. Today its walls, gates and moats are surrounded by greenery, and the complex is one of the most interesting recreational and historical areas in the capital.",
+      "The Citadel is home to the X Pavilion Museum, dedicated to political prisoners, and its extensive green areas invite you to run, walk and picnic. It is a good place to combine physical activity with a history lesson."
+    ],
+    "doHere": [
+      "Run along the ramparts and avenues around the fort",
+      "Visit the X Pavilion Museum",
+      "Have a picnic on the green areas",
+      "Photograph the brick gates and walls"
+    ],
+    "getThere": "Take the metro (M1) to Dworzec Gdański or Plac Wilsona, then continue by tram or on foot.",
+    "bestTime": "In spring and summer – the greenery is at its best and the evenings are long.",
+    "tips": [
+      "Some parts of the site are open at specific hours – check the rules before you visit.",
+      "Wear comfortable shoes – surfaces can be uneven."
+    ]
+  }
+}

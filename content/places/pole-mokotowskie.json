@@ -1,0 +1,75 @@
+{
+  "slug": "pole-mokotowskie",
+  "categories": [
+    "sport",
+    "integration",
+    "friends"
+  ],
+  "lat": 52.21199,
+  "lng": 21.00056,
+  "address": "Park Pole Mokotowskie, Aleja Niepodległości, Warszawa",
+  "website": "",
+  "photos": [
+    {
+      "image": "content/photos/pole-mokotowskie-01.jpg",
+      "author": "Cybularny",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:2018_Warszawa_Pole_Mokotowskie,_29.jpg"
+    },
+    {
+      "image": "content/photos/pole-mokotowskie-02.jpg",
+      "author": "Jolanta Dyr",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Pole_Mokotowskie_(Ochota)_-_park_-_09.jpg"
+    },
+    {
+      "image": "content/photos/pole-mokotowskie-03.jpg",
+      "author": "Jolanta Dyr",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Pole_Mokotowskie_(Ochota)_-_park_-_01.jpg"
+    }
+  ],
+  "pl": {
+    "name": "Pole Mokotowskie",
+    "summary": "Wielki miejski park w sercu Warszawy – bieganie, rolki, piłka, piknik i hamaki, kiedy tylko zrobi się ciepło.",
+    "article": [
+      "Pole Mokotowskie to jeden z największych parków w centrum Warszawy, powstały na terenie dawnego lotniska. Rozległe trawniki, szerokie aleje i staw sprawiają, że w ciepłe dni zbiera się tu pół miasta.",
+      "To idealna przestrzeń do aktywności na świeżym powietrzu: bieganie, jazda na rolkach i rowerze, gra w siatkówkę czy frisbee. Park jest też świetnym miejscem na piknik i spotkania ze znajomymi, a wokół znajdziesz kawiarnie i miejsca na szybki posiłek."
+    ],
+    "doHere": [
+      "Zrób rundę biegową po alejach parku",
+      "Zagrajcie w siatkówkę, frisbee lub piłkę na trawie",
+      "Zorganizujcie piknik albo rozwieście hamaki",
+      "Wypożycz rower lub rolki i zwiedź park w ruchu"
+    ],
+    "getThere": "Stacja metra Pole Mokotowskie (M1) znajduje się przy samym parku.",
+    "bestTime": "Od wiosny do jesieni, najlepiej po południu lub wczesnym wieczorem.",
+    "tips": [
+      "W upalne dni szukaj cienia pod drzewami wzdłuż głównych alej.",
+      "Po sobie sprzątaj – park jest wspólny, utrzymujmy go w czystości."
+    ]
+  },
+  "en": {
+    "name": "Pole Mokotowskie Park",
+    "summary": "A huge city park in the heart of Warsaw – running, rollerblading, ball games, picnics and hammocks as soon as it gets warm.",
+    "article": [
+      "Pole Mokotowskie is one of the largest parks in central Warsaw, created on the site of a former airfield. Wide lawns, broad avenues and a pond mean that on warm days half the city ends up here.",
+      "It is an ideal space for outdoor activities: running, rollerblading and cycling, volleyball or frisbee. The park is also a great place for a picnic and meeting friends, and around it you will find cafés and spots for a quick bite."
+    ],
+    "doHere": [
+      "Do a running loop along the park's avenues",
+      "Play volleyball, frisbee or football on the grass",
+      "Have a picnic or hang hammocks between the trees",
+      "Rent a bike or rollerblades and explore the park on the move"
+    ],
+    "getThere": "The Pole Mokotowskie metro station (M1) is right by the park.",
+    "bestTime": "From spring to autumn, best in the afternoon or early evening.",
+    "tips": [
+      "On hot days look for shade under the trees along the main avenues.",
+      "Clean up after yourself – the park belongs to everyone, so let's keep it tidy."
+    ]
+  }
+}

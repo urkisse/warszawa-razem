@@ -1,0 +1,60 @@
+{
+  "slug": "hala-torwar",
+  "categories": [
+    "sport",
+    "music"
+  ],
+  "lat": 52.22245,
+  "lng": 21.04217,
+  "address": "ul. Łazienkowska 6a, 00-449 Warszawa",
+  "website": "",
+  "photos": [
+    {
+      "image": "content/photos/hala-torwar-01.jpg",
+      "author": "The original uploader was Mehacos at Polish Wikipedia.",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Metamorphosis_orange_Warszawa_Hala_Torwar.jpg"
+    }
+  ],
+  "pl": {
+    "name": "Hala Torwar",
+    "summary": "Legendarna warszawska hala sportowo-widowiskowa z lodowiskiem – mecze, treningi i koncerty w jednym miejscu.",
+    "article": [
+      "Hala Torwar to jedna z najbardziej znanych hal sportowo-widowiskowych w Warszawie. Przez dekady gościła zawody sportowe, a także koncerty znanych artystów, przez co dla wielu pokoleń warszawiaków jest miejscem pełnym wspomnień.",
+      "Przy hali działa lodowisko, więc zimą to świetne miejsce na wspólną jazdę na łyżwach. Poza sezonem warto śledzić program: odbywają się tu mecze, turnieje i koncerty."
+    ],
+    "doHere": [
+      "Pojeździj na łyżwach zimą z przyjaciółmi",
+      "Obejrzyj mecz lub turniej",
+      "Sprawdź program koncertów w hali",
+      "Wybierz się na spacer po pobliskich bulwarach i parkach"
+    ],
+    "getThere": "Dojedziesz autobusami i tramwajami przez ul. Łazienkowską; do stacji metra Stadion Narodowy (M2) jest kilkanaście minut pieszo.",
+    "bestTime": "Zimą ze względu na lodowisko; w pozostałe miesiące zależnie od wydarzeń.",
+    "tips": [
+      "Godziny otwarcia lodowiska i program hali zmieniają się w zależności od sezonu – sprawdź przed wyjściem.",
+      "Na lodowisko weź ciepłe rękawiczki; łyżwy zwykle można wypożyczyć na miejscu."
+    ]
+  },
+  "en": {
+    "name": "Torwar Hall",
+    "summary": "A legendary Warsaw sports and entertainment arena with an ice rink – matches, training and concerts in one place.",
+    "article": [
+      "Torwar Hall is one of Warsaw's best-known sports and entertainment arenas. For decades it has hosted sporting events and concerts by famous artists, which makes it a place full of memories for many generations of Varsovians.",
+      "There is an ice rink by the hall, so in winter it is a great place to skate together. Outside the season, follow the programme: matches, tournaments and concerts take place here."
+    ],
+    "doHere": [
+      "Go ice skating with friends in winter",
+      "Watch a match or tournament",
+      "Check the concert programme at the hall",
+      "Take a walk through the nearby boulevards and parks"
+    ],
+    "getThere": "Buses and trams run along Łazienkowska street; the Stadion Narodowy metro station (M2) is a walk of about 15 minutes.",
+    "bestTime": "In winter because of the ice rink; in other months depending on events.",
+    "tips": [
+      "Rink opening hours and the hall's programme change with the season – check before you go.",
+      "Bring warm gloves for the rink; skates can usually be rented on site."
+    ]
+  }
+}

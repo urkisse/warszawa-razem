@@ -1,0 +1,92 @@
+[
+  {
+    "id": "integration",
+    "color": "#e5484d",
+    "ink": "#ffffff",
+    "icon": "<path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M22 21v-2a4 4 0 0 0-3-3.87\"/><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"/>",
+    "pl": {
+      "name": "Integracja",
+      "desc": "Miejsca, w których łatwo poznać nowych ludzi i spędzić czas w grupie."
+    },
+    "en": {
+      "name": "Integration",
+      "desc": "Places where it is easy to meet new people and spend time as a group."
+    },
+    "cover": {
+      "slug": "hala-koszyki",
+      "n": 1
+    }
+  },
+  {
+    "id": "culture",
+    "color": "#7c4ddb",
+    "ink": "#ffffff",
+    "icon": "<line x1=\"3\" x2=\"21\" y1=\"22\" y2=\"22\"/><line x1=\"6\" x2=\"6\" y1=\"18\" y2=\"11\"/><line x1=\"10\" x2=\"10\" y1=\"18\" y2=\"11\"/><line x1=\"14\" x2=\"14\" y1=\"18\" y2=\"11\"/><line x1=\"18\" x2=\"18\" y1=\"18\" y2=\"11\"/><polygon points=\"12 2 20 7 4 7\"/>",
+    "pl": {
+      "name": "Wypoczynek kulturalny",
+      "desc": "Muzea, zabytki, wystawy i miejsca, które pozwalają odkrywać historię i sztukę."
+    },
+    "en": {
+      "name": "Cultural leisure",
+      "desc": "Museums, landmarks, exhibitions and places to discover history and art."
+    },
+    "cover": {
+      "slug": "muzeum-polin",
+      "n": 1
+    }
+  },
+  {
+    "id": "sport",
+    "color": "#12926a",
+    "ink": "#ffffff",
+    "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M4.9 4.9c4 3 10 3 14.2 0M4.9 19.1c4-3 10-3 14.2 0M12 2v20\"/>",
+    "pl": {
+      "name": "Wypoczynek sportowy",
+      "desc": "Parki, stadiony i przestrzenie do biegania, jazdy na rolkach i gry w drużynie."
+    },
+    "en": {
+      "name": "Sports leisure",
+      "desc": "Parks, stadiums and spaces for running, rollerblading and team games."
+    },
+    "cover": {
+      "slug": "pge-narodowy",
+      "n": 1
+    }
+  },
+  {
+    "id": "music",
+    "color": "#2f6fe4",
+    "ink": "#ffffff",
+    "icon": "<path d=\"M9 18V5l12-2v13\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><circle cx=\"18\" cy=\"16\" r=\"3\"/>",
+    "pl": {
+      "name": "Muzyka",
+      "desc": "Sale koncertowe, sceny i przestrzenie, w których usłyszysz muzykę na żywo."
+    },
+    "en": {
+      "name": "Music",
+      "desc": "Concert halls, stages and venues where you can hear live music."
+    },
+    "cover": {
+      "slug": "teatr-wielki",
+      "n": 1
+    }
+  },
+  {
+    "id": "friends",
+    "color": "#f5a524",
+    "ink": "#2b1a00",
+    "icon": "<path d=\"m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z\"/>",
+    "pl": {
+      "name": "Rozrywka ze znajomymi",
+      "desc": "Jedzenie, spacery i wieczory, które najlepiej spędzać w gronie przyjaciół."
+    },
+    "en": {
+      "name": "Entertainment with friends",
+      "desc": "Food, walks and evenings that are best spent with friends."
+    },
+    "cover": {
+      "slug": "park-fontann",
+      "n": 1
+    }
+  }
+]

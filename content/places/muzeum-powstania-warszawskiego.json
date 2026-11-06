@@ -1,0 +1,73 @@
+{
+  "slug": "muzeum-powstania-warszawskiego",
+  "categories": [
+    "culture"
+  ],
+  "lat": 52.2321,
+  "lng": 20.98138,
+  "address": "ul. Grzybowska 79, 00-844 Warszawa",
+  "website": "https://www.1944.pl",
+  "photos": [
+    {
+      "image": "content/photos/muzeum-powstania-warszawskiego-01.jpg",
+      "author": "Adrian Grycuk",
+      "license": "CC BY 3.0 pl",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/pl/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Muzeum_Powstania_Warszawskiego_2023.jpg"
+    },
+    {
+      "image": "content/photos/muzeum-powstania-warszawskiego-02.jpg",
+      "author": "Adrian Grycuk",
+      "license": "CC BY-SA 3.0 pl",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/pl/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Muzeum_Powstania_Warszawskiego_2014_018.JPG"
+    },
+    {
+      "image": "content/photos/muzeum-powstania-warszawskiego-03.jpg",
+      "author": "User:Halibutt",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Muzeum_Powstania_Warszawskiego_-_Liberator.JPG"
+    }
+  ],
+  "pl": {
+    "name": "Muzeum Powstania Warszawskiego",
+    "summary": "Wciągająca, wielozmysłowa opowieść o 63 dniach Powstania Warszawskiego w dawnej elektrowni tramwajowej.",
+    "article": [
+      "Muzeum Powstania Warszawskiego, otwarte w 2004 roku, mieści się w zabytkowym budynku dawnej elektrowni tramwajowej na Woli. To jedno z najczęściej odwiedzanych muzeów w Polsce, poświęcone zrywowi z 1944 roku i losom mieszkańców walczącego miasta.",
+      "Ekspozycja angażuje wszystkie zmysły: dźwięki, zdjęcia, filmy, rekonstrukcje i setki osobistych pamiątek budują atmosferę tamtych dni. To miejsce, które pomaga zrozumieć historię Warszawy – i warto odwiedzić je razem z przyjaciółmi, żeby potem o niej porozmawiać."
+    ],
+    "doHere": [
+      "Przejdź przez główną ekspozycję i posłuchaj dźwięków powstańczej Warszawy",
+      "Zobacz repliki i pamiątki z 1944 roku",
+      "Odwiedź pobliski Park Wolności",
+      "Zostaw czas na rozmowę po zwiedzaniu"
+    ],
+    "getThere": "Stacja metra Rondo Daszyńskiego (M2) jest oddalona o kilka minut spacerem.",
+    "bestTime": "W dni powszednie przed południem jest mniej zwiedzających.",
+    "tips": [
+      "Na zwiedzanie warto przeznaczyć 2–3 godziny.",
+      "Temat ekspozycji jest poruszający – to miejsce wymaga skupienia. Sprawdź aktualne zasady wstępu na stronie muzeum."
+    ]
+  },
+  "en": {
+    "name": "Warsaw Rising Museum",
+    "summary": "A gripping, multi-sensory story of the 63 days of the Warsaw Uprising in a former tram power station.",
+    "article": [
+      "The Warsaw Rising Museum, opened in 2004, is housed in the historic former tram power station in the Wola district. It is one of the most visited museums in Poland, dedicated to the 1944 uprising and the fate of the inhabitants of the fighting city.",
+      "The exhibition engages all the senses: sounds, photographs, films, reconstructions and hundreds of personal mementos recreate the atmosphere of those days. It helps you understand the history of Warsaw – and it is worth visiting with friends so you can talk about it afterwards."
+    ],
+    "doHere": [
+      "Walk through the main exhibition and listen to the sounds of insurgent Warsaw",
+      "See replicas and mementos from 1944",
+      "Visit the nearby Freedom Park",
+      "Leave time to talk after your visit"
+    ],
+    "getThere": "The Rondo Daszyńskiego metro station (M2) is a few minutes' walk away.",
+    "bestTime": "Weekday mornings have fewer visitors.",
+    "tips": [
+      "Plan 2–3 hours for your visit.",
+      "The subject is moving and the exhibition requires focus. Check current entry rules on the museum's website."
+    ]
+  }
+}

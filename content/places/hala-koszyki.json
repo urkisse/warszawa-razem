@@ -1,0 +1,72 @@
+{
+  "slug": "hala-koszyki",
+  "categories": [
+    "friends",
+    "integration"
+  ],
+  "lat": 52.22216,
+  "lng": 21.01129,
+  "address": "ul. Koszykowa 63, 00-667 Warszawa",
+  "website": "",
+  "photos": [
+    {
+      "image": "content/photos/hala-koszyki-01.jpg",
+      "author": "Chris Olszewski",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Front_facade_of_Hala_Koszyki,_Warsaw,_Poland.jpg"
+    },
+    {
+      "image": "content/photos/hala-koszyki-02.jpg",
+      "author": "nieznany/unknown",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Hala_Koszyki_1908.jpg"
+    },
+    {
+      "image": "content/photos/hala-koszyki-03.jpg",
+      "author": "Cybularny",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2026_Warszawa_Hala_Koszyki,_1.jpg"
+    }
+  ],
+  "pl": {
+    "name": "Hala Koszyki",
+    "summary": "Zabytkowa hala targowa z początku XX wieku, dziś jedno z ulubionych miejsc na wspólne jedzenie i spotkania ze znajomymi.",
+    "article": [
+      "Hala Koszyki to zabytkowa hala targowa z początku XX wieku, którą po gruntownej renowacji otwarto ponownie w 2016 roku. Pod ceglaną fasadą kryje się przestronne wnętrze z dziesiątkami stoisk i restauracji – od polskich klasyków po kuchnie świata.",
+      "To naturalne miejsce na pierwsze spotkanie, urodziny w gronie znajomych albo nieformalny wieczór po zajęciach. Każdy może zamówić coś innego i usiąść przy wspólnym stole, więc nikt nie musi zgadzać się na jedną kuchnię."
+    ],
+    "doHere": [
+      "Spróbuj kilku kuchni świata w jednym miejscu",
+      "Usiądźcie razem przy wspólnym stole – każdy może zamówić coś innego",
+      "Sprawdź, czy w tym tygodniu odbywa się wydarzenie lub targ"
+    ],
+    "getThere": "Najbliżej jest do stacji metra Politechnika (M1) oraz przystanków przy ul. Koszykowej.",
+    "bestTime": "W weekendy i wieczorami bywa tłoczno. Na spokojniejszą atmosferę wpadnij w dzień powszedni po południu.",
+    "tips": [
+      "Godziny otwarcia lokali są różne – sprawdź je przed wyjściem.",
+      "Przy większej grupie warto zarezerwować stolik w wybranej restauracji."
+    ]
+  },
+  "en": {
+    "name": "Hala Koszyki",
+    "summary": "A historic market hall from the early 20th century, now a favourite spot for sharing food and meeting friends.",
+    "article": [
+      "Hala Koszyki is a historic market hall from the early 20th century, reopened in 2016 after a thorough restoration. Behind the brick façade you will find a spacious interior with dozens of food stalls and restaurants, from Polish classics to world cuisines.",
+      "It is a natural place for a first meetup, a birthday with friends or a relaxed evening after classes. Everyone can order something different and still sit at one shared table, so nobody has to agree on a single cuisine."
+    ],
+    "doHere": [
+      "Try several world cuisines under one roof",
+      "Sit together at a shared table – everyone can order something different",
+      "Check whether an event or market is on this week"
+    ],
+    "getThere": "The closest metro station is Politechnika (M1); there are also stops on Koszykowa street.",
+    "bestTime": "Weekends and evenings can be crowded. For a calmer atmosphere come on a weekday afternoon.",
+    "tips": [
+      "Opening hours differ between venues – check before you go.",
+      "For a bigger group, book a table at your chosen restaurant."
+    ]
+  }
+}

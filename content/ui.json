@@ -1,0 +1,200 @@
+{
+  "pl": {
+    "siteName": "Warszawa Razem",
+    "siteTag": "Miejsca dla młodych",
+    "skip": "Przejdź do treści",
+    "langLabel": "Język",
+    "navMap": "Mapa miejsc",
+    "navAbout": "O projekcie",
+    "demoBadge": "Wersja demonstracyjna",
+    "home": {
+      "title": "Warszawa Razem – interaktywna mapa miejsc dla młodych",
+      "description": "Odkryj w Warszawie miejsca do integracji, kultury, sportu, muzyki i spotkań ze znajomymi. Interaktywna mapa i lista z filtrami.",
+      "h1": "Odkryj Warszawę razem z przyjaciółmi",
+      "lead": "Wybierz, na co masz dziś ochotę – integrację, kulturę, sport, muzykę czy wspólną zabawę – i zobacz miejsca na mapie.",
+      "filtersLabel": "Kategorie miejsc",
+      "clear": "Wyczyść filtry",
+      "viewLabel": "Widok",
+      "viewMap": "Mapa",
+      "viewList": "Lista",
+      "mapLabel": "Interaktywna mapa miejsc w Warszawie",
+      "listHeading": "Lista miejsc",
+      "empty": "Nie znaleziono miejsc dla wybranych kategorii.",
+      "openPlace": "Zobacz miejsce",
+      "count": {
+        "one": "miejsce",
+        "few": "miejsca",
+        "many": "miejsc",
+        "other": "miejsca"
+      }
+    },
+    "place": {
+      "back": "Wróć do mapy",
+      "address": "Adres",
+      "doHere": "Co tu zrobić",
+      "info": "Przydatne informacje",
+      "getThere": "Jak dojechać",
+      "bestTime": "Kiedy przyjść",
+      "tips": "Wskazówki",
+      "website": "Strona oficjalna",
+      "route": "Wyznacz trasę",
+      "similar": "Podobne miejsca",
+      "gallery": "Zdjęcia",
+      "photoAlt": "{name} – ilustracja {n}",
+      "close": "Zamknij",
+      "titleSuffix": "Warszawa Razem",
+      "photoAltReal": "{name} – zdjęcie {n}",
+      "credits": "Zdjęcia",
+      "prev": "Poprzednie zdjęcie",
+      "next": "Następne zdjęcie"
+    },
+    "about": {
+      "title": "O projekcie – Warszawa Razem",
+      "description": "Warszawa Razem pomaga młodym ludziom znaleźć ciekawe miejsca do integracji, kultury, sportu, muzyki i rozrywki w Warszawie.",
+      "h1": "Warszawa jest lepsza, gdy odkrywa się ją razem",
+      "p": [
+        "Warszawa Razem to wspólny projekt z Miastem Stołecznym Warszawa. Pomaga mieszkańcom – zwłaszcza młodym ludziom – znaleźć ciekawe miejsca do integracji, rozwijania zainteresowań, aktywności sportowej i spędzania czasu ze znajomymi.",
+        "Każde miejsce ma własną stronę z opisem, zdjęciami i praktycznymi informacjami. Serwis działa po polsku i po angielsku, a mapę i listę można filtrować według kilku kategorii jednocześnie."
+      ],
+      "catsHeading": "Czego szukasz?",
+      "cta": "Otwórz mapę",
+      "eyebrow": "O projekcie",
+      "lead": "Warszawa Razem pomaga młodym mieszkańcom znaleźć miejsca na integrację, kulturę, sport, muzykę i wspólny wieczór ze znajomymi – wszystko na jednej mapie.",
+      "stats": {
+        "places": "miejsc na mapie",
+        "cats": "kategorii",
+        "langs": "wersje językowe"
+      },
+      "missionTitle": "Po co powstała ta strona",
+      "catsLead": "Wybierz kategorię, aby zobaczyć pasujące miejsca na mapie.",
+      "stepsHeading": "Jak to działa",
+      "steps": [
+        {
+          "t": "Wybierz kategorie",
+          "d": "Zaznacz jedną lub kilka – mapa i lista pokażą tylko pasujące miejsca."
+        },
+        {
+          "t": "Przeglądaj mapę lub listę",
+          "d": "Kliknij pinezkę, aby zobaczyć zdjęcie, adres i krótki opis."
+        },
+        {
+          "t": "Otwórz stronę miejsca",
+          "d": "Sprawdź, co można tam robić, jak dojechać i kiedy najlepiej przyjść."
+        }
+      ],
+      "demoTitle": "Wersja demonstracyjna",
+      "demoNote": "Prezentowane miejsca i opisy są przykładowe i zostaną zastąpione docelowymi materiałami. Zdjęcia pochodzą z Wikimedia Commons; autorzy i licencje są podane pod każdą galerią.",
+      "ctaTitle": "Gotowy na odkrywanie?"
+    },
+    "footer": {
+      "blurb": "Interaktywna mapa miejsc dla młodych mieszkańców Warszawy.",
+      "demo": "Wersja demonstracyjna – treści przykładowe.",
+      "map": "Mapa i filtry",
+      "tiles": "Mapa: © współtwórcy OpenStreetMap"
+    },
+    "notFound": {
+      "title": "Nie znaleziono strony – Warszawa Razem",
+      "h1": "Nie znaleziono strony",
+      "text": "Ta strona nie istnieje lub została przeniesiona.",
+      "home": "Wróć na stronę główną"
+    }
+  },
+  "en": {
+    "siteName": "Warsaw Together",
+    "siteTag": "Places for young people",
+    "skip": "Skip to content",
+    "langLabel": "Language",
+    "navMap": "Map of places",
+    "navAbout": "About",
+    "demoBadge": "Demo version",
+    "home": {
+      "title": "Warsaw Together – interactive map of places for young people",
+      "description": "Discover places in Warsaw for integration, culture, sports, music and hanging out with friends. Interactive map and list with filters.",
+      "h1": "Discover Warsaw with your friends",
+      "lead": "Pick what you feel like today – integration, culture, sports, music or fun with friends – and see the places on the map.",
+      "filtersLabel": "Place categories",
+      "clear": "Clear filters",
+      "viewLabel": "View",
+      "viewMap": "Map",
+      "viewList": "List",
+      "mapLabel": "Interactive map of places in Warsaw",
+      "listHeading": "List of places",
+      "empty": "No places found for the selected categories.",
+      "openPlace": "View place",
+      "count": {
+        "one": "place",
+        "other": "places"
+      }
+    },
+    "place": {
+      "back": "Back to the map",
+      "address": "Address",
+      "doHere": "What to do here",
+      "info": "Useful information",
+      "getThere": "Getting there",
+      "bestTime": "When to go",
+      "tips": "Tips",
+      "website": "Official website",
+      "route": "Get directions",
+      "similar": "Similar places",
+      "gallery": "Photos",
+      "photoAlt": "{name} – illustration {n}",
+      "close": "Close",
+      "titleSuffix": "Warsaw Together",
+      "photoAltReal": "{name} – photo {n}",
+      "credits": "Photos",
+      "prev": "Previous photo",
+      "next": "Next photo"
+    },
+    "about": {
+      "title": "About – Warsaw Together",
+      "description": "Warsaw Together helps young people find interesting places for integration, culture, sports, music and entertainment in Warsaw.",
+      "h1": "Warsaw is better when you discover it together",
+      "p": [
+        "Warsaw Together is a joint project with the City of Warsaw. It helps residents, especially young people, find interesting places for social integration, developing interests, sports and spending time with friends.",
+        "Every place has its own page with a description, photos and practical information. The site works in Polish and English, and the map and list can be filtered by several categories at once."
+      ],
+      "catsHeading": "What are you looking for?",
+      "cta": "Open the map",
+      "eyebrow": "About the project",
+      "lead": "Warsaw Together helps young residents find places for integration, culture, sports, music and an evening out with friends, all on one map.",
+      "stats": {
+        "places": "places on the map",
+        "cats": "categories",
+        "langs": "languages"
+      },
+      "missionTitle": "Why this site exists",
+      "catsLead": "Pick a category to see matching places on the map.",
+      "stepsHeading": "How it works",
+      "steps": [
+        {
+          "t": "Choose categories",
+          "d": "Select one or several – the map and list show only matching places."
+        },
+        {
+          "t": "Browse the map or list",
+          "d": "Click a pin to see a photo, the address and a short description."
+        },
+        {
+          "t": "Open the place page",
+          "d": "See what to do there, how to get there and when to go."
+        }
+      ],
+      "demoTitle": "Demo version",
+      "demoNote": "The places and descriptions shown are samples and will be replaced with the final materials. Photos come from Wikimedia Commons; authors and licences are listed under each gallery.",
+      "ctaTitle": "Ready to explore?"
+    },
+    "footer": {
+      "blurb": "An interactive map of places for young people in Warsaw.",
+      "demo": "Demo version – sample content.",
+      "map": "Map and filters",
+      "tiles": "Map: © OpenStreetMap contributors"
+    },
+    "notFound": {
+      "title": "Page not found – Warsaw Together",
+      "h1": "Page not found",
+      "text": "This page does not exist or has been moved.",
+      "home": "Back to the home page"
+    }
+  }
+}

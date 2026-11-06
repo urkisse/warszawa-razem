@@ -1,0 +1,74 @@
+{
+  "slug": "rynek-starego-miasta",
+  "categories": [
+    "culture",
+    "friends"
+  ],
+  "lat": 52.24977,
+  "lng": 21.01252,
+  "address": "Rynek Starego Miasta, 00-272 Warszawa",
+  "website": "",
+  "photos": [
+    {
+      "image": "content/photos/rynek-starego-miasta-01.jpg",
+      "author": "Аимаина хикари",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Rynek_Starego_Miasta_27-31_Warszawa.jpg"
+    },
+    {
+      "image": "content/photos/rynek-starego-miasta-02.jpg",
+      "author": "Igor123121",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Old_Town_Market_Square.,_2026,_Warsaw,_Poland.jpg"
+    },
+    {
+      "image": "content/photos/rynek-starego-miasta-03.jpg",
+      "author": "Adrian Grycuk",
+      "license": "CC BY-SA 3.0 pl",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/pl/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Warsaw_Old_Town_Market_Square_10.JPG"
+    }
+  ],
+  "pl": {
+    "name": "Rynek Starego Miasta",
+    "summary": "Odbudowane po wojnie serce Warszawy wpisane na listę UNESCO – kolorowe kamienice, kawiarnie i klimat dawnej stolicy.",
+    "article": [
+      "Rynek Starego Miasta to najstarszy i najbardziej znany plac Warszawy. Zniszczone w czasie II wojny światowej kamienice zostały pieczołowicie odbudowane, a Stare Miasto wpisano na listę światowego dziedzictwa UNESCO. W centrum stoi pomnik Syreny, symbolu miasta.",
+      "Wokół rynku mieszczą się kawiarnie, restauracje, galerie i małe muzea. To dobre miejsce na spacer, wspólne zdjęcia i kawę na świeżym powietrzu, a wąskie uliczki prowadzące do Barbakanu i Zamku Królewskiego zachęcają do dalszego odkrywania."
+    ],
+    "doHere": [
+      "Zrób zdjęcie z Syreną w centrum rynku",
+      "Usiądźcie w kawiarni z widokiem na kolorowe kamienice",
+      "Przejdź się do Barbakanu i Placu Zamkowego",
+      "Zajrzyj do małych galerii i muzeów w okolicy"
+    ],
+    "getThere": "Najbliżej jest do stacji metra Ratusz Arsenał (M1) lub przystanków przy Placu Zamkowym; dalej wygodnie dojdziesz pieszo.",
+    "bestTime": "Wcześnie rano rynek jest niemal pusty; wieczorem pięknie oświetlony i pełen życia.",
+    "tips": [
+      "W szczycie sezonu turystycznego warto unikać południowych godzin.",
+      "Ceny w lokalach na samym rynku bywają wyższe – dobre kawiarnie znajdziesz też w bocznych uliczkach."
+    ]
+  },
+  "en": {
+    "name": "Old Town Market Square",
+    "summary": "Warsaw's rebuilt heart and a UNESCO World Heritage Site – colourful townhouses, cafés and the atmosphere of the old capital.",
+    "article": [
+      "The Old Town Market Square is the oldest and best-known square in Warsaw. The townhouses destroyed during the Second World War were painstakingly rebuilt, and the Old Town was inscribed on the UNESCO World Heritage List. In the centre stands the Mermaid statue, the symbol of the city.",
+      "Around the square you will find cafés, restaurants, galleries and small museums. It is a good place for a walk, group photos and a coffee outdoors, and the narrow streets leading to the Barbican and the Royal Castle invite you to explore further."
+    ],
+    "doHere": [
+      "Take a photo with the Mermaid in the middle of the square",
+      "Sit in a café overlooking the colourful townhouses",
+      "Walk to the Barbican and Castle Square",
+      "Look into the small galleries and museums nearby"
+    ],
+    "getThere": "The closest option is the Ratusz Arsenał metro station (M1) or the stops by Castle Square; from there it is an easy walk.",
+    "bestTime": "Early in the morning the square is almost empty; in the evening it is beautifully lit and full of life.",
+    "tips": [
+      "In peak tourist season, avoid midday hours.",
+      "Prices on the square itself can be higher – you will find good cafés in the side streets too."
+    ]
+  }
+}

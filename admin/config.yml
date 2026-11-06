@@ -1,0 +1,120 @@
+# Editing panel configuration (Sveltia CMS, compatible with the Decap CMS format).
+# Every save in the panel becomes a commit in the GitHub repository; the site is rebuilt and
+# republished automatically (see .github/workflows/pages.yml). Docs: https://sveltiacms.app/en/docs
+
+backend:
+  name: github
+  repo: urkisse/warszawa-razem # change to the new "owner/repo" after the repository is transferred
+  branch: main
+
+site_url: https://urkisse.github.io/warszawa-razem/
+display_url: https://urkisse.github.io/warszawa-razem/
+
+# New photos are stored next to the existing ones in content/photos/.
+media_folder: content/photos
+public_folder: content/photos
+media_libraries:
+  default:
+    config:
+      max_file_size: 15000000
+      slugify_filename: true
+      transformations:
+        raster_image:
+          width: 1600
+          height: 1600
+          quality: 82
+
+collections:
+  - name: places
+    label: Miejsca / Places
+    label_singular: Miejsce / Place
+    description: "Każde miejsce to jedna strona na mapie i w liście. / Each place is one page, one pin and one card."
+    folder: content/places
+    extension: json
+    format: json
+    create: true
+    delete: true
+    identifier_field: slug
+    slug: "{{slug}}"
+    summary: "{{slug}} — {{address}}"
+    sortable_fields: [slug]
+    fields:
+      - label: "Adres strony (slug) / Page address"
+        name: slug
+        widget: string
+        pattern: ["^[a-z0-9-]+$", "Tylko małe litery, cyfry i myślniki / Lowercase letters, digits and dashes only"]
+        hint: "Część adresu URL, np. hala-koszyki. Nie zmieniaj po publikacji. / Part of the page URL. Do not change after publishing."
+
+      - label: "Kategorie / Categories"
+        name: categories
+        widget: select
+        multiple: true
+        min: 1
+        hint: "Pierwsza kategoria wyznacza kolor pinezki. / The first category sets the pin colour."
+        options:
+          - { label: "Integracja / Integration", value: integration }
+          - { label: "Wypoczynek kulturalny / Cultural leisure", value: culture }
+          - { label: "Wypoczynek sportowy / Sports leisure", value: sport }
+          - { label: "Muzyka / Music", value: music }
+          - { label: "Rozrywka ze znajomymi / Entertainment with friends", value: friends }
+
+      - label: "Szerokość geograficzna / Latitude"
+        name: lat
+        widget: number
+        value_type: float
+        min: 51.9
+        max: 52.5
+        hint: "Np. 52.22216. W Mapach Google: prawy przycisk myszy na miejscu, kliknij współrzędne. / E.g. 52.22216. In Google Maps right-click the spot and click the coordinates."
+
+      - label: "Długość geograficzna / Longitude"
+        name: lng
+        widget: number
+        value_type: float
+        min: 20.6
+        max: 21.5
+        hint: "Np. 21.01129 / E.g. 21.01129"
+
+      - { label: "Adres / Address", name: address, widget: string }
+      - { label: "Strona internetowa / Website", name: website, widget: string, required: false, hint: "Pełny adres z https:// / Full address starting with https://" }
+
+      - label: "Zdjęcia / Photos"
+        name: photos
+        widget: list
+        required: false
+        summary: "{{author}} — {{image}}"
+        hint: "Pierwsze zdjęcie jest okładką. Pokazywane są trzy pierwsze. Podaj autora i licencję. / The first photo is the cover; the first three are shown. Always credit the author and licence."
+        fields:
+          - { label: "Plik / Image", name: image, widget: image }
+          - { label: "Autor / Author", name: author, widget: string, required: false }
+          - { label: "Licencja / Licence", name: license, widget: string, required: false, hint: "Np. CC BY-SA 4.0, Public domain, © Miasto" }
+          - { label: "Adres licencji / Licence URL", name: licenseUrl, widget: string, required: false }
+          - { label: "Źródło (adres) / Source URL", name: source, widget: string, required: false }
+
+      - label: "Polski (PL)"
+        name: pl
+        widget: object
+        fields: &texts
+          - { label: "Nazwa / Name", name: name, widget: string }
+          - { label: "Krótki opis (1–2 zdania) / Short summary", name: summary, widget: text }
+          - label: "Artykuł (akapity) / Article (paragraphs)"
+            name: article
+            widget: list
+            min: 1
+            field: { label: "Akapit / Paragraph", name: paragraph, widget: text }
+          - label: "Co tu zrobić / What to do here"
+            name: doHere
+            widget: list
+            min: 1
+            field: { label: "Punkt / Item", name: item, widget: string }
+          - { label: "Jak dojechać / Getting there", name: getThere, widget: text }
+          - { label: "Kiedy najlepiej / Best time", name: bestTime, widget: string }
+          - label: "Wskazówki / Tips"
+            name: tips
+            widget: list
+            min: 1
+            field: { label: "Wskazówka / Tip", name: tip, widget: string }
+
+      - label: "English (EN)"
+        name: en
+        widget: object
+        fields: *texts

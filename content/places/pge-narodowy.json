@@ -1,0 +1,67 @@
+{
+  "slug": "pge-narodowy",
+  "categories": [
+    "sport",
+    "music"
+  ],
+  "lat": 52.2394,
+  "lng": 21.04568,
+  "address": "Al. Księcia Józefa Poniatowskiego 1, 03-901 Warszawa",
+  "website": "https://www.pgenarodowy.pl",
+  "photos": [
+    {
+      "image": "content/photos/pge-narodowy-01.jpg",
+      "author": "Arne Müseler",
+      "license": "CC BY-SA 3.0 de",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:National_Stadium_Warsaw_aerial_view_2.jpg"
+    },
+    {
+      "image": "content/photos/pge-narodowy-02.jpg",
+      "author": "Igor123121",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Kazimierz_G%C3%B3rski_National_Stadium,_2026,_Warsaw_Poland.jpg"
+    }
+  ],
+  "pl": {
+    "name": "PGE Narodowy",
+    "summary": "Największy stadion w Polsce – mecze reprezentacji, wielkie koncerty i widok na miasto z poziomu trybun.",
+    "article": [
+      "PGE Narodowy, oddany do użytku w 2012 roku przed mistrzostwami Europy w piłce nożnej, to największy stadion w Polsce, mieszczący ponad 58 tysięcy widzów. Biało-czerwona, charakterystyczna bryła widoczna jest z wielu miejsc w mieście.",
+      "To tu odbywają się mecze reprezentacji Polski, ważne wydarzenia sportowe i największe koncerty w kraju. Nawet jeśli nie masz biletu na mecz, warto zajrzeć w okolice stadionu i pobliskich bulwarów, a w dni imprez poczuć atmosferę wielkiego święta."
+    ],
+    "doHere": [
+      "Kibicuj podczas meczu reprezentacji lub innego wydarzenia sportowego",
+      "Idź na koncert gwiazd w dużej, otwartej atmosferze",
+      "Zrób zdjęcie bryły stadionu z mostu lub bulwarów",
+      "Sprawdź, czy dostępne są zwiedzania stadionu"
+    ],
+    "getThere": "Stacja metra Stadion Narodowy (M2) znajduje się tuż przy obiekcie.",
+    "bestTime": "W dni wydarzeń zaplanuj dojazd z zapasem czasu – okolica bywa mocno zatłoczona.",
+    "tips": [
+      "Kalendarz wydarzeń i bilety znajdziesz na oficjalnej stronie stadionu.",
+      "Po wydarzeniu metro może być bardzo zapełnione – zaplanuj powrót."
+    ]
+  },
+  "en": {
+    "name": "PGE Narodowy Stadium",
+    "summary": "Poland's largest stadium – national team matches, huge concerts and a view of the city from the stands.",
+    "article": [
+      "PGE Narodowy, opened in 2012 ahead of the UEFA European Championship, is Poland's largest stadium, with room for more than 58,000 spectators. Its distinctive red-and-white structure can be seen from many parts of the city.",
+      "It hosts matches of the Polish national team, major sporting events and the biggest concerts in the country. Even without a ticket, it is worth visiting the area around the stadium and the nearby boulevards, and on event days feeling the atmosphere of a big celebration."
+    ],
+    "doHere": [
+      "Cheer at a national team match or another sporting event",
+      "Go to a concert by a big-name artist",
+      "Take a photo of the stadium from the bridge or the boulevards",
+      "Check whether stadium tours are available"
+    ],
+    "getThere": "The Stadion Narodowy metro station (M2) is right next to the venue.",
+    "bestTime": "On event days, plan your journey with time to spare – the area gets very crowded.",
+    "tips": [
+      "The events calendar and tickets are available on the official stadium website.",
+      "After events the metro can be very busy – plan your return."
+    ]
+  }
+}

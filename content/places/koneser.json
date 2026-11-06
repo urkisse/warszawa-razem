@@ -1,0 +1,75 @@
+{
+  "slug": "koneser",
+  "categories": [
+    "culture",
+    "friends",
+    "integration"
+  ],
+  "lat": 52.25539,
+  "lng": 21.04599,
+  "address": "Plac Konesera 1, 03-736 Warszawa",
+  "website": "",
+  "photos": [
+    {
+      "image": "content/photos/koneser-01.jpg",
+      "author": "Beata77",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Koneser_warszawa_praga.jpg"
+    },
+    {
+      "image": "content/photos/koneser-02.jpg",
+      "author": "Adrian Grycuk",
+      "license": "CC BY-SA 3.0 pl",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/pl/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Centrum_Praskie_Koneser_od_strony_ul._Z%C4%85bkowskiej_2021.jpg"
+    },
+    {
+      "image": "content/photos/koneser-03.jpg",
+      "author": "Adrian Grycuk",
+      "license": "CC BY-SA 3.0 pl",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/pl/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Centrum_Praskie_Koneser_2019b.jpg"
+    }
+  ],
+  "pl": {
+    "name": "Centrum Praskie Koneser",
+    "summary": "Dawna wytwórnia wódek na Pradze, zamieniona w kwartał kultury, gastronomii i designu z klimatem postindustrialnej cegły.",
+    "article": [
+      "Dawna Wytwórnia Wódek „Koneser” na warszawskiej Pradze Północ została przekształcona w kwartał kultury, gastronomii i designu. Ceglane budynki z przełomu XIX i XX wieku sąsiadują tu z nowoczesną architekturą, a całość tworzy jedną z najbardziej charakterystycznych przestrzeni miejskich po prawej stronie Wisły.",
+      "Na terenie działa m.in. Muzeum Polskiej Wódki, a wśród zabytkowych murów znajdziesz kawiarnie, restauracje, galerie i sklepy lokalnych marek. Dziedziniec i skwery sprzyjają spotkaniom na świeżym powietrzu, a w sezonie bywa tu wiele wydarzeń plenerowych."
+    ],
+    "doHere": [
+      "Pospaceruj po poprzemysłowych dziedzińcach i zrób zdjęcia ceglanej architektury",
+      "Odwiedź Muzeum Polskiej Wódki",
+      "Umów się na kawę albo kolację w jednym z lokali",
+      "Sprawdź kalendarz wydarzeń plenerowych"
+    ],
+    "getThere": "Z metra (M2) wysiądź na stacji Dworzec Wileński – stamtąd to około 10–15 minut pieszo.",
+    "bestTime": "Najładniej jest późnym popołudniem, gdy cegła nabiera ciepłych kolorów, a w lokalach robi się gwarno.",
+    "tips": [
+      "Po wizycie warto przejść się po okolicznych uliczkach Pragi.",
+      "Godziny otwarcia muzeum i lokali sprawdź przed wyjściem."
+    ]
+  },
+  "en": {
+    "name": "Koneser Praga Centre",
+    "summary": "A former vodka distillery in Praga, turned into a quarter of culture, food and design with post-industrial brick charm.",
+    "article": [
+      "The former Koneser Vodka Factory in Warsaw's Praga district has been turned into a quarter of culture, gastronomy and design. Brick buildings from the turn of the 20th century stand next to modern architecture, creating one of the most distinctive urban spaces on the right bank of the Vistula.",
+      "The site hosts the Polish Vodka Museum, and among the historic walls you will find cafés, restaurants, galleries and shops of local brands. The courtyard and small squares invite you to meet outdoors, and in season there are plenty of open-air events."
+    ],
+    "doHere": [
+      "Stroll through the post-industrial courtyards and photograph the brick architecture",
+      "Visit the Polish Vodka Museum",
+      "Meet for a coffee or dinner in one of the venues",
+      "Check the calendar of open-air events"
+    ],
+    "getThere": "Take the metro (M2) to Dworzec Wileński – from there it is about a 10–15 minute walk.",
+    "bestTime": "Late afternoon is the prettiest, when the brick turns warm and the venues fill up.",
+    "tips": [
+      "Take a walk through the nearby streets of Praga afterwards.",
+      "Check opening hours of the museum and venues before you go."
+    ]
+  }
+}

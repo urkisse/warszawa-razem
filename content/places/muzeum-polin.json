@@ -1,0 +1,74 @@
+{
+  "slug": "muzeum-polin",
+  "categories": [
+    "culture",
+    "integration"
+  ],
+  "lat": 52.24937,
+  "lng": 20.99316,
+  "address": "ul. Mordechaja Anielewicza 6, 00-157 Warszawa",
+  "website": "https://polin.pl",
+  "photos": [
+    {
+      "image": "content/photos/muzeum-polin-01.jpg",
+      "author": "Wojciech Kryński",
+      "license": "CC BY-SA 3.0 pl",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/pl/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Museum_of_the_History_of_Polish_Jews_in_Warsaw_building_0011.jpg"
+    },
+    {
+      "image": "content/photos/muzeum-polin-02.jpg",
+      "author": "Wojciech Kryński",
+      "license": "CC BY-SA 3.0 pl",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/pl/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Museum_of_the_History_of_Polish_Jews_in_Warsaw_building_0012.jpg"
+    },
+    {
+      "image": "content/photos/muzeum-polin-03.jpg",
+      "author": "Grzegorz Gigol",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:POLIN_Museum_of_the_History_of_Polish_Jews_fa%C3%A7ade_(detail).jpg"
+    }
+  ],
+  "pl": {
+    "name": "Muzeum POLIN",
+    "summary": "Muzeum Historii Żydów Polskich – tysiąc lat wspólnej historii opowiedziane w nowoczesnej, otwartej przestrzeni na Muranowie.",
+    "article": [
+      "Muzeum Historii Żydów Polskich POLIN stoi na Muranowie, naprzeciw Pomnika Bohaterów Getta. Wystawa główna prowadzi przez tysiąc lat wspólnej historii Polaków i Żydów – od średniowiecza po czasy współczesne – a nowoczesna architektura budynku robi wrażenie już od wejścia.",
+      "POLIN to nie tylko wystawa, ale także miejsce spotkań: odbywają się tu wykłady, warsztaty, koncerty i dyskusje. Jeśli szukasz przestrzeni, w której można poznawać różne perspektywy i rozmawiać o nich z innymi, to dobry adres."
+    ],
+    "doHere": [
+      "Zwiedź wystawę główną „1000 lat historii Żydów polskich”",
+      "Zajrzyj do kawiarni i księgarni w muzeum",
+      "Sprawdź program wydarzeń: warsztaty, spotkania, koncerty",
+      "Przejdź się po okolicy, w której znajduje się Pomnik Bohaterów Getta"
+    ],
+    "getThere": "Najbliżej znajduje się przystanek tramwajowy Muzeum POLIN.",
+    "bestTime": "W dni powszednie przed południem, kiedy w muzeum jest spokojniej.",
+    "tips": [
+      "Na wystawę główną zarezerwuj kilka godzin – jest rozbudowana.",
+      "Wejściówki i godziny otwarcia sprawdź na stronie muzeum."
+    ]
+  },
+  "en": {
+    "name": "POLIN Museum",
+    "summary": "The Museum of the History of Polish Jews – a thousand years of shared history told in a modern, open space in Muranów.",
+    "article": [
+      "The POLIN Museum of the History of Polish Jews stands in the Muranów district, opposite the Monument to the Ghetto Heroes. The core exhibition takes you through a thousand years of shared Polish and Jewish history, from the Middle Ages to the present day, and the building's modern architecture impresses from the moment you step in.",
+      "POLIN is not only an exhibition but also a meeting place: it hosts lectures, workshops, concerts and discussions. If you are looking for a space to learn about different perspectives and talk about them with others, this is a good address."
+    ],
+    "doHere": [
+      "See the core exhibition “1000 Years of History of Polish Jews”",
+      "Drop by the museum's café and bookshop",
+      "Check the events programme: workshops, meetups, concerts",
+      "Walk around the neighbourhood, where the Monument to the Ghetto Heroes stands"
+    ],
+    "getThere": "The nearest stop is the tram stop Muzeum POLIN.",
+    "bestTime": "Weekday mornings, when the museum is calmer.",
+    "tips": [
+      "Set aside several hours for the core exhibition – it is extensive.",
+      "Check tickets and opening hours on the museum's website."
+    ]
+  }
+}

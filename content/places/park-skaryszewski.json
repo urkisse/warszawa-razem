@@ -1,0 +1,75 @@
+{
+  "slug": "park-skaryszewski",
+  "categories": [
+    "sport",
+    "integration",
+    "friends"
+  ],
+  "lat": 52.24227,
+  "lng": 21.05557,
+  "address": "Park Skaryszewski, Praga-Południe, Warszawa",
+  "website": "",
+  "photos": [
+    {
+      "image": "content/photos/park-skaryszewski-01.jpg",
+      "author": "Oleslawlama",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Skaryszewski_Park_in_Warsaw_April_2024.jpg"
+    },
+    {
+      "image": "content/photos/park-skaryszewski-02.jpg",
+      "author": "Oleslawlama",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Sunset_over_a_lake_in_Skaryszewski_Park_Warsaw_September_2023.jpg"
+    },
+    {
+      "image": "content/photos/park-skaryszewski-03.jpg",
+      "author": "Artur Sapun",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Park_Skaryszewski_3.jpg"
+    }
+  ],
+  "pl": {
+    "name": "Park Skaryszewski",
+    "summary": "Zielone serce Pragi z jeziorem, długimi alejami i miejscami do biegania, spacerów i wspólnego odpoczynku.",
+    "article": [
+      "Park Skaryszewski, założony na początku XX wieku, to największy park na Pradze-Południe i jedno z ulubionych miejsc mieszkańców tej dzielnicy. Wśród starych drzew prowadzą długie aleje, a w głębi parku znajduje się jezioro.",
+      "To dobre miejsce na poranny jogging, spacer z psem, grę w piłkę albo leniwy piknik na trawie. W weekendy park wypełnia się rodzinami i grupami przyjaciół, a okoliczne ulice oferują kawiarnie i lokale, w których można usiąść po aktywnym dniu."
+    ],
+    "doHere": [
+      "Pobiegaj alejami wśród starych drzew",
+      "Posiedź przy jeziorze i wyłącz telefon",
+      "Zorganizuj piknik z przyjaciółmi na trawie",
+      "Zakończ dzień w jednej z okolicznych kawiarni"
+    ],
+    "getThere": "Dojedziesz tramwajem lub autobusem; do stacji metra Stadion Narodowy (M2) jest około 15–20 minut spaceru.",
+    "bestTime": "Wiosną i latem, szczególnie rano i przed zachodem słońca.",
+    "tips": [
+      "W weekendy park bywa tłoczny – wejdź głębiej w aleje, by znaleźć spokojniejsze miejsce.",
+      "Wieczorem trzymaj się głównych, oświetlonych alejek."
+    ]
+  },
+  "en": {
+    "name": "Skaryszewski Park",
+    "summary": "The green heart of Praga with a lake, long avenues and spaces for running, walking and relaxing together.",
+    "article": [
+      "Skaryszewski Park, laid out in the early 20th century, is the largest park in Praga-Południe and one of its residents' favourite places. Long avenues run among old trees, and a lake lies deeper in the park.",
+      "It is a good spot for a morning jog, a walk with the dog, a ball game or a lazy picnic on the grass. On weekends the park fills with families and groups of friends, and the surrounding streets offer cafés and venues where you can sit after an active day."
+    ],
+    "doHere": [
+      "Run along the avenues among old trees",
+      "Sit by the lake and switch off your phone",
+      "Have a picnic with friends on the grass",
+      "End the day in one of the nearby cafés"
+    ],
+    "getThere": "Take a tram or bus; from the Stadion Narodowy metro station (M2) it is about a 15–20 minute walk.",
+    "bestTime": "In spring and summer, especially in the morning and before sunset.",
+    "tips": [
+      "On weekends the park can be crowded – go deeper into the avenues to find a quieter spot.",
+      "In the evening, stick to the main, lit paths."
+    ]
+  }
+}

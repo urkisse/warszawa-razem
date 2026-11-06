@@ -1,0 +1,75 @@
+{
+  "slug": "lazienki-krolewskie",
+  "categories": [
+    "culture",
+    "music",
+    "integration"
+  ],
+  "lat": 52.21518,
+  "lng": 21.03607,
+  "address": "ul. Agrykola 1, 00-460 Warszawa",
+  "website": "https://www.lazienki-krolewskie.pl",
+  "photos": [
+    {
+      "image": "content/photos/lazienki-krolewskie-01.jpg",
+      "author": "Maciej Rolkowski",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Pa%C5%82ac_na_wyspie,_%C5%81azienki_Kr%C3%B3lewskie,_Warszawa_2021.jpg"
+    },
+    {
+      "image": "content/photos/lazienki-krolewskie-02.jpg",
+      "author": "Krzysztof Popławski",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Pa%C5%82ac_na_Wyspie,_%C5%81azienki_Kr%C3%B3lewskie_w_Warszawie,_2025,_KsP_004.jpg"
+    },
+    {
+      "image": "content/photos/lazienki-krolewskie-03.jpg",
+      "author": "Adrian Grycuk",
+      "license": "CC BY-SA 3.0 pl",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/pl/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Nowa_Pomara%C5%84czarnia_%C5%81azienki_Kr%C3%B3lewskie_Warszawa_05.JPG"
+    }
+  ],
+  "pl": {
+    "name": "Łazienki Królewskie",
+    "summary": "Najpiękniejszy park w centrum miasta: pałac na wodzie, pawie, pomnik Chopina i letnie koncerty pod gołym niebem.",
+    "article": [
+      "Łazienki Królewskie to zespół pałacowo-ogrodowy z XVIII wieku i jeden z najbardziej znanych parków w Polsce. Jego symbolem jest Pałac na Wyspie, odbijający się w stawie, a po alejkach spacerują pawie i wiewiórki.",
+      "Przy pomniku Fryderyka Chopina w sezonie letnim odbywają się plenerowe koncerty muzyki chopinowskiej, które przyciągają zarówno turystów, jak i mieszkańców. W parku jest też miejsce na piknik, bieganie, wypożyczenie roweru, odwiedzenie muzeów i amfiteatru."
+    ],
+    "doHere": [
+      "Posłuchaj koncertu pod pomnikiem Chopina (w sezonie letnim, zwykle w niedziele)",
+      "Zrób zdjęcie Pałacu na Wyspie",
+      "Rozłóżcie koc na trawie i urządźcie piknik",
+      "Odwiedź muzea i pawilony na terenie parku"
+    ],
+    "getThere": "W pobliżu zatrzymują się liczne autobusy i tramwaje – wysiądź na przystankach przy Łazienkach Królewskich.",
+    "bestTime": "Od późnej wiosny do wczesnej jesieni. Wcześnie rano park jest pusty i bardzo spokojny.",
+    "tips": [
+      "Wstęp do parku jest bezpłatny; muzea i pałace mają osobne bilety.",
+      "Nie karm zwierząt – pawie i wiewiórki są dzikie."
+    ]
+  },
+  "en": {
+    "name": "Royal Łazienki Park",
+    "summary": "The most beautiful park in the city centre: a palace on the water, peacocks, the Chopin monument and summer open-air concerts.",
+    "article": [
+      "Royal Łazienki is an 18th-century palace-and-garden complex and one of the best-known parks in Poland. Its symbol is the Palace on the Isle, reflected in the pond, and peacocks and squirrels roam the paths.",
+      "In summer, open-air concerts of Chopin's music take place by the monument to Frédéric Chopin, attracting both tourists and locals. The park also has space for picnics, running, museums and an amphitheatre."
+    ],
+    "doHere": [
+      "Listen to a concert by the Chopin monument (in summer, usually on Sundays)",
+      "Take a photo of the Palace on the Isle",
+      "Spread a blanket on the grass and have a picnic",
+      "Visit the museums and pavilions in the park"
+    ],
+    "getThere": "Many buses and trams stop nearby – get off at the stops by Łazienki Królewskie.",
+    "bestTime": "From late spring to early autumn. Early in the morning the park is empty and very calm.",
+    "tips": [
+      "Entry to the park is free; museums and palaces have separate tickets.",
+      "Do not feed the animals – the peacocks and squirrels are wild."
+    ]
+  }
+}
