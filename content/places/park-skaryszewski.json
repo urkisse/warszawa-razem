@@ -1,5 +1,8 @@
 {
   "slug": "park-skaryszewski",
+  "status": "published",
+  "publishedAt": "2026-11-06T13:33:53",
+  "archived": false,
   "categories": [
     "sport",
     "integration",
@@ -71,5 +74,11 @@
       "On weekends the park can be crowded – go deeper into the avenues to find a quieter spot.",
       "In the evening, stick to the main, lit paths."
     ]
+  },
+  "meta": {
+    "createdAt": "2026-11-06T13:33:53",
+    "createdBy": "urkisse",
+    "updatedAt": "2026-11-06T13:33:53",
+    "updatedBy": "urkisse"
   }
 }

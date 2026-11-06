@@ -1,5 +1,8 @@
 {
   "slug": "park-fontann",
+  "status": "published",
+  "publishedAt": "2026-11-06T13:33:53",
+  "archived": false,
   "categories": [
     "friends",
     "culture",
@@ -71,5 +74,11 @@
       "On warm evenings it can be crowded – pick a spot with a good view early.",
       "Show dates depend on the season and weather – check current information."
     ]
+  },
+  "meta": {
+    "createdAt": "2026-11-06T13:33:53",
+    "createdBy": "urkisse",
+    "updatedAt": "2026-11-06T13:33:53",
+    "updatedBy": "urkisse"
   }
 }

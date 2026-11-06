@@ -1,5 +1,8 @@
 {
   "slug": "fabryka-trzciny",
+  "status": "published",
+  "publishedAt": "2026-11-06T13:33:53",
+  "archived": false,
   "categories": [
     "music",
     "culture",
@@ -57,5 +60,11 @@
       "Check the programme before you go – the venue is open mainly during events.",
       "After dark, go back with a group of friends or choose reliable transport."
     ]
+  },
+  "meta": {
+    "createdAt": "2026-11-06T13:33:53",
+    "createdBy": "urkisse",
+    "updatedAt": "2026-11-06T13:33:53",
+    "updatedBy": "urkisse"
   }
 }

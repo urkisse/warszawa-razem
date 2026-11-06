@@ -1,5 +1,8 @@
 {
   "slug": "hala-koszyki",
+  "status": "published",
+  "publishedAt": "2026-11-06T13:33:53",
+  "archived": false,
   "categories": [
     "friends",
     "integration"
@@ -68,5 +71,11 @@
       "Opening hours differ between venues – check before you go.",
       "For a bigger group, book a table at your chosen restaurant."
     ]
+  },
+  "meta": {
+    "createdAt": "2026-11-06T13:33:53",
+    "createdBy": "urkisse",
+    "updatedAt": "2026-11-06T13:33:53",
+    "updatedBy": "urkisse"
   }
 }

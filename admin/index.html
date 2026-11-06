@@ -45,5 +45,33 @@
     <!-- Sveltia CMS: the editing panel. It edits content/places/*.json and content/photos/* in the
          GitHub repository (see admin/config.yml); every save is a commit that republishes the site. -->
     <script src="./sveltia-cms.js"></script>
+    <script>
+      // On every save: fill in the "Extra" block (created / modified, by whom) and stamp the first
+      // publication date. The hook runs for single saves and for bulk edits in the list.
+      (function () {
+        if (!window.CMS || !CMS.registerEventListener) return;
+        var pad = function (n) { return String(n).padStart(2, '0'); };
+        var nowLocal = function () {
+          var d = new Date();
+          return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + 'T' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
+        };
+        CMS.registerEventListener({
+          name: 'preSave',
+          handler: function (args) {
+            var data = args.entry.get('data');
+            var who = (args.author && (args.author.login || args.author.name)) || '';
+            var now = nowLocal();
+            var meta = data.get('meta');
+            if (!meta || typeof meta.set !== 'function') data = data.set('meta', data.clear()); // new place: no "Extra" block yet
+            if (!data.getIn(['meta', 'createdAt'])) data = data.setIn(['meta', 'createdAt'], now);
+            if (who && !data.getIn(['meta', 'createdBy'])) data = data.setIn(['meta', 'createdBy'], who);
+            data = data.setIn(['meta', 'updatedAt'], now);
+            if (who) data = data.setIn(['meta', 'updatedBy'], who);
+            if (data.get('status') === 'published' && !data.get('publishedAt')) data = data.set('publishedAt', nowLocal());
+            return data;
+          },
+        });
+      })();
+    </script>
   </body>
 </html>

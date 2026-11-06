@@ -1,5 +1,8 @@
 {
   "slug": "pge-narodowy",
+  "status": "published",
+  "publishedAt": "2026-11-06T13:33:53",
+  "archived": false,
   "categories": [
     "sport",
     "music"
@@ -63,5 +66,11 @@
       "The events calendar and tickets are available on the official stadium website.",
       "After events the metro can be very busy – plan your return."
     ]
+  },
+  "meta": {
+    "createdAt": "2026-11-06T13:33:53",
+    "createdBy": "urkisse",
+    "updatedAt": "2026-11-06T13:33:53",
+    "updatedBy": "urkisse"
   }
 }

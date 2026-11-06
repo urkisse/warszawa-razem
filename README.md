@@ -48,7 +48,26 @@ automatically within about a minute.** Uploaded photos are resized to 1600 px. T
 (Decap-CMS-compatible); its fields are defined in `admin/config.yml`.
 
 The panel is themed to match the website (colours, fonts and corner radius are set with Sveltia's own variables
-in `admin/index.html`; the logo is `admin/logo.svg`) and shows places as a photo list/gallery with a category filter.
+in `admin/index.html`; the logo is `admin/logo.svg`).
+
+**Statuses, archive and the list.**
+
+* **Required fields:** only the page address (slug) and the Polish name. Everything else may stay empty; the site
+  leaves that part out (no coordinates or category -> listed but not on the map; no English text -> the Polish text
+  is shown; see `loadContent()` in `build.mjs`). Missing pieces are reported as warnings in the build log.
+* **Status:** *Draft* (default for new places) or *Published*. Drafts are saved but not built into the site.
+  The first time a place is published its "Published on" date is filled in.
+* **Archive:** the *Archived* switch in the form hides the place from the site and moves it to the **Archived**
+  tab (next to the **Active** tab); switching it off restores it. In the list, **Edit** (top right) opens a
+  spreadsheet-like bulk editor, so many places can be published, set back to draft or archived at once.
+* **List:** a table with Name, Status, Published at, Created on, Modified on and Edited by, sorted newest first
+  (change it with *Sort*; *Filter* narrows by status or category). Click a row to open the place.
+* **Extra block** (bottom of each place): who created it and who last edited it, and when. It is filled in
+  automatically on every save by a small hook in `admin/index.html` and is read-only. The complete history
+  (every change, by whom) is the repository's commit history on GitHub.
+
+A draft or archived place is not on the public site, but its text is in the repository; if the repository is
+public, so is the draft. For unpublished material that must stay private, use a private repository.
 
 **Changing the panel safely:** `node tools/admin-test.mjs`, then `python3 -m http.server 4190 -d .admin-test`
 and open http://localhost:4190/ -> *Start Demo*. This is a login-free sandbox of the panel with the real places and
@@ -58,11 +77,30 @@ checked, including a save, before they are published. A configuration error is s
 Not editable in the panel yet: interface texts (`content/ui.json`), the About page and the category
 definitions (`content/categories.json`). Edit those files directly or add them to `admin/config.yml`.
 
+### Users, passwords and roles
+
+The panel has no user database of its own: **people are GitHub accounts**, and GitHub does the sign-in.
+
+* **Add an editor:** repository *Settings -> Collaborators* (or, in an organisation, add the person to a team with
+  *Write* access). They then sign in to `/admin/` with their own GitHub account (or a personal access token).
+* **Remove an editor:** remove them from the collaborators/team; their access ends immediately.
+* **Passwords, 2-factor, recovery:** managed by GitHub in each person's own account (Settings -> Password and
+  authentication). The panel cannot create accounts or change passwords.
+* **Roles:** *Write* = can edit and publish; *Read* = can look but not save. Anything finer (for example "editors
+  prepare, an editor-in-chief approves") needs an approval step: Sveltia CMS supports an Editorial Workflow (every
+  change becomes a pull request that someone must merge; set `publish_mode: editorial_workflow` in `config.yml`
+  and give the token *Pull requests: Read and write*) or GitHub branch protection.
+* If the city hall wants its own accounts with passwords, roles and password reset inside the panel, that needs a
+  sign-in service in front of the panel (for example the city's single sign-on) or a CMS with its own server
+  (Strapi, Directus and similar). That is a different hosting model than this static site.
+
 ### By hand
 
-Each place is one file, `content/places/<slug>.json`: `slug`, `categories` (`integration`, `culture`, `sport`,
-`music`, `friends`), `lat`/`lng`, `address`, `website`, `photos`, and the `pl` and `en` blocks. The build fails
-with a clear message if something is missing. Photos live in `content/photos/` and are listed per place:
+Each place is one file, `content/places/<slug>.json`: `slug`, `status` (`draft` or `published`; missing counts as
+published), `archived` (`true` hides it), `categories` (`integration`, `culture`, `sport`, `music`, `friends`),
+`lat`/`lng`, `address`, `website`, `photos`, the `pl` and `en` blocks, and `meta` (filled in by the panel). Only
+`slug` and `pl.name` are needed; the build fails with a clear message if those are wrong. Photos live in
+`content/photos/` and are listed per place:
 
 ```json
 "photos": [
@@ -117,4 +155,5 @@ for the Claude artifact viewer, which blocks external files; it uses its own off
 
 * All places, texts and illustrations are **sample content** – verify facts, coordinates and opening info.
 * Not part of the demo: domain registration, DNS/HTTPS on the city hall's domain, user accounts and roles beyond
-  GitHub's, an approval step before publishing (can be added with branch protection and pull requests).
+  GitHub's, an approval step before publishing (see "Users, passwords and roles"), scheduled publishing (a
+  future "Published on" date does not delay publication).

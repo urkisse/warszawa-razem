@@ -1,5 +1,8 @@
 {
   "slug": "lazienki-krolewskie",
+  "status": "published",
+  "publishedAt": "2026-11-06T13:33:53",
+  "archived": false,
   "categories": [
     "culture",
     "music",
@@ -71,5 +74,11 @@
       "Entry to the park is free; museums and palaces have separate tickets.",
       "Do not feed the animals – the peacocks and squirrels are wild."
     ]
+  },
+  "meta": {
+    "createdAt": "2026-11-06T13:33:53",
+    "createdBy": "urkisse",
+    "updatedAt": "2026-11-06T13:33:53",
+    "updatedBy": "urkisse"
   }
 }

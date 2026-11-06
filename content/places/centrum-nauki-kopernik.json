@@ -1,5 +1,8 @@
 {
   "slug": "centrum-nauki-kopernik",
+  "status": "published",
+  "publishedAt": "2026-11-06T13:33:53",
+  "archived": false,
   "categories": [
     "culture",
     "friends"
@@ -70,5 +73,11 @@
       "Buy tickets for planetarium shows and selected demonstrations online in advance.",
       "Set aside at least 2–3 hours for your visit."
     ]
+  },
+  "meta": {
+    "createdAt": "2026-11-06T13:33:53",
+    "createdBy": "urkisse",
+    "updatedAt": "2026-11-06T13:33:53",
+    "updatedBy": "urkisse"
   }
 }

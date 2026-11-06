@@ -1,6 +1,17 @@
 # Editing panel configuration (Sveltia CMS, compatible with the Decap CMS format).
 # Every save in the panel becomes a commit in the GitHub repository; the site is rebuilt and
 # republished automatically (see .github/workflows/pages.yml). Docs: https://sveltiacms.app/en/docs
+#
+# How the pieces fit together:
+#  * Only two fields are required: the page address (slug) and the Polish name. Everything else may be
+#    left empty; the website then simply leaves that part out (see loadContent() in build.mjs).
+#  * "status" (draft / published) and "archived" decide whether a place is on the public site. Drafts
+#    and archived places stay in the repository and in this panel, but are not built into the site.
+#  * The two collections below ("Active" and "Archived") are two tabs over the same folder, split by
+#    the "archived" switch. Archiving = switching "archived" on (in the form, or for many places at once
+#    with "Bulk edit" in the list).
+#  * Created / edited (who and when) are filled in automatically on every save by the preSave hook in
+#    admin/index.html. The full history is also in the repository's commits.
 
 backend:
   name: github
@@ -28,41 +39,80 @@ media_libraries:
           quality: 82
 
 collections:
+  # ------------------------------------------------------------------ tab 1: active places
   - name: places
-    label: Miejsca / Places
+    label: Aktywne / Active
     label_singular: Miejsce / Place
-    description: "Każde miejsce to jedna strona na mapie i w liście. / Each place is one page, one pin and one card."
+    description: "Każde miejsce to jedna strona na mapie i w liście. Szkice nie są widoczne na stronie. / Each place is one page, one pin and one card. Drafts are not shown on the site."
     folder: content/places
     extension: json
     format: json
     create: true
     delete: true
+    filter: { field: archived, value: [false, null] }
     identifier_field: slug
     slug: "{{slug}}"
     summary: "{{pl.name}}"
     thumbnail: photos.0.image
     editor:
       preview: false # the raw-values preview is not a real preview of the site; a wider form is easier to use
-    sortable_fields: [slug, pl.name, address]
+    # newest first by default; the Sort menu offers the other fields
+    sortable_fields:
+      fields: [meta.createdAt, meta.updatedAt, publishedAt, pl.name, slug, status]
+      default: { field: meta.createdAt, direction: descending }
+    # the table view (the list's default view): the columns asked for by the client
+    table_columns: &columns
+      - { field: _summary, label: "Nazwa / Name" }
+      - { field: status, label: "Status" }
+      - { field: "{{publishedAt | date('DD.MM.YYYY HH:mm')}}", label: "Opublikowano / Published at" }
+      - { field: "{{meta.createdAt | date('DD.MM.YYYY HH:mm')}}", label: "Utworzono / Created on" }
+      - { field: "{{meta.updatedAt | date('DD.MM.YYYY HH:mm')}}", label: "Zmodyfikowano / Modified on" }
+      - { field: meta.updatedBy, label: "Edytował / Edited by" }
+    # change status / archive many places at once, in one commit
+    bulk_edit: { fields: [status, archived] }
     view_filters:
+      - { label: "Szkice / Drafts", field: status, pattern: draft }
+      - { label: "Opublikowane / Published", field: status, pattern: published }
       - { label: "Integracja / Integration", field: categories, pattern: integration }
       - { label: "Kultura / Culture", field: categories, pattern: culture }
       - { label: "Sport", field: categories, pattern: sport }
       - { label: "Muzyka / Music", field: categories, pattern: music }
       - { label: "Ze znajomymi / With friends", field: categories, pattern: friends }
-    fields:
+    fields: &place_fields
       - label: "Adres strony (slug) / Page address"
         name: slug
         widget: string
         pattern: ["^[a-z0-9-]+$", "Tylko małe litery, cyfry i myślniki / Lowercase letters, digits and dashes only"]
         hint: "Część adresu URL, np. hala-koszyki. Nie zmieniaj po publikacji. / Part of the page URL. Do not change after publishing."
 
+      - label: "Status"
+        name: status
+        widget: select
+        default: draft # always has a value (no empty choice), so a place can never be "published by accident"
+        options:
+          - { label: "Szkic / Draft", value: draft }
+          - { label: "Opublikowane / Published", value: published }
+        hint: "Szkic jest ukryty na stronie, opublikowane miejsce jest widoczne. Nowe miejsca zaczynają jako szkic; strona odświeża się około minuty po zapisie. / A draft is hidden from the site, a published place is shown. New places start as drafts; the site updates about a minute after saving."
+
+      - label: "Data publikacji / Published on"
+        name: publishedAt
+        widget: datetime
+        required: false
+        hint: "Uzupełnia się samo przy pierwszej publikacji; można zmienić. / Filled in automatically when first published; you may change it."
+
+      - label: "Zarchiwizowane / Archived"
+        name: archived
+        widget: boolean
+        required: false
+        default: false
+        hint: "Ukrywa miejsce na stronie i przenosi je do zakładki Archiwum. Można przywrócić. / Hides the place from the site and moves it to the Archived tab. It can be restored."
+
       - label: "Kategorie / Categories"
         name: categories
         widget: select
         multiple: true
-        min: 1
-        hint: "Pierwsza kategoria wyznacza kolor pinezki. / The first category sets the pin colour."
+        required: false
+        hint: "Pierwsza kategoria wyznacza kolor pinezki. Bez kategorii miejsce nie pojawi się na mapie. / The first category sets the pin colour. Without a category the place is not shown on the map."
         options:
           - { label: "Integracja / Integration", value: integration }
           - { label: "Wypoczynek kulturalny / Cultural leisure", value: culture }
@@ -74,19 +124,21 @@ collections:
         name: lat
         widget: number
         value_type: float
+        required: false
         min: 51.9
         max: 52.5
-        hint: "Np. 52.22216. W Mapach Google: prawy przycisk myszy na miejscu, kliknij współrzędne. / E.g. 52.22216. In Google Maps right-click the spot and click the coordinates."
+        hint: "Np. 52.22216. Bez współrzędnych miejsce nie pojawi się na mapie. W Mapach Google: prawy przycisk myszy na miejscu, kliknij współrzędne. / E.g. 52.22216. Without coordinates the place is not shown on the map. In Google Maps right-click the spot and click the coordinates."
 
       - label: "Długość geograficzna / Longitude"
         name: lng
         widget: number
         value_type: float
+        required: false
         min: 20.6
         max: 21.5
         hint: "Np. 21.01129 / E.g. 21.01129"
 
-      - { label: "Adres / Address", name: address, widget: string }
+      - { label: "Adres / Address", name: address, widget: string, required: false }
       - { label: "Strona internetowa / Website", name: website, widget: string, required: false, hint: "Pełny adres z https:// / Full address starting with https://" }
 
       - label: "Zdjęcia / Photos"
@@ -97,7 +149,7 @@ collections:
         summary: "{{author}} — {{license}}"
         hint: "Pierwsze zdjęcie jest okładką. Pokazywane są trzy pierwsze. Podaj autora i licencję. / The first photo is the cover; the first three are shown. Always credit the author and licence."
         fields:
-          - { label: "Plik / Image", name: image, widget: image }
+          - { label: "Plik / Image", name: image, widget: image, required: false }
           - { label: "Autor / Author", name: author, widget: string, required: false }
           - { label: "Licencja / Licence", name: license, widget: string, required: false, hint: "Np. CC BY-SA 4.0, Public domain, © Miasto" }
           - { label: "Adres licencji / Licence URL", name: licenseUrl, widget: string, required: false }
@@ -106,28 +158,78 @@ collections:
       - label: "Polski (PL)"
         name: pl
         widget: object
-        fields: &texts
+        fields:
           - { label: "Nazwa / Name", name: name, widget: string }
-          - { label: "Krótki opis (1–2 zdania) / Short summary", name: summary, widget: text }
-          - label: "Artykuł (akapity) / Article (paragraphs)"
+          - &f_summary { label: "Krótki opis (1–2 zdania) / Short summary", name: summary, widget: text, required: false }
+          - &f_article
+            label: "Artykuł (akapity) / Article (paragraphs)"
             name: article
             widget: list
-            min: 1
-            field: { label: "Akapit / Paragraph", name: paragraph, widget: text }
-          - label: "Co tu zrobić / What to do here"
+            required: false
+            field: { label: "Akapit / Paragraph", name: paragraph, widget: text, required: false }
+          - &f_dohere
+            label: "Co tu zrobić / What to do here"
             name: doHere
             widget: list
-            min: 1
-            field: { label: "Punkt / Item", name: item, widget: string }
-          - { label: "Jak dojechać / Getting there", name: getThere, widget: text }
-          - { label: "Kiedy najlepiej / Best time", name: bestTime, widget: string }
-          - label: "Wskazówki / Tips"
+            required: false
+            field: { label: "Punkt / Item", name: item, widget: string, required: false }
+          - &f_getthere { label: "Jak dojechać / Getting there", name: getThere, widget: text, required: false }
+          - &f_besttime { label: "Kiedy najlepiej / Best time", name: bestTime, widget: string, required: false }
+          - &f_tips
+            label: "Wskazówki / Tips"
             name: tips
             widget: list
-            min: 1
-            field: { label: "Wskazówka / Tip", name: tip, widget: string }
+            required: false
+            field: { label: "Wskazówka / Tip", name: tip, widget: string, required: false }
 
       - label: "English (EN)"
         name: en
         widget: object
-        fields: *texts
+        required: false # optional block: tick "Add English" to write the English version
+        hint: "Opcjonalne. Bez wersji angielskiej strona EN pokazuje tekst polski. / Optional. Without it the English page shows the Polish text."
+        fields:
+          - { label: "Nazwa / Name", name: name, widget: string, required: false }
+          - *f_summary
+          - *f_article
+          - *f_dohere
+          - *f_getthere
+          - *f_besttime
+          - *f_tips
+
+      # Filled in automatically on every save by the preSave hook in admin/index.html - read-only here.
+      - label: "Dodatkowe / Extra – historia zmian / change history"
+        name: meta
+        widget: object
+        required: false
+        collapsed: true
+        summary: "Utworzono / Created {{createdAt | date('DD.MM.YYYY HH:mm')}} ({{createdBy}}) · Zmieniono / Modified {{updatedAt | date('DD.MM.YYYY HH:mm')}} ({{updatedBy}})"
+        hint: "Wypełniane automatycznie przy każdym zapisie. Pełna historia jest w commitach repozytorium. / Filled in automatically on every save. The full history is in the repository's commits."
+        fields:
+          - { label: "Utworzono / Created on", name: createdAt, widget: datetime, required: false, readonly: true }
+          - { label: "Utworzył / Created by", name: createdBy, widget: string, required: false, readonly: true }
+          - { label: "Zmodyfikowano / Modified on", name: updatedAt, widget: datetime, required: false, readonly: true }
+          - { label: "Edytował / Last edited by", name: updatedBy, widget: string, required: false, readonly: true }
+
+  # ------------------------------------------------------------------ tab 2: archived places
+  - name: archive
+    label: Archiwum / Archived
+    label_singular: Miejsce / Place
+    description: "Zarchiwizowane miejsca nie są widoczne na stronie. Aby przywrócić, wyłącz „Zarchiwizowane”. / Archived places are not shown on the site. To restore one, switch “Archived” off."
+    folder: content/places
+    extension: json
+    format: json
+    create: false # new places are created in the Active tab
+    delete: true
+    filter: { field: archived, value: true }
+    identifier_field: slug
+    slug: "{{slug}}"
+    summary: "{{pl.name}}"
+    thumbnail: photos.0.image
+    editor:
+      preview: false
+    sortable_fields:
+      fields: [meta.updatedAt, meta.createdAt, publishedAt, pl.name, slug, status]
+      default: { field: meta.updatedAt, direction: descending }
+    table_columns: *columns
+    bulk_edit: { fields: [archived] }
+    fields: *place_fields

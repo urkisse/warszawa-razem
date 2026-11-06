@@ -1,5 +1,8 @@
 {
   "slug": "teatr-wielki",
+  "status": "published",
+  "publishedAt": "2026-11-06T13:33:53",
+  "archived": false,
   "categories": [
     "music",
     "culture"
@@ -70,5 +73,11 @@
       "Lower-priced tickets are often available for less popular performances.",
       "Dress smart but comfortable – many people treat a night at the opera as an event."
     ]
+  },
+  "meta": {
+    "createdAt": "2026-11-06T13:33:53",
+    "createdBy": "urkisse",
+    "updatedAt": "2026-11-06T13:33:53",
+    "updatedBy": "urkisse"
   }
 }

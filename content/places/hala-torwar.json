@@ -1,5 +1,8 @@
 {
   "slug": "hala-torwar",
+  "status": "published",
+  "publishedAt": "2026-11-06T13:33:53",
+  "archived": false,
   "categories": [
     "sport",
     "music"
@@ -56,5 +59,11 @@
       "Rink opening hours and the hall's programme change with the season – check before you go.",
       "Bring warm gloves for the rink; skates can usually be rented on site."
     ]
+  },
+  "meta": {
+    "createdAt": "2026-11-06T13:33:53",
+    "createdBy": "urkisse",
+    "updatedAt": "2026-11-06T13:33:53",
+    "updatedBy": "urkisse"
   }
 }

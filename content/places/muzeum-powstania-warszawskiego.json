@@ -1,5 +1,8 @@
 {
   "slug": "muzeum-powstania-warszawskiego",
+  "status": "published",
+  "publishedAt": "2026-11-06T13:33:53",
+  "archived": false,
   "categories": [
     "culture"
   ],
@@ -69,5 +72,11 @@
       "Plan 2–3 hours for your visit.",
       "The subject is moving and the exhibition requires focus. Check current entry rules on the museum's website."
     ]
+  },
+  "meta": {
+    "createdAt": "2026-11-06T13:33:53",
+    "createdBy": "urkisse",
+    "updatedAt": "2026-11-06T13:33:53",
+    "updatedBy": "urkisse"
   }
 }

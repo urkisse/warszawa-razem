@@ -159,6 +159,13 @@ async function loadContent() {
   const catIds = new Set(cats.map((c) => c.id));
   const seen = new Set();
   const places = [];
+  const hidden = [];
+  // Only a broken slug / unknown category / missing Polish name stops the build. Everything else in a
+  // place is optional (editors may leave fields empty): the site simply leaves that part out, and a
+  // note is printed so gaps are visible in the build log (GitHub Actions shows ::warning lines).
+  const warn = (f, m) => console.warn(process.env.GITHUB_ACTIONS ? `::warning file=content/places/${f}::${m}` : `warning: content/places/${f}: ${m}`);
+  const TEXT_KEYS = ['name', 'summary', 'article', 'doHere', 'getThere', 'bestTime', 'tips'];
+  const isEmpty = (v) => v == null || (typeof v === 'string' && !v.trim()) || (Array.isArray(v) && !v.some((x) => String(x ?? '').trim()));
   for (const f of files) {
     const p = await readJson(path.join(dir, f));
     const fail = (m) => {
@@ -167,18 +174,41 @@ async function loadContent() {
     if (!p.slug || !/^[a-z0-9-]+$/.test(p.slug)) fail('slug must be lowercase letters, digits and dashes');
     if (seen.has(p.slug)) fail(`duplicate slug "${p.slug}"`);
     seen.add(p.slug);
-    if (!Array.isArray(p.categories) || !p.categories.length) fail('at least one category is required');
-    for (const c of p.categories) if (!catIds.has(c)) fail(`unknown category "${c}"`);
-    if (typeof p.lat !== 'number' || typeof p.lng !== 'number') fail('lat and lng must be numbers');
-    if (!p.address) fail('address is required');
-    for (const l of LANGS) {
-      const t = p[l];
-      if (!t) fail(`missing "${l}" translation`);
-      for (const k of ['name', 'summary', 'article', 'doHere', 'getThere', 'bestTime', 'tips'])
-        if (!t[k] || (Array.isArray(t[k]) && !t[k].length)) fail(`${l}.${k} is missing`);
+    // Status: "draft" or "published" (a missing status counts as published). "archived: true" removes the
+    // place from the public site too. Both stay in the repository and in the editing panel.
+    if (p.status === 'draft' || p.archived === true) {
+      hidden.push(`${p.slug} (${p.archived === true ? 'archived' : 'draft'})`);
+      continue;
     }
+    p.categories = (Array.isArray(p.categories) ? p.categories : []).filter(Boolean);
+    for (const c of p.categories) if (!catIds.has(c)) fail(`unknown category "${c}"`);
+    const num = (v) => (typeof v === 'number' && Number.isFinite(v) ? v : null);
+    p.lat = num(p.lat);
+    p.lng = num(p.lng);
+    if (p.lat === null || p.lng === null) p.lat = p.lng = null;
+    p.address = String(p.address || '').trim();
+    p.website = String(p.website || '').trim();
+    const base = p[LANGS[0]] || {};
+    if (isEmpty(base.name)) fail(`${LANGS[0]}.name (the place name) is required`);
+    for (const l of LANGS) {
+      const own = p[l] || {};
+      const other = p[otherLang(l)] || {};
+      const t = {};
+      const fell = [];
+      for (const k of TEXT_KEYS) {
+        // an empty text falls back to the other language, so a page is never blank
+        const v = !isEmpty(own[k]) ? own[k] : !isEmpty(other[k]) ? other[k] : k.match(/^(article|doHere|tips)$/) ? [] : '';
+        if (isEmpty(own[k]) && !isEmpty(v)) fell.push(k);
+        t[k] = Array.isArray(v) ? v.filter((x) => String(x ?? '').trim()) : String(v).trim();
+      }
+      if (fell.length) warn(f, `${p.slug}: ${l} text missing for ${fell.join(', ')}, showing the ${otherLang(l)} text`);
+      p[l] = t;
+    }
+    if (p.lat === null) warn(f, `${p.slug}: no coordinates, so it is listed but not shown on the map`);
+    if (!p.categories.length) warn(f, `${p.slug}: no category, so it is listed but not shown on the map or in category filters`);
     places.push(p);
   }
+  if (hidden.length) console.log(`Not published (${hidden.length}): ${hidden.join(', ')}`);
   return { cats, ui, places };
 }
 
@@ -208,7 +238,7 @@ async function preparePhotos(places) {
     } else {
       for (let v = 0; v < 3; v++) {
         const file = `${p.slug}-${v + 1}.svg`;
-        await fs.writeFile(path.join(outDir, file), art(p.slug, p.categories[0], v));
+        await fs.writeFile(path.join(outDir, file), art(p.slug, p.categories[0] || 'integration', v));
         p.photos.push(`/img/places/${file}`);
       }
     }
@@ -327,8 +357,8 @@ function card(p, lang, catMap) {
           <div class="card-body">
             <div class="tags">${tagList(p, lang, catMap)}</div>
             <h3 class="card-title">${esc(t.name)}</h3>
-            <p class="card-addr">${svgIcon(ICONS.pin, 14)}<span>${esc(p.address)}</span></p>
-            <p class="card-sum">${esc(t.summary)}</p>
+            ${p.address ? `<p class="card-addr">${svgIcon(ICONS.pin, 14)}<span>${esc(p.address)}</span></p>` : ''}
+            ${t.summary ? `<p class="card-sum">${esc(t.summary)}</p>` : ''}
           </div>
         </a>
       </li>`;
@@ -405,6 +435,7 @@ function placePage(lang, p, ctx) {
   const pt = t.place;
   const x = p[lang];
   const catMap = Object.fromEntries(cats.map((c) => [c.id, c]));
+  const hasPos = p.lat !== null && p.lng !== null;
   const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}`;
   const photoAlt = (n) => (p.realPhotos ? pt.photoAltReal : pt.photoAlt).replace('{name}', x.name).replace('{n}', n);
   const shown = p.photos.slice(0, 3);
@@ -450,32 +481,36 @@ function placePage(lang, p, ctx) {
     <header class="place-head">
       <div class="tags">${tagList(p, lang, catMap)}</div>
       <h1>${esc(x.name)}</h1>
-      <p class="place-addr">${svgIcon(ICONS.pin, 18)}<span>${esc(p.address)}</span></p>
-      <p class="lead">${esc(x.summary)}</p>
+      ${p.address ? `<p class="place-addr">${svgIcon(ICONS.pin, 18)}<span>${esc(p.address)}</span></p>` : ''}
+      ${x.summary ? `<p class="lead">${esc(x.summary)}</p>` : ''}
     </header>
     <section class="gallery n${shown.length}" aria-label="${esc(pt.gallery)}">${gallery}</section>
     ${creditsHtml}
     <div class="place-grid">
       <article class="article">
         ${x.article.map((para) => `<p>${esc(para)}</p>`).join('\n        ')}
-        <h2>${esc(pt.doHere)}</h2>
+        ${
+          x.doHere.length
+            ? `<h2>${esc(pt.doHere)}</h2>
         <ul class="checklist">
           ${x.doHere.map((i) => `<li>${svgIcon(ICONS.check, 18)}<span>${esc(i)}</span></li>`).join('\n          ')}
-        </ul>
+        </ul>`
+            : ''
+        }
       </article>
       <aside class="info" aria-labelledby="info-h">
         <h2 id="info-h">${esc(pt.info)}</h2>
         <dl>
-          <div><dt>${svgIcon(ICONS.pin, 16)}${esc(pt.address)}</dt><dd>${esc(p.address)}</dd></div>
-          <div><dt>${svgIcon(ICONS.train, 16)}${esc(pt.getThere)}</dt><dd>${esc(x.getThere)}</dd></div>
-          <div><dt>${svgIcon(ICONS.clock, 16)}${esc(pt.bestTime)}</dt><dd>${esc(x.bestTime)}</dd></div>
-          <div><dt>${svgIcon(ICONS.bulb, 16)}${esc(pt.tips)}</dt><dd><ul>${x.tips.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></dd></div>
+          ${p.address ? `<div><dt>${svgIcon(ICONS.pin, 16)}${esc(pt.address)}</dt><dd>${esc(p.address)}</dd></div>` : ''}
+          ${x.getThere ? `<div><dt>${svgIcon(ICONS.train, 16)}${esc(pt.getThere)}</dt><dd>${esc(x.getThere)}</dd></div>` : ''}
+          ${x.bestTime ? `<div><dt>${svgIcon(ICONS.clock, 16)}${esc(pt.bestTime)}</dt><dd>${esc(x.bestTime)}</dd></div>` : ''}
+          ${x.tips.length ? `<div><dt>${svgIcon(ICONS.bulb, 16)}${esc(pt.tips)}</dt><dd><ul>${x.tips.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></dd></div>` : ''}
         </dl>
         <div class="info-actions">
-          <a class="btn" href="${mapsUrl}" target="_blank" rel="noopener">${svgIcon(ICONS.route, 16)}${esc(pt.route)}</a>
+          ${hasPos ? `<a class="btn" href="${mapsUrl}" target="_blank" rel="noopener">${svgIcon(ICONS.route, 16)}${esc(pt.route)}</a>` : ''}
           ${p.website ? `<a class="btn btn-ghost" href="${esc(p.website)}" target="_blank" rel="noopener">${svgIcon(ICONS.external, 16)}${esc(pt.website)}</a>` : ''}
         </div>
-        <div class="mini-map" data-mini-map data-lat="${p.lat}" data-lng="${p.lng}" data-cats="${p.categories.join(',')}" role="img" aria-label="${esc(x.name)} – ${esc(p.address)}"></div>
+        ${hasPos && p.categories.length ? `<div class="mini-map" data-mini-map data-lat="${p.lat}" data-lng="${p.lng}" data-cats="${p.categories.join(',')}" role="img" aria-label="${esc(x.name)}${p.address ? ' – ' + esc(p.address) : ''}"></div>` : ''}
       </aside>
     </div>
     ${
@@ -496,12 +531,12 @@ function placePage(lang, p, ctx) {
       '@context': 'https://schema.org',
       '@type': 'TouristAttraction',
       name: x.name,
-      description: x.summary,
+      description: x.summary || x.name,
       inLanguage: lang,
       url: abs(paths[lang]),
       image: p.photos.map((s) => abs(s)),
-      address: { '@type': 'PostalAddress', streetAddress: p.address, addressLocality: 'Warszawa', addressCountry: 'PL' },
-      geo: { '@type': 'GeoCoordinates', latitude: p.lat, longitude: p.lng },
+      address: { '@type': 'PostalAddress', ...(p.address ? { streetAddress: p.address } : {}), addressLocality: 'Warszawa', addressCountry: 'PL' },
+      ...(hasPos ? { geo: { '@type': 'GeoCoordinates', latitude: p.lat, longitude: p.lng } } : {}),
       ...(p.website ? { sameAs: p.website } : {}),
     },
     {
@@ -513,7 +548,7 @@ function placePage(lang, p, ctx) {
       ],
     },
   ];
-  out.push({ urlPath: paths[lang], html: layout({ lang, title: pageTitle, description: x.summary, paths, body, jsonld, ui }) });
+  out.push({ urlPath: paths[lang], html: layout({ lang, title: pageTitle, description: x.summary || x.name, paths, body, jsonld, ui }) });
 }
 
 function aboutPage(lang, ctx) {
@@ -524,8 +559,9 @@ function aboutPage(lang, ctx) {
   const countLabel = (n) => `${n} ${t.home.count[plural.select(n)] || t.home.count.other}`;
   // Cover photos are picked by place + photo number, with fallbacks so the page survives deleted places.
   const photoOf = (slug, n) => places.find((p) => p.slug === slug)?.photos[n - 1];
-  const coverOf = (c) => photoOf(c.cover.slug, c.cover.n) || places.find((p) => p.categories.includes(c.id))?.photos[0] || places[0].photos[0];
-  const hero = ['rynek-starego-miasta', 'lazienki-krolewskie', 'koneser'].map((s, i) => photoOf(s, 1) || places[i % places.length].photos[0]);
+  const anyPhoto = (i = 0) => (places.length ? places[i % places.length].photos[0] : '');
+  const coverOf = (c) => photoOf(c.cover.slug, c.cover.n) || places.find((p) => p.categories.includes(c.id))?.photos[0] || anyPhoto();
+  const hero = ['rynek-starego-miasta', 'lazienki-krolewskie', 'koneser'].map((s, i) => photoOf(s, 1) || anyPhoto(i));
   const catCards = cats
     .map((c, i) => {
       const n = places.filter((p) => p.categories.includes(c.id)).length;

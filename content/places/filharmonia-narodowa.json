@@ -1,5 +1,8 @@
 {
   "slug": "filharmonia-narodowa",
+  "status": "published",
+  "publishedAt": "2026-11-06T13:33:53",
+  "archived": false,
   "categories": [
     "music",
     "culture"
@@ -70,5 +73,11 @@
       "Buy tickets in advance for concerts – popular events sell out quickly.",
       "Look out for concessions for young people and students."
     ]
+  },
+  "meta": {
+    "createdAt": "2026-11-06T13:33:53",
+    "createdBy": "urkisse",
+    "updatedAt": "2026-11-06T13:33:53",
+    "updatedBy": "urkisse"
   }
 }

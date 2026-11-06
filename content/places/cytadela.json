@@ -1,5 +1,8 @@
 {
   "slug": "cytadela",
+  "status": "published",
+  "publishedAt": "2026-11-06T13:33:53",
+  "archived": false,
   "categories": [
     "sport",
     "culture"
@@ -70,5 +73,11 @@
       "Some parts of the site are open at specific hours – check the rules before you visit.",
       "Wear comfortable shoes – surfaces can be uneven."
     ]
+  },
+  "meta": {
+    "createdAt": "2026-11-06T13:33:53",
+    "createdBy": "urkisse",
+    "updatedAt": "2026-11-06T13:33:53",
+    "updatedBy": "urkisse"
   }
 }

@@ -1,5 +1,8 @@
 {
   "slug": "rynek-starego-miasta",
+  "status": "published",
+  "publishedAt": "2026-11-06T13:33:53",
+  "archived": false,
   "categories": [
     "culture",
     "friends"
@@ -70,5 +73,11 @@
       "In peak tourist season, avoid midday hours.",
       "Prices on the square itself can be higher – you will find good cafés in the side streets too."
     ]
+  },
+  "meta": {
+    "createdAt": "2026-11-06T13:33:53",
+    "createdBy": "urkisse",
+    "updatedAt": "2026-11-06T13:33:53",
+    "updatedBy": "urkisse"
   }
 }

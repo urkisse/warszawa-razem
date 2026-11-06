@@ -63,7 +63,9 @@
   if (mapEl) {
     const map = baseMap(mapEl, { center: WARSAW, zoom: 12, minZoom: 10 });
     const markers = {};
-    D.places.forEach((p) => {
+    // a place without coordinates or category is still in the list, just not on the map
+    const onMap = (p) => Number.isFinite(p.lat) && Number.isFinite(p.lng) && p.cats.length > 0;
+    D.places.filter(onMap).forEach((p) => {
       const m = L.marker([p.lat, p.lng], { icon: pinIcon(p.cats), title: p.name, alt: p.name, riseOnHover: true });
       if (canHover) {
         // Hover shows the name; clicking opens a preview card with a separate button to the place page.
@@ -89,6 +91,7 @@
     const fmtCount = (n) => `${n} ${S.count[plural.select(n)] || S.count.other}`;
 
     function fitTo(list, animate) {
+      list = list.filter(onMap);
       if (!list.length) return;
       const pts = list.map((p) => [p.lat, p.lng]);
       if (pts.length === 1) return animate ? map.flyTo(pts[0], 15, { duration: 0.6 }) : map.setView(pts[0], 15);
@@ -112,6 +115,7 @@
       const list = D.places.filter(visible);
       D.places.forEach((p) => {
         const m = markers[p.slug];
+        if (!m) return;
         const show = visible(p);
         if (show && !map.hasLayer(m)) m.addTo(map);
         else if (!show && map.hasLayer(m)) m.remove();
