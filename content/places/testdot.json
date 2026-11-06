@@ -1,0 +1,42 @@
+{
+  "slug": "testdot",
+  "categories": [
+    "integration",
+    "culture"
+  ],
+  "lat": 52.22216,
+  "lng": 21.01129,
+  "address": "Warsaw, the best street 1",
+  "website": "",
+  "photos": [],
+  "pl": {
+    "name": "Test Location",
+    "summary": "Test Location",
+    "article": [
+      "Test Location"
+    ],
+    "doHere": [
+      "Test Location"
+    ],
+    "getThere": "Test Location",
+    "bestTime": "Test Location",
+    "tips": [
+      "Test Location"
+    ]
+  },
+  "en": {
+    "name": "Test Location",
+    "summary": "Test Location",
+    "article": [
+      "Test Location"
+    ],
+    "doHere": [
+      "Test Location"
+    ],
+    "getThere": "Test Location",
+    "bestTime": "Test Location",
+    "tips": [
+      "Test Location"
+    ]
+  }
+}
