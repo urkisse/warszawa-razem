@@ -187,6 +187,7 @@ for the Claude artifact viewer, which blocks external files; it uses its own off
 
 ## Demo vs. production
 
+* (The public site no longer calls itself a demo: the footer badge, the About note and the video captions were removed.)
 * All places, texts and illustrations are **sample content** – verify facts, coordinates and opening info.
 * Not part of the demo: domain registration, DNS/HTTPS on the city hall's domain, user accounts and roles beyond
   GitHub's, an approval step before publishing (see "Users, passwords and roles"), scheduled publishing (a

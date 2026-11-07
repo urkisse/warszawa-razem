@@ -359,8 +359,6 @@ function layout({ lang, title, description, paths, body, jsonld = [], keepQuery 
         </div>
       </div>
       <div class="footer-meta">
-        <span class="badge">${esc(t.demoBadge)}</span>
-        <p>${esc(t.footer.demo)}</p>
         <p>${esc(t.footer.tiles)}</p>
       </div>
     </div>

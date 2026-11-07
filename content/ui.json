@@ -6,7 +6,6 @@
     "langLabel": "Język",
     "navMap": "Mapa miejsc",
     "navAbout": "O projekcie",
-    "demoBadge": "Wersja demonstracyjna",
     "home": {
       "title": "Warszawa Razem – interaktywna mapa miejsc dla młodych",
       "description": "Odkryj w Warszawie miejsca do integracji, kultury, sportu, muzyki i spotkań ze znajomymi. Interaktywna mapa i lista z filtrami.",
@@ -84,13 +83,10 @@
           "d": "Sprawdź, co można tam robić, jak dojechać i kiedy najlepiej przyjść."
         }
       ],
-      "demoTitle": "Wersja demonstracyjna",
-      "demoNote": "Prezentowane miejsca i opisy są przykładowe i zostaną zastąpione docelowymi materiałami. Zdjęcia pochodzą z Wikimedia Commons; autorzy i licencje są podane pod każdą galerią.",
       "ctaTitle": "Gotowy na odkrywanie?"
     },
     "footer": {
       "blurb": "Interaktywna mapa miejsc dla młodych mieszkańców Warszawy.",
-      "demo": "Wersja demonstracyjna – treści przykładowe.",
       "map": "Mapa i filtry",
       "tiles": "Mapa: © współtwórcy OpenStreetMap",
       "orgAlt": "Wyspa teen club",
@@ -110,7 +106,6 @@
     "langLabel": "Language",
     "navMap": "Map of places",
     "navAbout": "About",
-    "demoBadge": "Demo version",
     "home": {
       "title": "Warsaw Together – interactive map of places for young people",
       "description": "Discover places in Warsaw for integration, culture, sports, music and hanging out with friends. Interactive map and list with filters.",
@@ -186,13 +181,10 @@
           "d": "See what to do there, how to get there and when to go."
         }
       ],
-      "demoTitle": "Demo version",
-      "demoNote": "The places and descriptions shown are samples and will be replaced with the final materials. Photos come from Wikimedia Commons; authors and licences are listed under each gallery.",
       "ctaTitle": "Ready to explore?"
     },
     "footer": {
       "blurb": "An interactive map of places for young people in Warsaw.",
-      "demo": "Demo version – sample content.",
       "map": "Map and filters",
       "tiles": "Map: © OpenStreetMap contributors",
       "orgAlt": "Wyspa teen club",

@@ -232,9 +232,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .ab-step-n { font-size: 0.85rem; font-weight: 800; color: var(--brand); font-variant-numeric: tabular-nums; }
 .ab-steps strong { font-size: 1.3rem; letter-spacing: -0.02em; }
 .ab-steps p { color: var(--muted); max-width: 34ch; }
-.ab-note { display: flex; gap: 14px; align-items: flex-start; flex-wrap: wrap; background: #fff4d8; border: 1px solid #f1d58a; border-radius: 18px; padding: 18px 22px; color: #5c4200; }
-.ab-note .badge { flex: none; }
-.ab-note p { flex: 1 1 320px; min-width: 0; font-size: 0.95rem; }
 .ab-cta { margin-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 48px 48px; border-radius: 28px; background: var(--mesh); color: #fff; position: relative; overflow: hidden; isolation: isolate; }
 .ab-cta h2 { font-size: clamp(1.6rem, 3.4vw, 2.4rem); letter-spacing: -0.03em; }
 .btn-light { background: #fff; color: var(--brand); border-color: #fff; }
@@ -375,7 +372,6 @@ h1, h2 { font-family: var(--display); }
 .footer-nav { display: flex; gap: 18px; margin-top: 14px; }
 .footer-nav a { font-weight: 800; color: #fff; text-underline-offset: 4px; }
 .footer-meta { display: grid; gap: 8px; justify-items: start; color: rgba(255, 255, 255, 0.9); max-width: 34ch; }
-.badge { background: var(--yellow); color: var(--navy); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; }
 .skip:focus-visible { outline-color: var(--yellow); }
 
 @media (max-width: 960px) {
