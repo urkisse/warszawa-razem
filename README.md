@@ -69,6 +69,18 @@ in `admin/index.html`; the logo is `admin/logo.svg`).
 A draft or archived place is not on the public site, but its text is in the repository; if the repository is
 public, so is the draft. For unpublished material that must stay private, use a private repository.
 
+**Videos.** Each place has an optional *Videos* list (video file, poster image, PL/EN caption, credit). The place page
+shows a normal video player (play/pause, seeking, volume, fullscreen; nothing autoplays, and only the first
+bytes load until someone presses play) and the card and map popup get a "Video" badge. Files go to `content/videos/`
+and are published unchanged, so compress them first: MP4 (H.264), 720p, ideally under 10 MB, at most 25 MB (the
+panel refuses bigger files; the build warns above 25 MB). Every uploaded file stays in the Git history for good, so
+the repository grows with each upload (GitHub advises keeping a repository under about 1 GB; a single file over
+100 MB cannot be pushed at all). For long or many videos use a video host instead (a hosting plan, Vimeo, YouTube
+with the privacy-enhanced embed) and link to it. The six demo clips (8 s, about 0.5 MB each) were made from the
+place photos with ffmpeg:
+`ffmpeg -loop 1 -i photo.jpg -vf "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='min(1.0+0.0009*on,1.22)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s=960x540:fps=25,format=yuv420p" -t 8 -r 25 -c:v libx264 -crf 26 -movflags +faststart -an out.mp4`
+(for real footage: `ffmpeg -i in.mov -vf scale=-2:720 -c:v libx264 -crf 26 -preset slow -c:a aac -b:a 96k -movflags +faststart out.mp4`).
+
 **Changing the panel safely:** `node tools/admin-test.mjs`, then `python3 -m http.server 4190 -d .admin-test`
 and open http://localhost:4190/ -> *Start Demo*. This is a login-free sandbox of the panel with the real places and
 photos (edits stay in the browser, nothing is sent anywhere), so changes to `admin/config.yml` or the theme can be
@@ -98,7 +110,7 @@ The panel has no user database of its own: **people are GitHub accounts**, and G
 
 Each place is one file, `content/places/<slug>.json`: `slug`, `status` (`draft` or `published`; missing counts as
 published), `archived` (`true` hides it), `categories` (`integration`, `culture`, `sport`, `music`, `friends`),
-`lat`/`lng`, `address`, `website`, `photos`, the `pl` and `en` blocks, and `meta` (filled in by the panel). Only
+`lat`/`lng`, `address`, `website`, `photos`, `videos` (files in `content/videos/`: `video`, optional `poster`, `caption`, `captionEn`, `credit`), the `pl` and `en` blocks, and `meta` (filled in by the panel). Only
 `slug` and `pl.name` are needed; the build fails with a clear message if those are wrong. Photos live in
 `content/photos/` and are listed per place:
 
@@ -133,9 +145,11 @@ background; replace it with the official SVG when available.
 
 `.github/workflows/pages.yml` builds the site and publishes it to **GitHub Pages** on every push to `main`
 (including commits made by the editing panel). One-time setup: repository *Settings -> Pages -> Source:
-GitHub Actions*. The site is plain static files, so it can be hosted anywhere (Cloudflare Pages, Netlify, nginx,
-the city hall's own server): run `npm run build` with the right `SITE_URL`/`BASE_PATH` and upload `dist/`.
-The host must support HTTP Range requests (needed for the map file).
+GitHub Actions*. The site is plain static files, so it can be hosted on any web server (nginx, Apache, the city
+hall's own server, Netlify): run `npm run build` with the right `SITE_URL`/`BASE_PATH` and upload `dist/`.
+The host must support HTTP Range requests (needed for the map file and for seeking in videos) and must accept the
+30 MB map file. **Cloudflare Pages does not fit as it is**: it allows at most 25 MiB per file, and the map is about
+29 MiB (it would need the map on separate storage such as Cloudflare R2, or a smaller map).
 
 **Custom domain:** Settings -> Pages -> Custom domain, then a DNS record at the registrar. The workflow picks up the
 new address automatically (no `BASE_PATH` any more).

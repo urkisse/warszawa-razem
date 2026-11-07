@@ -35,6 +35,15 @@
       "source": "https://commons.wikimedia.org/wiki/File:Nowa_Pomara%C5%84czarnia_%C5%81azienki_Kr%C3%B3lewskie_Warszawa_05.JPG"
     }
   ],
+  "videos": [
+    {
+      "video": "content/videos/lazienki-krolewskie.mp4",
+      "poster": "",
+      "caption": "Przykładowe wideo – animacja ze zdjęcia",
+      "captionEn": "Sample video – animated from the photo",
+      "credit": "Zdjęcie / Photo: Maciej Rolkowski, CC BY-SA 4.0"
+    }
+  ],
   "pl": {
     "name": "Łazienki Królewskie",
     "summary": "Najpiękniejszy park w centrum miasta: pałac na wodzie, pawie, pomnik Chopina i letnie koncerty pod gołym niebem.",

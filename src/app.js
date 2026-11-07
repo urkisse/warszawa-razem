@@ -36,7 +36,8 @@
   function popupHtml(p, href) {
     const tags = p.cats.map((id) => `<span class="tag" style="--c:${catById[id].color}"><i></i>${esc(catById[id].name)}</span>`).join('');
     const pin = svg('<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>', 14);
-    return `<div class="pop"><img src="${p.img}" alt="" width="280" height="175"><div class="pop-body"><div class="tags">${tags}</div><strong class="pop-title">${esc(p.name)}</strong><span class="pop-addr">${pin}<span>${esc(p.address)}</span></span><p class="pop-sum">${esc(p.summary)}</p><a class="pop-btn" href="${href}">${esc(S.openPlace)} &rarr;</a></div></div>`;
+    const play = p.video ? `<span class="play-badge">${svg('<path d="M7 4.5v15l13-7.5z" fill="currentColor" stroke="none"/>', 12)}${esc(S.video)}</span>` : '';
+    return `<div class="pop"><div class="pop-media"><img src="${p.img}" alt="" width="280" height="175">${play}</div><div class="pop-body"><div class="tags">${tags}</div><strong class="pop-title">${esc(p.name)}</strong><span class="pop-addr">${pin}<span>${esc(p.address)}</span></span><p class="pop-sum">${esc(p.summary)}</p><a class="pop-btn" href="${href}">${esc(S.openPlace)} &rarr;</a></div></div>`;
   }
 
   function baseMap(el, opts) {

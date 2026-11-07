@@ -346,7 +346,7 @@ h1, h2 { font-family: var(--display); }
 .ab-c2 { transform: translateY(14px) rotate(-3deg); }
 
 /* display headings: black, uppercase, tight (as in the posts) */
-.place-head h1, .ab-mission h2, .ab-head h2, .similar h2, .ab-cta h2 { font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; line-height: 1.05; overflow-wrap: break-word; }
+.place-head h1, .ab-mission h2, .ab-head h2, .similar h2, .videos h2, .ab-cta h2 { font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; line-height: 1.05; overflow-wrap: break-word; }
 .place-head h1 { font-size: clamp(1.9rem, 4.6vw, 3.2rem); color: var(--navy); }
 .ab-mission h2, .ab-head h2 { color: var(--navy); }
 .ab-cta h2 { color: #fff; position: relative; }
@@ -410,3 +410,17 @@ h1, h2 { font-family: var(--display); }
   .hero-place .hero-orn { width: 120px; top: 60px; right: -20px; opacity: 0.8; }
   .place-body { margin-top: -48px; }
 }
+
+/* videos: native player (play/pause, seek, volume, fullscreen) + a "Video" badge on cards and map popups */
+.card-media, .pop-media { position: relative; }
+.play-badge { position: absolute; left: 12px; bottom: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px 5px 9px; border-radius: 999px; background: rgba(34, 34, 79, 0.88); color: #fff; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.02em; line-height: 1.2; pointer-events: none; }
+.videos { margin-top: 56px; }
+.videos h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin-bottom: 20px; color: var(--navy); }
+.video-grid { display: grid; gap: 24px; grid-template-columns: 1fr; }
+.video-grid.n1 { max-width: 880px; }
+.video-grid.n2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.video { margin: 0; display: grid; gap: 10px; min-width: 0; }
+.video video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #0e0b16; border-radius: var(--radius); object-fit: contain; box-shadow: var(--shadow); }
+.video figcaption { display: grid; gap: 2px; color: var(--ink); font-size: 0.95rem; font-weight: 600; }
+.video figcaption small { color: var(--muted); font-size: 0.78rem; font-weight: 500; }
+@media (max-width: 720px) { .video-grid.n2 { grid-template-columns: 1fr; } .videos { margin-top: 40px; } }

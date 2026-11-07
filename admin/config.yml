@@ -30,7 +30,7 @@ public_folder: content/photos
 media_libraries:
   default:
     config:
-      max_file_size: 15000000
+      max_file_size: 25000000 # 25 MB; videos should be much smaller (see the hint on the Videos field)
       slugify_filename: true
       transformations:
         raster_image:
@@ -154,6 +154,26 @@ collections:
           - { label: "Licencja / Licence", name: license, widget: string, required: false, hint: "Np. CC BY-SA 4.0, Public domain, © Miasto" }
           - { label: "Adres licencji / Licence URL", name: licenseUrl, widget: string, required: false }
           - { label: "Źródło (adres) / Source URL", name: source, widget: string, required: false }
+
+      - label: "Wideo / Videos"
+        name: videos
+        widget: list
+        required: false
+        collapsed: true
+        summary: "{{caption}} {{video}}"
+        hint: "Opcjonalne. Plik MP4 (H.264), najlepiej do 10 MB (maks. 25 MB), 720p, kilkadziesiąt sekund. Dłuższe filmy: skompresuj lub podaj link. Każdy plik zostaje w historii repozytorium na stałe. Odtwarzacz ma przyciski start/stop, przewijanie, głośność i pełny ekran. / Optional. MP4 (H.264), ideally under 10 MB (max 25 MB), 720p, up to a minute or so. For longer films compress them first. Every uploaded file stays in the repository history for good. The player has play/pause, seeking, volume and fullscreen."
+        fields:
+          - label: "Plik wideo / Video file"
+            name: video
+            widget: file
+            required: false
+            media_folder: /content/videos
+            public_folder: /content/videos
+            choose_url: false
+          - { label: "Okładka / Poster image", name: poster, widget: image, required: false, hint: "Obraz widoczny przed odtworzeniem. Puste = pierwsze zdjęcie miejsca. / Shown before playing. Empty = the place's first photo." }
+          - { label: "Opis (PL) / Caption (PL)", name: caption, widget: string, required: false }
+          - { label: "Opis (EN) / Caption (EN)", name: captionEn, widget: string, required: false }
+          - { label: "Autor / Credit", name: credit, widget: string, required: false, hint: "Autor i licencja materiału. / Author and licence of the footage." }
 
       - label: "Polski (PL)"
         name: pl

@@ -27,6 +27,15 @@
       "source": "https://commons.wikimedia.org/wiki/File:Kazimierz_G%C3%B3rski_National_Stadium,_2026,_Warsaw_Poland.jpg"
     }
   ],
+  "videos": [
+    {
+      "video": "content/videos/pge-narodowy.mp4",
+      "poster": "",
+      "caption": "Przykładowe wideo – animacja ze zdjęcia",
+      "captionEn": "Sample video – animated from the photo",
+      "credit": "Zdjęcie / Photo: Arne Müseler, CC BY-SA 3.0 de"
+    }
+  ],
   "pl": {
     "name": "PGE Narodowy",
     "summary": "Największy stadion w Polsce – mecze reprezentacji, wielkie koncerty i widok na miasto z poziomu trybun.",

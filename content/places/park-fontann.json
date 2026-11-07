@@ -35,6 +35,15 @@
       "source": "https://commons.wikimedia.org/wiki/File:Multimedialny_Park_Fontann_-_panoramio.jpg"
     }
   ],
+  "videos": [
+    {
+      "video": "content/videos/park-fontann.mp4",
+      "poster": "",
+      "caption": "Przykładowe wideo – animacja ze zdjęcia",
+      "captionEn": "Sample video – animated from the photo",
+      "credit": "Zdjęcie / Photo: Adrian Grycuk, CC BY-SA 3.0 pl"
+    }
+  ],
   "pl": {
     "name": "Multimedialny Park Fontann",
     "summary": "Wieczorne pokazy wody, światła i muzyki tuż przy Starym Mieście – idealne na spontaniczne wyjście ze znajomymi.",

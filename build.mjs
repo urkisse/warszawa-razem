@@ -39,7 +39,7 @@ const abs = (p) => SITE_URL + p;
 const withBase = (html) =>
   BASE
     ? html
-        .replace(/(\s(?:href|src|data-base|data-full)=")\/(?!\/)/g, `$1${BASE}/`)
+        .replace(/(\s(?:href|src|poster|data-base|data-full)=")\/(?!\/)/g, `$1${BASE}/`)
         .replace(/("(?:url|img)":")\/(?!\/)/g, `$1${BASE}/`)
     : html;
 const svgIcon = (inner, size = 16, cls = '') =>
@@ -188,6 +188,10 @@ async function loadContent() {
     if (p.lat === null || p.lng === null) p.lat = p.lng = null;
     p.address = String(p.address || '').trim();
     p.website = String(p.website || '').trim();
+    // videos: optional; an entry without a file is ignored
+    p.videos = (Array.isArray(p.videos) ? p.videos : [])
+      .map((v) => ({ video: String(v?.video || '').trim(), poster: String(v?.poster || '').trim(), caption: String(v?.caption || '').trim(), captionEn: String(v?.captionEn || '').trim(), credit: String(v?.credit || '').trim() }))
+      .filter((v) => v.video);
     const base = p[LANGS[0]] || {};
     if (isEmpty(base.name)) fail(`${LANGS[0]}.name (the place name) is required`);
     for (const l of LANGS) {
@@ -242,6 +246,42 @@ async function preparePhotos(places) {
         p.photos.push(`/img/places/${file}`);
       }
     }
+  }
+}
+
+const VIDEO_TYPES = { '.mp4': 'video/mp4', '.m4v': 'video/mp4', '.webm': 'video/webm', '.ogv': 'video/ogg' };
+// Videos are copied unchanged (no re-encoding) to dist/media/places/<slug>/. Keep them small: the files live in the
+// Git repository, and some hosts limit a single file to 25 MB.
+async function prepareVideos(places) {
+  const videoRoot = path.join(ROOT, 'content/videos');
+  const photoRoot = path.join(ROOT, 'content/photos');
+  for (const p of places) {
+    const list = [];
+    for (const v of p.videos) {
+      const where = `content/places/${p.slug}.json: video "${v.video}"`;
+      const src = path.resolve(ROOT, v.video.replace(/^\/+/, ''));
+      if (!src.startsWith(videoRoot + path.sep)) throw new Error(`${where} must be inside content/videos/`);
+      const type = VIDEO_TYPES[path.extname(src).toLowerCase()];
+      if (!type) throw new Error(`${where} must be an .mp4, .webm or .ogv file`);
+      if (!fsSync.existsSync(src)) throw new Error(`${where} does not exist`);
+      const mb = fsSync.statSync(src).size / 1048576;
+      if (mb > 25) console.warn(process.env.GITHUB_ACTIONS ? `::warning file=${v.video}::video is ${mb.toFixed(0)} MB; compress it (aim for under 10 MB)` : `warning: ${v.video} is ${mb.toFixed(0)} MB; compress it (aim for under 10 MB)`);
+      const dir = path.join(DIST, 'media/places', p.slug);
+      await fs.mkdir(dir, { recursive: true });
+      const name = path.basename(src).replace(/[^A-Za-z0-9._-]+/g, '-');
+      await fs.copyFile(src, path.join(dir, name));
+      let poster = p.photos[0];
+      if (v.poster) {
+        const ps = path.resolve(ROOT, v.poster.replace(/^\/+/, ''));
+        if (!ps.startsWith(photoRoot + path.sep) || !fsSync.existsSync(ps)) throw new Error(`${where}: poster "${v.poster}" must be an existing file inside content/photos/`);
+        const pn = path.basename(ps).replace(/[^A-Za-z0-9._-]+/g, '-');
+        await fs.mkdir(path.join(DIST, 'img/places', p.slug), { recursive: true });
+        await fs.copyFile(ps, path.join(DIST, 'img/places', p.slug, pn));
+        poster = `/img/places/${p.slug}/${pn}`;
+      }
+      list.push({ src: `/media/places/${p.slug}/${name}`, type, poster, caption: v.caption, captionEn: v.captionEn, credit: v.credit });
+    }
+    p.videos = list;
   }
 }
 
@@ -338,7 +378,7 @@ function appData(lang, ctx, extra = {}) {
   const t = ui[lang];
   return `<script type="application/json" id="app-data">${jsonInHtml({
     lang,
-    strings: { count: t.home.count, openPlace: t.home.openPlace, close: t.place.close, prev: t.place.prev, next: t.place.next, gallery: t.place.gallery },
+    strings: { count: t.home.count, openPlace: t.home.openPlace, close: t.place.close, prev: t.place.prev, next: t.place.next, gallery: t.place.gallery, video: t.place.video },
     cats: cats.map((c) => ({ id: c.id, color: c.color, ink: c.ink, icon: c.icon, name: c[lang].name })),
     places: places.map((p) => ({
       slug: p.slug,
@@ -350,6 +390,7 @@ function appData(lang, ctx, extra = {}) {
       lat: p.lat,
       lng: p.lng,
       img: p.photos[0],
+      video: p.videos.length > 0,
     })),
     ...extra,
   })}</script>`;
@@ -361,11 +402,14 @@ function tagList(p, lang, catMap) {
     .join('');
 }
 
+const PLAY = '<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" focusable="false"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>';
+const VIDEO_LABEL = { pl: 'Wideo', en: 'Video' };
+
 function card(p, lang, catMap) {
   const t = p[lang];
   return `<li class="card" data-slug="${p.slug}" data-cats="${p.categories.join(' ')}">
         <a class="card-link" href="${ROUTES[lang].place(p.slug)}">
-          <div class="card-media"><img src="${p.photos[0]}" width="1200" height="750" loading="lazy" decoding="async" alt=""></div>
+          <div class="card-media"><img src="${p.photos[0]}" width="1200" height="750" loading="lazy" decoding="async" alt="">${p.videos.length ? `<span class="play-badge">${PLAY}${VIDEO_LABEL[lang]}</span>` : ''}</div>
           <div class="card-body">
             <div class="tags">${tagList(p, lang, catMap)}</div>
             <h3 class="card-title">${esc(t.name)}</h3>
@@ -483,6 +527,22 @@ function placePage(lang, p, ctx) {
         .join('')
     : '';
   const creditsHtml = creditItems ? `<div class="credits"><strong>${esc(pt.credits)}</strong><ul>${creditItems}</ul></div>` : '';
+  const videosHtml = p.videos.length
+    ? `<section class="videos" aria-labelledby="vid-h">
+      <h2 id="vid-h">${esc(pt.videos)}</h2>
+      <div class="video-grid n${Math.min(p.videos.length, 2)}">
+        ${p.videos
+          .map((v, i) => {
+            const cap = (lang === 'en' && v.captionEn) || v.caption;
+            return `<figure class="video">
+          <video controls preload="metadata" playsinline poster="${v.poster}" aria-label="${esc(cap || `${x.name} – ${pt.video} ${i + 1}`)}"><source src="${v.src}" type="${v.type}"><a href="${v.src}">${esc(pt.videoFallback)}</a></video>
+          ${cap || v.credit ? `<figcaption>${cap ? `<span>${esc(cap)}</span>` : ''}${v.credit ? `<small>${esc(v.credit)}</small>` : ''}</figcaption>` : ''}
+        </figure>`;
+          })
+          .join('\n        ')}
+      </div>
+    </section>`
+    : '';
   const similar = places
     .filter((o) => o.slug !== p.slug)
     .map((o) => ({ o, score: o.categories.filter((c) => p.categories.includes(c)).length }))
@@ -507,6 +567,7 @@ function placePage(lang, p, ctx) {
     <div class="container place-body">
     <section class="gallery n${shown.length}" aria-label="${esc(pt.gallery)}">${gallery}</section>
     ${creditsHtml}
+    ${videosHtml}
     <div class="place-grid">
       <article class="article">
         ${x.article.map((para) => `<p>${esc(para)}</p>`).join('\n        ')}
@@ -726,6 +787,7 @@ async function build() {
 
   const ctx = await loadContent();
   await preparePhotos(ctx.places);
+  await prepareVideos(ctx.places);
 
   for (const lang of LANGS) {
     homePage(lang, ctx);
@@ -745,7 +807,7 @@ async function build() {
 }
 
 // -------------------------------------------------------------- dev server
-const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.xml': 'application/xml', '.yml': 'text/yaml; charset=utf-8', '.txt': 'text/plain; charset=utf-8' };
+const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.mp4': 'video/mp4', '.m4v': 'video/mp4', '.webm': 'video/webm', '.ogv': 'video/ogg', '.xml': 'application/xml', '.yml': 'text/yaml; charset=utf-8', '.txt': 'text/plain; charset=utf-8' };
 function serve(port = 4173) {
   http
     .createServer(async (req, res) => {

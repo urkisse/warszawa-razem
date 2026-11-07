@@ -34,6 +34,15 @@
       "source": "https://commons.wikimedia.org/wiki/File:2026_Warszawa_Hala_Koszyki,_1.jpg"
     }
   ],
+  "videos": [
+    {
+      "video": "content/videos/hala-koszyki.mp4",
+      "poster": "",
+      "caption": "Przykładowe wideo – animacja ze zdjęcia",
+      "captionEn": "Sample video – animated from the photo",
+      "credit": "Zdjęcie / Photo: Chris Olszewski, CC BY-SA 4.0"
+    }
+  ],
   "pl": {
     "name": "Hala Koszyki",
     "summary": "Zabytkowa hala targowa z początku XX wieku, dziś jedno z ulubionych miejsc na wspólne jedzenie i spotkania ze znajomymi.",

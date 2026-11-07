@@ -46,7 +46,10 @@
       "photoAltReal": "{name} – zdjęcie {n}",
       "credits": "Zdjęcia",
       "prev": "Poprzednie zdjęcie",
-      "next": "Następne zdjęcie"
+      "next": "Następne zdjęcie",
+      "videos": "Wideo",
+      "video": "Wideo",
+      "videoFallback": "Ta przeglądarka nie odtwarza wideo. Pobierz plik."
     },
     "about": {
       "title": "O projekcie – Warszawa Razem",
@@ -146,7 +149,10 @@
       "photoAltReal": "{name} – photo {n}",
       "credits": "Photos",
       "prev": "Previous photo",
-      "next": "Next photo"
+      "next": "Next photo",
+      "videos": "Videos",
+      "video": "Video",
+      "videoFallback": "This browser cannot play the video. Download the file."
     },
     "about": {
       "title": "About – Warsaw Together",

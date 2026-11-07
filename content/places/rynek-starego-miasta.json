@@ -34,6 +34,15 @@
       "source": "https://commons.wikimedia.org/wiki/File:Warsaw_Old_Town_Market_Square_10.JPG"
     }
   ],
+  "videos": [
+    {
+      "video": "content/videos/rynek-starego-miasta.mp4",
+      "poster": "",
+      "caption": "Przykładowe wideo – animacja ze zdjęcia",
+      "captionEn": "Sample video – animated from the photo",
+      "credit": "Zdjęcie / Photo: Аимаина хикари, CC0"
+    }
+  ],
   "pl": {
     "name": "Rynek Starego Miasta",
     "summary": "Odbudowane po wojnie serce Warszawy wpisane na listę UNESCO – kolorowe kamienice, kawiarnie i klimat dawnej stolicy.",

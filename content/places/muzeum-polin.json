@@ -34,6 +34,15 @@
       "source": "https://commons.wikimedia.org/wiki/File:POLIN_Museum_of_the_History_of_Polish_Jews_fa%C3%A7ade_(detail).jpg"
     }
   ],
+  "videos": [
+    {
+      "video": "content/videos/muzeum-polin.mp4",
+      "poster": "",
+      "caption": "Przykładowe wideo – animacja ze zdjęcia",
+      "captionEn": "Sample video – animated from the photo",
+      "credit": "Zdjęcie / Photo: Wojciech Kryński, CC BY-SA 3.0 pl"
+    }
+  ],
   "pl": {
     "name": "Muzeum POLIN",
     "summary": "Muzeum Historii Żydów Polskich – tysiąc lat wspólnej historii opowiedziane w nowoczesnej, otwartej przestrzeni na Muranowie.",

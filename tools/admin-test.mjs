@@ -28,7 +28,7 @@ for (const f of fs.readdirSync(path.join(ROOT, 'admin'))) if (!['index.html', 'c
 // seed: content/ (without the 30 MB map) is made available and listed
 fs.mkdirSync(path.join(OUT, 'content'));
 const files = [];
-for (const sub of ['places', 'photos']) {
+for (const sub of ['places', 'photos', 'videos']) {
   fs.symlinkSync(path.join(ROOT, 'content', sub), path.join(OUT, 'content', sub));
   for (const f of fs.readdirSync(path.join(ROOT, 'content', sub))) files.push(`content/${sub}/${f}`);
 }
