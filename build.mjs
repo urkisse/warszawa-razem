@@ -697,14 +697,7 @@ function aboutPage(lang, ctx) {
       ${catCards}
       </ul>
     </section>
-    <section class="container ab-section" aria-labelledby="ab-steps-h">
-      <div class="ab-head"><h2 id="ab-steps-h">${esc(a.stepsHeading)}</h2></div>
-      <ol class="ab-steps">
-        ${a.steps.map((s, i) => `<li><span class="ab-step-n">${i + 1}</span><strong>${esc(s.t)}</strong><p>${esc(s.d)}</p></li>`).join('\n        ')}
-      </ol>
-    </section>
     <section class="container ab-section">
-      <div class="ab-note"><span class="badge">${esc(a.demoTitle)}</span><p>${esc(a.demoNote)}</p></div>
       <div class="ab-cta">
         <h2>${esc(a.ctaTitle)}</h2>
         <a class="btn btn-light" href="${ROUTES[lang].home}">${svgIcon(ICONS.map, 16)}${esc(a.cta)}</a>
