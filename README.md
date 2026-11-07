@@ -70,8 +70,11 @@ A draft or archived place is not on the public site, but its text is in the repo
 public, so is the draft. For unpublished material that must stay private, use a private repository.
 
 **Videos.** Each place has an optional *Videos* list (video file, poster image, PL/EN caption, credit). The place page
-shows a normal video player (play/pause, seeking, volume, fullscreen; nothing autoplays, and only the first
-bytes load until someone presses play) and the card and map popup get a "Video" badge. Files go to `content/videos/`
+shows the video as the first tile of the photo gallery (play button and "Video" badge); a click opens the
+lightbox, where the video has a normal player (play/pause, seeking, volume, fullscreen) and the arrows lead on to the
+photos. Nothing autoplays on the page, and only the first bytes load until someone presses play. Cards and map
+popups get a "Video" badge too; clicking the image in a map popup opens the place page, and for a place with a video
+(`.../#video`) it opens the video straight away. Files go to `content/videos/`
 and are published unchanged, so compress them first: MP4 (H.264), 720p, ideally under 10 MB, at most 25 MB (the
 panel refuses bigger files; the build warns above 25 MB). Every uploaded file stays in the Git history for good, so
 the repository grows with each upload (GitHub advises keeping a repository under about 1 GB; a single file over

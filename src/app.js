@@ -37,7 +37,7 @@
     const tags = p.cats.map((id) => `<span class="tag" style="--c:${catById[id].color}"><i></i>${esc(catById[id].name)}</span>`).join('');
     const pin = svg('<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>', 14);
     const play = p.video ? `<span class="play-badge">${svg('<path d="M7 4.5v15l13-7.5z" fill="currentColor" stroke="none"/>', 12)}${esc(S.video)}</span>` : '';
-    return `<div class="pop"><div class="pop-media"><img src="${p.img}" alt="" width="280" height="175">${play}</div><div class="pop-body"><div class="tags">${tags}</div><strong class="pop-title">${esc(p.name)}</strong><span class="pop-addr">${pin}<span>${esc(p.address)}</span></span><p class="pop-sum">${esc(p.summary)}</p><a class="pop-btn" href="${href}">${esc(S.openPlace)} &rarr;</a></div></div>`;
+    return `<div class="pop"><a class="pop-media" href="${p.video ? `${href}#video` : href}" tabindex="-1" aria-hidden="true"><img src="${p.img}" alt="" width="280" height="175">${play}</a><div class="pop-body"><div class="tags">${tags}</div><strong class="pop-title">${esc(p.name)}</strong><span class="pop-addr">${pin}<span>${esc(p.address)}</span></span><p class="pop-sum">${esc(p.summary)}</p><a class="pop-btn" href="${href}">${esc(S.openPlace)} &rarr;</a></div></div>`;
   }
 
   function baseMap(el, opts) {
@@ -166,49 +166,83 @@
     L.marker([lat, lng], { icon: pinIcon(el.dataset.cats.split(',')), keyboard: false, interactive: false }).addTo(map);
   });
 
-  /* ------------------------------------------------- place page: lightbox */
+  /* ------------------------------------------------- place page: lightbox (photos and videos) */
   const items = [...document.querySelectorAll('.g-item')];
-    if (items.length) {
-      const dlg = document.createElement('dialog');
-      dlg.className = 'lightbox';
-      dlg.setAttribute('aria-label', S.gallery || '');
-      dlg.innerHTML = `<div class="lb-stage"><img alt="" draggable="false"><button type="button" class="lb-nav lb-prev" aria-label="${esc(S.prev)}">${svg('<path d="m15 18-6-6 6-6"/>', 22)}</button><button type="button" class="lb-nav lb-next" aria-label="${esc(S.next)}">${svg('<path d="m9 18 6-6-6-6"/>', 22)}</button><button type="button" class="lb-close" aria-label="${esc(S.close)}">${svg('<path d="M18 6 6 18M6 6l12 12"/>', 20)}</button></div><div class="lb-bar"><span class="lb-cap"></span><span class="lb-count"></span></div>`;
-      document.body.appendChild(dlg);
-      const img = dlg.querySelector('img');
-      const cap = dlg.querySelector('.lb-cap');
-      const count = dlg.querySelector('.lb-count');
-      const prev = dlg.querySelector('.lb-prev');
-      const next = dlg.querySelector('.lb-next');
-      let idx = 0;
-      const many = items.length > 1;
-      prev.hidden = next.hidden = count.hidden = !many;
-      const show = (i) => {
-        idx = (i + items.length) % items.length;
-        const b = items[idx];
+  if (items.length) {
+    const dlg = document.createElement('dialog');
+    dlg.className = 'lightbox';
+    dlg.setAttribute('aria-label', S.gallery || '');
+    dlg.innerHTML = `<div class="lb-stage"><img alt="" draggable="false"><video class="lb-video" controls playsinline preload="metadata" hidden></video><button type="button" class="lb-nav lb-prev" aria-label="${esc(S.prev)}">${svg('<path d="m15 18-6-6 6-6"/>', 22)}</button><button type="button" class="lb-nav lb-next" aria-label="${esc(S.next)}">${svg('<path d="m9 18 6-6-6-6"/>', 22)}</button><button type="button" class="lb-close" aria-label="${esc(S.close)}">${svg('<path d="M18 6 6 18M6 6l12 12"/>', 20)}</button></div><div class="lb-bar"><span class="lb-cap"></span><span class="lb-count"></span></div>`;
+    document.body.appendChild(dlg);
+    const img = dlg.querySelector('img');
+    const vid = dlg.querySelector('video');
+    const cap = dlg.querySelector('.lb-cap');
+    const count = dlg.querySelector('.lb-count');
+    const prev = dlg.querySelector('.lb-prev');
+    const next = dlg.querySelector('.lb-next');
+    let idx = 0;
+    const many = items.length > 1;
+    prev.hidden = next.hidden = count.hidden = !many;
+    const stopVideo = () => {
+      vid.pause();
+      vid.removeAttribute('src');
+      vid.load();
+    };
+    const show = (i, autoplay) => {
+      idx = (i + items.length) % items.length;
+      const b = items[idx];
+      stopVideo();
+      if (b.dataset.kind === 'video') {
+        img.hidden = true;
+        vid.hidden = false;
+        vid.poster = b.dataset.full || '';
+        vid.setAttribute('aria-label', b.dataset.alt || '');
+        vid.src = b.dataset.video;
+        if (autoplay) {
+          const pr = vid.play();
+          if (pr && pr.catch) pr.catch(() => {}); // the browser may refuse autoplay; the controls are there
+        }
+      } else {
+        vid.hidden = true;
+        img.hidden = false;
         img.src = b.dataset.full;
         img.alt = b.dataset.alt || '';
-        cap.textContent = b.dataset.alt || '';
-        count.textContent = `${idx + 1} / ${items.length}`;
-        if (many) new Image().src = items[(idx + 1) % items.length].dataset.full;
-      };
-      items.forEach((b, i) => b.addEventListener('click', () => { show(i); dlg.showModal(); }));
-      prev.addEventListener('click', () => show(idx - 1));
-      next.addEventListener('click', () => show(idx + 1));
-      dlg.querySelector('.lb-close').addEventListener('click', () => dlg.close());
-      dlg.addEventListener('click', (e) => { if (e.target === dlg || e.target.classList.contains('lb-stage')) dlg.close(); });
-      dlg.addEventListener('keydown', (e) => {
-        if (!many) return;
-        if (e.key === 'ArrowLeft') { e.preventDefault(); show(idx - 1); }
-        else if (e.key === 'ArrowRight') { e.preventDefault(); show(idx + 1); }
-      });
-      let sx = null;
-      const stage = dlg.querySelector('.lb-stage');
-      stage.addEventListener('pointerdown', (e) => { sx = e.clientX; });
-      stage.addEventListener('pointerup', (e) => {
-        if (sx === null || !many) return;
-        const dx = e.clientX - sx;
-        sx = null;
-        if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
-      });
+        const nx = items[(idx + 1) % items.length];
+        if (many && nx.dataset.kind !== 'video') new Image().src = nx.dataset.full;
+      }
+      cap.textContent = b.dataset.alt || '';
+      count.textContent = `${idx + 1} / ${items.length}`;
+    };
+    items.forEach((b, i) =>
+      b.addEventListener('click', (e) => {
+        e.preventDefault(); // video tiles are plain links to the file when JavaScript is off
+        show(i, true);
+        dlg.showModal();
+      }),
+    );
+    prev.addEventListener('click', () => show(idx - 1, false));
+    next.addEventListener('click', () => show(idx + 1, false));
+    dlg.querySelector('.lb-close').addEventListener('click', () => dlg.close());
+    dlg.addEventListener('close', stopVideo);
+    dlg.addEventListener('click', (e) => { if (e.target === dlg || e.target.classList.contains('lb-stage')) dlg.close(); });
+    dlg.addEventListener('keydown', (e) => {
+      if (!many || e.target === vid) return; // arrows seek inside a focused video
+      if (e.key === 'ArrowLeft') { e.preventDefault(); show(idx - 1, false); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); show(idx + 1, false); }
+    });
+    let sx = null;
+    const stage = dlg.querySelector('.lb-stage');
+    stage.addEventListener('pointerdown', (e) => { sx = e.target === vid ? null : e.clientX; });
+    stage.addEventListener('pointerup', (e) => {
+      if (sx === null || !many) return;
+      const dx = e.clientX - sx;
+      sx = null;
+      if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1), false);
+    });
+    // coming from a map popup of a place with a video (…/#video): open the video straight away
+    if (location.hash === '#video') {
+      const i = items.findIndex((b) => b.dataset.kind === 'video');
+      if (i >= 0) { show(i, true); dlg.showModal(); }
     }
+  }
 })();

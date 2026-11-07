@@ -403,6 +403,7 @@ function tagList(p, lang, catMap) {
 }
 
 const PLAY = '<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" focusable="false"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>';
+const PLAY_BIG = '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>';
 const VIDEO_LABEL = { pl: 'Wideo', en: 'Video' };
 
 function card(p, lang, catMap) {
@@ -497,12 +498,23 @@ function placePage(lang, p, ctx) {
   const hasPos = p.lat !== null && p.lng !== null;
   const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}`;
   const photoAlt = (n) => (p.realPhotos ? pt.photoAltReal : pt.photoAlt).replace('{name}', x.name).replace('{n}', n);
-  const shown = p.photos.slice(0, 3);
-  const gallery = shown
-    .map(
-      (src, i) =>
-        `<button type="button" class="g-item g-${i}" data-full="${src}" data-alt="${esc(photoAlt(i + 1))}"><img src="${src}" width="800" height="600" alt="${esc(photoAlt(i + 1))}"${i === 0 ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async"></button>`,
-    )
+  // One gallery for photos and videos: a video (if any) comes first, then the photos. The grid shows 3 tiles;
+  // the rest stay in the lightbox (arrows / swipe).
+  const vidCap = (v, i) => (lang === 'en' && v.captionEn) || v.caption || `${x.name} – ${pt.video} ${i + 1}`;
+  const media = [...p.videos.map((v, i) => ({ kind: 'video', v, i })), ...p.photos.slice(0, 3).map((src, i) => ({ kind: 'photo', src, i }))];
+  const tileCount = Math.min(media.length, 3);
+  const gallery = media
+    .map((m, k) => {
+      const more = k === 2 && media.length > 3 ? `<span class="g-more">+${media.length - 3}</span>` : '';
+      const hid = k > 2 ? ' hidden' : '';
+      const prio = k === 0 ? ' fetchpriority="high"' : ' loading="lazy"';
+      if (m.kind === 'video') {
+        const cap = vidCap(m.v, m.i);
+        return `<a class="g-item g-${k} g-video" href="${m.v.src}" data-kind="video" data-video="${m.v.src}" data-full="${m.v.poster}" data-alt="${esc(cap)}"${hid}><img src="${m.v.poster}" width="800" height="600" alt="${esc(cap)}"${prio} decoding="async"><span class="g-play" aria-hidden="true">${PLAY_BIG}</span><span class="play-badge">${PLAY}${VIDEO_LABEL[lang]}</span>${more}</a>`;
+      }
+      const alt = esc(photoAlt(m.i + 1));
+      return `<button type="button" class="g-item g-${k}" data-full="${m.src}" data-alt="${alt}"${hid}><img src="${m.src}" width="800" height="600" alt="${alt}"${prio} decoding="async">${more}</button>`;
+    })
     .join('');
   const sourceLabel = (u) => {
     try {
@@ -526,23 +538,8 @@ function placePage(lang, p, ctx) {
         .map((c, i) => (c && creditLine(c) ? `<li><span class="credit-n">${i + 1}</span> ${creditLine(c)}</li>` : ''))
         .join('')
     : '';
-  const creditsHtml = creditItems ? `<div class="credits"><strong>${esc(pt.credits)}</strong><ul>${creditItems}</ul></div>` : '';
-  const videosHtml = p.videos.length
-    ? `<section class="videos" aria-labelledby="vid-h">
-      <h2 id="vid-h">${esc(pt.videos)}</h2>
-      <div class="video-grid n${Math.min(p.videos.length, 2)}">
-        ${p.videos
-          .map((v, i) => {
-            const cap = (lang === 'en' && v.captionEn) || v.caption;
-            return `<figure class="video">
-          <video controls preload="metadata" playsinline poster="${v.poster}" aria-label="${esc(cap || `${x.name} – ${pt.video} ${i + 1}`)}"><source src="${v.src}" type="${v.type}"><a href="${v.src}">${esc(pt.videoFallback)}</a></video>
-          ${cap || v.credit ? `<figcaption>${cap ? `<span>${esc(cap)}</span>` : ''}${v.credit ? `<small>${esc(v.credit)}</small>` : ''}</figcaption>` : ''}
-        </figure>`;
-          })
-          .join('\n        ')}
-      </div>
-    </section>`
-    : '';
+  const videoCredits = p.videos.filter((v) => v.credit).map((v) => `<li><span class="credit-n">${PLAY}</span> ${esc(v.credit)}</li>`).join('');
+  const creditsHtml = creditItems || videoCredits ? `<div class="credits"><strong>${esc(p.videos.length ? pt.creditsMedia : pt.credits)}</strong><ul>${creditItems}${videoCredits}</ul></div>` : '';
   const similar = places
     .filter((o) => o.slug !== p.slug)
     .map((o) => ({ o, score: o.categories.filter((c) => p.categories.includes(c)).length }))
@@ -565,9 +562,8 @@ function placePage(lang, p, ctx) {
       </div>
     </div>
     <div class="container place-body">
-    <section class="gallery n${shown.length}" aria-label="${esc(pt.gallery)}">${gallery}</section>
+    <section class="gallery n${tileCount}" aria-label="${esc(pt.gallery)}">${gallery}</section>
     ${creditsHtml}
-    ${videosHtml}
     <div class="place-grid">
       <article class="article">
         ${x.article.map((para) => `<p>${esc(para)}</p>`).join('\n        ')}

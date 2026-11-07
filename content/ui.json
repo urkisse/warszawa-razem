@@ -47,9 +47,8 @@
       "credits": "Zdjęcia",
       "prev": "Poprzednie zdjęcie",
       "next": "Następne zdjęcie",
-      "videos": "Wideo",
       "video": "Wideo",
-      "videoFallback": "Ta przeglądarka nie odtwarza wideo. Pobierz plik."
+      "creditsMedia": "Zdjęcia i wideo"
     },
     "about": {
       "title": "O projekcie – Warszawa Razem",
@@ -150,9 +149,8 @@
       "credits": "Photos",
       "prev": "Previous photo",
       "next": "Next photo",
-      "videos": "Videos",
       "video": "Video",
-      "videoFallback": "This browser cannot play the video. Download the file."
+      "creditsMedia": "Photos and video"
     },
     "about": {
       "title": "About – Warsaw Together",
