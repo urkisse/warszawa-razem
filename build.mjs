@@ -276,7 +276,7 @@ function layout({ lang, title, description, paths, body, jsonld = [], keepQuery 
   <meta property="og:url" content="${abs(self)}">
   <meta property="og:locale" content="${LOCALE[lang]}">
   <meta property="og:locale:alternate" content="${LOCALE[otherLang(lang)]}">
-  <meta name="theme-color" content="#faf8f4">
+  <meta name="theme-color" content="#faf8fd">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="/assets/style.css?v=${ASSET_V}">
@@ -299,6 +299,15 @@ function layout({ lang, title, description, paths, body, jsonld = [], keepQuery 
     </div>
   </header>
   ${body}
+  <section class="partners" aria-label="${esc(t.footer.partners)}">
+    <div class="container partners-inner">
+      <p class="partners-label">${esc(t.footer.partners)}</p>
+      <ul class="partner-logos">
+        <li><img class="logo-wyspa" src="/assets/img/wyspa-logo.svg" width="1215" height="341" alt="${esc(t.footer.orgAlt)}" loading="lazy" decoding="async"></li>
+        <li><img class="logo-city" src="/assets/img/warszawa-logo.png" width="760" height="466" alt="${esc(t.footer.cityAlt)}" loading="lazy" decoding="async"></li>
+      </ul>
+    </div>
+  </section>
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
@@ -675,6 +684,11 @@ async function build() {
 
   // static assets
   for (const f of ['style.css', 'favicon.svg']) await fs.copyFile(path.join(ROOT, 'src', f), path.join(DIST, 'assets', f));
+  // logos (Wyspa, City of Warsaw) and the self-hosted Montserrat font (latin + latin-ext for the Polish letters)
+  await fs.cp(path.join(ROOT, 'src/img'), path.join(DIST, 'assets/img'), { recursive: true });
+  await fs.mkdir(path.join(DIST, 'assets/fonts'), { recursive: true });
+  for (const f of ['montserrat-latin-wght-normal.woff2', 'montserrat-latin-ext-wght-normal.woff2'])
+    await fs.copyFile(path.join(ROOT, 'node_modules/@fontsource-variable/montserrat/files', f), path.join(DIST, 'assets/fonts', f));
   await fs.writeFile(path.join(DIST, 'assets/app.js'), (await fs.readFile(path.join(ROOT, 'src/app.js'), 'utf8')).replaceAll('__BASE__', BASE));
   const leaflet = path.join(ROOT, 'node_modules/leaflet/dist');
   for (const f of ['leaflet.js', 'leaflet.css']) await fs.copyFile(path.join(leaflet, f), path.join(DIST, 'assets/vendor/leaflet', f));

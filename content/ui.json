@@ -90,7 +90,10 @@
       "blurb": "Interaktywna mapa miejsc dla młodych mieszkańców Warszawy.",
       "demo": "Wersja demonstracyjna – treści przykładowe.",
       "map": "Mapa i filtry",
-      "tiles": "Mapa: © współtwórcy OpenStreetMap"
+      "tiles": "Mapa: © współtwórcy OpenStreetMap",
+      "partners": "Partnerzy",
+      "orgAlt": "Wyspa teen club",
+      "cityAlt": "Projekt finansuje miasto stołeczne Warszawa"
     },
     "notFound": {
       "title": "Nie znaleziono strony – Warszawa Razem",
@@ -188,7 +191,10 @@
       "blurb": "An interactive map of places for young people in Warsaw.",
       "demo": "Demo version – sample content.",
       "map": "Map and filters",
-      "tiles": "Map: © OpenStreetMap contributors"
+      "tiles": "Map: © OpenStreetMap contributors",
+      "partners": "Partners",
+      "orgAlt": "Wyspa teen club",
+      "cityAlt": "Project funded by the Capital City of Warsaw (projekt finansuje miasto stołeczne Warszawa)"
     },
     "notFound": {
       "title": "Page not found – Warsaw Together",

@@ -112,6 +112,20 @@ published), `archived` (`true` hides it), `categories` (`integration`, `culture`
 The first photo is the cover; the first three are shown on the place page. A place without photos gets generated
 placeholder illustrations. Photos from Wikimedia Commons (the demo set) must keep their author/licence line.
 
+## Branding and logos
+
+The look follows the Wyspa logo: purple/magenta (`--brand`, `--hot`), orange, yellow and teal (the five place
+categories and the colour ribbon under the header) and navy for headings (`--navy`). All colours are variables at
+the top of `src/style.css`; category (pin) colours are in `content/categories.json`; the editing panel uses the same
+colours in `admin/index.html`. The font is Montserrat, self-hosted from the `@fontsource-variable/montserrat` package
+(no request to Google Fonts).
+
+The "Partners" strip above the footer shows two logos: `src/img/wyspa-logo.svg` (Wyspa teen club) and
+`src/img/warszawa-logo.png` (City of Warsaw, "projekt finansuje miasto stołeczne Warszawa"). To replace one, overwrite
+the file (keep the name, or change it in `layout()` in `build.mjs`, together with the `width`/`height` attributes and the
+heights `.logo-wyspa` / `.logo-city` in `src/style.css`). Alt texts are in `content/ui.json` (`footer`). The city logo
+is a PNG with a transparent background; replace it with the official SVG/vector version when available.
+
 ## Publishing
 
 `.github/workflows/pages.yml` builds the site and publishes it to **GitHub Pages** on every push to `main`
