@@ -1,22 +1,28 @@
 /* Warszawa Razem – hand-written CSS, no frameworks. System fonts only (fast, no third-party requests). */
 :root {
   /* Brand colours are taken from the Wyspa logo: purple, magenta, orange, yellow, teal and navy. */
-  --bg: #faf8fd;
+  /* Colours come from the Wyspa brand posts: deep magenta, pink, orange, yellow, mint, plum and navy. */
+  --bg: #fbf9fd;
   --surface: #ffffff;
   --ink: #22224f;
   --navy: #2b2b6a;
   --muted: #5b5b7e;
   --line: #e7e2f0;
-  --tint: #efe9f7;
-  --brand: #7b1fa2;
-  --brand-deep: #560b73;
-  --hot: #d42dad;
-  --grad: linear-gradient(100deg, #560b73 0%, #a2239c 55%, #d42dad 100%);
-  --ribbon: linear-gradient(90deg, #560b73 0%, #d42dad 34%, #f27e22 62%, #fbdf48 78%, #20c990 100%);
+  --tint: #f3ebf8;
+  --brand: #99008e;
+  --brand-deep: #570075;
+  --pink: #ff3e7d;
+  --orange: #ff790f;
+  --yellow: #fbdf48;
+  --mint: #00e195;
+  --grad: linear-gradient(100deg, #99008e 0%, #ff3e7d 62%, #ff790f 100%);
+  --ribbon: linear-gradient(90deg, #99008e 0%, #ff3e7d 28%, #ff790f 52%, #fbdf48 74%, #00e195 100%);
+  --mesh: radial-gradient(60% 95% at 2% -12%, #ff3e7d 0%, rgba(255, 62, 125, 0) 70%), radial-gradient(48% 85% at 102% 112%, #ff790f 0%, rgba(255, 121, 15, 0) 72%), radial-gradient(42% 80% at 94% -14%, #00e195 0%, rgba(0, 225, 149, 0) 74%), #99008e;
+  --display: "Montserrat Variable", ui-sans-serif, system-ui, sans-serif; /* headings: swap for KyivType Sans when its files are added, see README */
   --radius: 18px;
-  --shadow: 0 1px 2px rgba(43, 43, 106, 0.06), 0 10px 28px rgba(43, 43, 106, 0.1);
+  --shadow: 0 1px 2px rgba(43, 43, 106, 0.06), 0 12px 30px rgba(43, 43, 106, 0.12);
   --max: 1200px;
-  --header-h: 64px;
+  --header-h: 76px;
   color-scheme: light;
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -44,27 +50,20 @@ button { font: inherit; color: inherit; cursor: pointer; }
 /* ---------- header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 1000;
-  background: rgba(250, 248, 253, 0.88);
+  background: rgba(255, 255, 255, 0.94);
   -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px);
   border-bottom: 1px solid var(--line);
 }
 .header-inner { height: var(--header-h); display: flex; align-items: center; gap: 20px; }
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-right: auto; min-width: 0; }
-.brand-mark { width: 36px; height: 36px; border-radius: 11px; background: var(--grad); color: #fff; display: grid; place-items: center; flex: none; }
-.brand-text { display: grid; line-height: 1.15; min-width: 0; }
-.brand-text strong { font-size: 1.02rem; letter-spacing: -0.01em; white-space: nowrap; }
-.brand-text small { color: var(--muted); font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .nav { display: flex; gap: 4px; }
 .nav a { text-decoration: none; padding: 8px 12px; border-radius: 999px; font-weight: 600; font-size: 0.94rem; color: var(--muted); transition: background 0.15s, color 0.15s; }
-.nav a:hover { background: rgba(86, 11, 115, 0.07); color: var(--ink); }
+.nav a:hover { background: rgba(153, 0, 142, 0.08); color: var(--ink); }
 .nav a[aria-current] { color: var(--brand-deep); background: var(--tint); }
 .lang { display: inline-flex; background: var(--tint); padding: 3px; border-radius: 999px; }
 .lang a { text-decoration: none; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.04em; padding: 6px 12px; border-radius: 999px; color: var(--muted); }
 .lang a[aria-current] { background: #fff; color: var(--ink); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); }
 
 /* ---------- intro ---------- */
-.intro { padding-top: 40px; padding-bottom: 28px; }
-.intro h1 { font-size: clamp(1.9rem, 4.4vw, 3rem); max-width: 20ch; }
 .lead { color: var(--muted); font-size: clamp(1rem, 1.6vw, 1.15rem); max-width: 62ch; margin-top: 10px; }
 
 /* ---------- toolbar / filters ---------- */
@@ -149,7 +148,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 /* ---------- place page ---------- */
 .place { padding-top: 20px; padding-bottom: 64px; }
 .back { display: inline-flex; align-items: center; gap: 4px; text-decoration: none; color: var(--muted); font-weight: 700; font-size: 0.92rem; padding: 6px 10px 6px 4px; border-radius: 999px; }
-.back:hover { color: var(--ink); background: rgba(86, 11, 115, 0.07); }
+.back:hover { color: var(--ink); background: rgba(153, 0, 142, 0.08); }
 .place-head { display: grid; gap: 16px; margin: 18px 0 32px; }
 .place-head h1 { font-size: clamp(2rem, 5vw, 3.4rem); }
 .place-addr { display: flex; align-items: center; gap: 8px; color: var(--muted); font-weight: 600; }
@@ -174,7 +173,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .info-actions { display: grid; gap: 12px; margin: 32px 0 28px; }
 .mini-map { height: 220px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: #e9eef2; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; background: var(--brand); color: #fff; font-weight: 700; padding: 12px 20px; border-radius: 999px; border: 2px solid var(--brand); transition: transform 0.15s, box-shadow 0.15s; }
-.btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(123, 31, 162, 0.3); }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(153, 0, 142, 0.3); }
 .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
 .btn-ghost:hover { box-shadow: none; border-color: var(--ink); }
 .similar { margin-top: 104px; }
@@ -192,7 +191,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 /* ---------- about ---------- */
 .about { padding-bottom: 96px; }
-.eyebrow { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); }
 .ab-hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 64px; align-items: center; padding-top: 64px; padding-bottom: 56px; }
 .ab-hero-text { display: grid; gap: 22px; justify-items: start; }
 .ab-hero h1 { font-size: clamp(2.3rem, 5.4vw, 4.2rem); line-height: 1.04; letter-spacing: -0.035em; text-wrap: balance; max-width: 16ch; }
@@ -230,16 +228,16 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .ab-cat-go { position: absolute; right: 20px; bottom: 24px; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: #fff; color: #16181d; transition: transform 0.25s, background 0.25s, color 0.25s; }
 .ab-cat a:hover .ab-cat-go { transform: translateX(4px); background: var(--c); color: var(--ink); }
 .ab-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; counter-reset: s; }
-.ab-steps li { display: grid; gap: 10px; align-content: start; padding-top: 20px; border-top: 2px solid var(--navy); }
+.ab-steps li { display: grid; gap: 10px; align-content: start; padding-top: 20px; border-top: 4px solid var(--brand); }
 .ab-step-n { font-size: 0.85rem; font-weight: 800; color: var(--brand); font-variant-numeric: tabular-nums; }
 .ab-steps strong { font-size: 1.3rem; letter-spacing: -0.02em; }
 .ab-steps p { color: var(--muted); max-width: 34ch; }
 .ab-note { display: flex; gap: 14px; align-items: flex-start; flex-wrap: wrap; background: #fff4d8; border: 1px solid #f1d58a; border-radius: 18px; padding: 18px 22px; color: #5c4200; }
 .ab-note .badge { flex: none; }
 .ab-note p { flex: 1 1 320px; min-width: 0; font-size: 0.95rem; }
-.ab-cta { margin-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 48px 48px; border-radius: 28px; background: linear-gradient(120deg, #2b2b6a 0%, #560b73 58%, #a2239c 100%); color: #fff; }
+.ab-cta { margin-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 48px 48px; border-radius: 28px; background: var(--mesh); color: #fff; position: relative; overflow: hidden; isolation: isolate; }
 .ab-cta h2 { font-size: clamp(1.6rem, 3.4vw, 2.4rem); letter-spacing: -0.03em; }
-.btn-light { background: #fff; color: var(--navy); border-color: #fff; }
+.btn-light { background: #fff; color: var(--brand); border-color: #fff; }
 .btn-light:hover { box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25); }
 
 /* ---------- 404 ---------- */
@@ -248,13 +246,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .nf-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
 
 /* ---------- footer ---------- */
-.site-footer { border-top: 1px solid var(--line); background: #f1ecf8; padding: 44px 0; color: var(--muted); font-size: 0.92rem; }
-.footer-inner { display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; }
-.footer-inner strong { color: var(--ink); font-size: 1.05rem; }
-.footer-nav { display: flex; gap: 16px; margin-top: 10px; }
-.footer-nav a { font-weight: 700; color: var(--ink); text-underline-offset: 3px; }
-.footer-meta { display: grid; gap: 6px; justify-items: start; }
-.badge { background: var(--navy); color: #fff; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; }
 
 /* ---------- lightbox ---------- */
 dialog.lightbox { border: 0; padding: 0; background: transparent; width: min(1100px, 94vw); max-width: none; overflow: visible; color: #fff; }
@@ -285,7 +276,7 @@ dialog.lightbox::backdrop { background: rgba(10, 12, 18, 0.88); }
   .info { position: static; }
 }
 @media (max-width: 720px) {
-  :root { --header-h: 58px; }
+  :root { --header-h: 64px; }
   .ab-cats { grid-template-columns: 1fr; gap: 16px; }
   .ab-cat:last-child { grid-column: span 1; }
   .ab-cat a, .ab-cat-wide a { min-height: 300px; }
@@ -295,9 +286,7 @@ dialog.lightbox::backdrop { background: rgba(10, 12, 18, 0.88); }
   .ab-stats div { padding: 20px 4px; }
   .container { padding-inline: 16px; }
   .header-inner { gap: 10px; }
-  .brand-text small { display: none; }
   .nav a { padding: 7px 9px; font-size: 0.88rem; }
-  .intro { padding-top: 20px; padding-bottom: 14px; }
   .filters { flex-wrap: nowrap; overflow-x: auto; margin-inline: -16px; padding: 2px 16px 8px; scrollbar-width: none; scroll-snap-type: x proximity; flex-basis: 100%; }
   .filters::-webkit-scrollbar { display: none; }
   .chip { scroll-snap-align: start; flex: none; }
@@ -314,36 +303,108 @@ dialog.lightbox::backdrop { background: rgba(10, 12, 18, 0.88); }
   .nav { display: none; }
 }
 @media (max-width: 380px) {
-  .brand-text strong { font-size: 0.92rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 
-/* ---------- branding (Wyspa): font, colour ribbon, partner logos ---------- */
+/* ---------- branding (Wyspa x City of Warsaw) ---------- */
 /* Montserrat (SIL Open Font Licence), self-hosted: no third-party font requests. Polish letters are in latin-ext. */
 @font-face { font-family: "Montserrat Variable"; font-style: normal; font-display: swap; font-weight: 100 900; src: url("fonts/montserrat-latin-ext-wght-normal.woff2") format("woff2-variations"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
 @font-face { font-family: "Montserrat Variable"; font-style: normal; font-display: swap; font-weight: 100 900; src: url("fonts/montserrat-latin-wght-normal.woff2") format("woff2-variations"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-body { position: relative; isolation: isolate; }
-body::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 560px; z-index: -1; pointer-events: none; background: radial-gradient(60% 100% at 0% 0%, rgba(212, 45, 173, 0.1), transparent 70%), radial-gradient(55% 90% at 100% 0%, rgba(32, 201, 144, 0.1), transparent 70%), radial-gradient(40% 70% at 55% 0%, rgba(251, 223, 72, 0.12), transparent 70%); }
-.site-header::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: var(--ribbon); }
-.intro h1 { font-weight: 800; color: var(--navy); }
-.ab-hero h1, .ab-mission h2, .ab-head h2, .place-head h1 { color: var(--navy); }
-.ab-stats dd { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
-.ab-cta h2 { color: #fff; }
-.card-title, .pop-title { color: var(--navy); }
 
-.partners { background: #fff; border-top: 1px solid var(--line); padding: 36px 0 40px; }
-.partners-inner { display: grid; gap: 22px; justify-items: center; text-align: center; }
-.partners-label { margin: 0; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
-.partner-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 28px 72px; }
-.partner-logos li { display: flex; align-items: center; }
-.partner-logos a { display: block; border-radius: 10px; }
-.partner-logos img { width: auto; max-width: 100%; }
-.logo-wyspa { height: 64px; }
-.logo-city { height: 112px; }
+body { position: relative; }
+h1, h2 { font-family: var(--display); }
+.eyebrow { display: inline-block; padding: 5px 12px; border-radius: 999px; background: var(--yellow); color: var(--navy); font-size: 0.74rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* header: the collaboration lock-up City of Warsaw x Wyspa */
+.site-header::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 4px; background: var(--ribbon); }
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; margin-right: auto; min-width: 0; }
+.brand img { width: auto; flex: none; }
+.brand-city { height: 58px; }
+.brand-wyspa { height: 44px; }
+.x-mark { flex: none; width: 18px; height: 18px; }
+
+/* hero band: the brand's mesh gradient + ornament from the Instagram posts */
+.hero { position: relative; overflow: hidden; isolation: isolate; background: var(--mesh); color: #fff; }
+.hero-inner { position: relative; z-index: 1; padding-block: 44px 76px; }
+.hero h1 { font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; line-height: 1.02; font-size: clamp(2rem, 5.4vw, 4rem); max-width: 17ch; text-wrap: balance; overflow-wrap: break-word; }
+.hero .lead { color: rgba(255, 255, 255, 0.92); font-weight: 500; max-width: 56ch; margin-top: 16px; }
+.hero-orn { position: absolute; z-index: 0; right: -60px; bottom: -110px; width: min(560px, 48vw); height: auto; pointer-events: none; }
+.hero-about .hero-orn { right: auto; left: 41%; top: 26px; bottom: auto; width: 120px; }
+.hero + .explorer { margin-top: -44px; position: relative; z-index: 2; padding-top: 0; }
+.hero .eyebrow { margin-bottom: 4px; }
+.btn-mint { background: var(--mint); border-color: var(--mint); color: var(--navy); }
+.btn-mint:hover { box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25); }
+.ab-hero { padding-block: 48px 72px; }
+.ab-hero h1 { color: #fff; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; line-height: 1.02; font-size: clamp(2rem, 5vw, 3.6rem); max-width: 14ch; }
+.ab-hero .lead { color: rgba(255, 255, 255, 0.92); font-weight: 500; }
+.ab-collage img { border: 6px solid #fff; box-shadow: 0 14px 34px rgba(40, 0, 60, 0.35); }
+.ab-c1 { transform: translateY(-14px) rotate(3deg); }
+.ab-c2 { transform: translateY(14px) rotate(-3deg); }
+
+/* display headings: black, uppercase, tight (as in the posts) */
+.place-head h1, .ab-mission h2, .ab-head h2, .similar h2, .ab-cta h2 { font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; line-height: 1.05; overflow-wrap: break-word; }
+.place-head h1 { font-size: clamp(1.9rem, 4.6vw, 3.2rem); color: var(--navy); }
+.ab-mission h2, .ab-head h2 { color: var(--navy); }
+.ab-cta h2 { color: #fff; position: relative; }
+.ab-cta .btn { position: relative; }
+.card-title, .pop-title { color: var(--navy); }
+.ab-stats dd { font-weight: 900; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+.info { border-top: 0; overflow: hidden; }
+.info::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px; background: var(--ribbon); }
+.nf-code { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+
+/* footer: brand gradient, logo card with the two logos */
+.site-footer { position: relative; overflow: hidden; isolation: isolate; background: var(--mesh); color: #fff; padding: 56px 0 52px; font-size: 0.95rem; }
+.site-footer::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--ribbon); }
+.foot-orn { position: absolute; z-index: 0; right: 4%; bottom: -30px; width: 190px; height: auto; opacity: 0.9; pointer-events: none; }
+.footer-inner { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 32px 56px; justify-content: space-between; align-items: flex-start; }
+.foot-main { display: flex; flex-wrap: wrap; gap: 28px 40px; align-items: center; }
+.logo-card { margin: 0; display: flex; align-items: center; gap: 22px; background: #fff; border-radius: 22px; padding: 22px 30px; box-shadow: 0 16px 40px rgba(40, 0, 60, 0.3); }
+.logo-card img { width: auto; }
+.foot-city { height: 84px; }
+.foot-wyspa { height: 56px; }
+.foot-text strong { font-size: 1.15rem; font-weight: 900; letter-spacing: -0.01em; text-transform: uppercase; }
+.foot-text p { margin-top: 4px; color: rgba(255, 255, 255, 0.9); max-width: 34ch; }
+.footer-nav { display: flex; gap: 18px; margin-top: 14px; }
+.footer-nav a { font-weight: 800; color: #fff; text-underline-offset: 4px; }
+.footer-meta { display: grid; gap: 8px; justify-items: start; color: rgba(255, 255, 255, 0.9); max-width: 34ch; }
+.badge { background: var(--yellow); color: var(--navy); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; }
+.skip:focus-visible { outline-color: var(--yellow); }
+
+@media (max-width: 960px) {
+  .hero-about .hero-orn { display: none; }
+}
 @media (max-width: 720px) {
-  .partner-logos { gap: 20px 40px; }
-  .logo-wyspa { height: 48px; }
-  .logo-city { height: 88px; }
+  .brand { gap: 10px; }
+  .brand-city { height: 40px; }
+  .brand-wyspa { height: 30px; }
+  .x-mark { width: 14px; height: 14px; }
+  .hero-inner { padding-block: 28px 64px; }
+  .hero-orn { width: 300px; right: -90px; bottom: -80px; opacity: 0.85; }
+  .ab-hero { padding-block: 28px 48px; }
+  .hero + .explorer { margin-top: -36px; }
+  .logo-card { gap: 14px; padding: 16px 18px; }
+  .foot-city { height: 64px; }
+  .foot-wyspa { height: 40px; }
+  .foot-orn { width: 130px; right: 2%; }
+}
+
+/* place page: the same gradient band, photos overlap it */
+.place { padding: 0; }
+.hero-place .hero-inner { padding-block: 22px 96px; display: grid; gap: 14px; justify-items: start; }
+.hero-place .back { color: #fff; background: rgba(255, 255, 255, 0.16); padding: 7px 14px 7px 8px; }
+.hero-place .back:hover { background: rgba(255, 255, 255, 0.28); color: #fff; }
+.hero-place .place-head { margin: 4px 0 0; }
+.hero-place .place-head h1 { color: #fff; max-width: 20ch; }
+.hero-place .place-addr { color: rgba(255, 255, 255, 0.92); }
+.hero-place .lead { color: rgba(255, 255, 255, 0.92); font-weight: 500; }
+.hero-place .tag { background: rgba(255, 255, 255, 0.92); }
+.hero-place .hero-orn { right: 4%; bottom: auto; top: 24px; width: min(230px, 22vw); }
+.place-body { position: relative; z-index: 2; margin-top: -64px; padding-bottom: 64px; }
+@media (max-width: 720px) {
+  .hero-place .hero-inner { padding-block: 16px 72px; }
+  .hero-place .hero-orn { width: 120px; top: 60px; right: -20px; opacity: 0.8; }
+  .place-body { margin-top: -48px; }
 }

@@ -250,6 +250,9 @@ let ASSET_V = '';
 const out = []; // { urlPath, html }
 const sitemap = []; // { pl: path, en: path }
 
+// the "x" between two partner logos (collaboration lock-up)
+const XMARK = '<svg class="x-mark" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5 5l14 14M19 5 5 19" stroke="#00e195" stroke-width="5.5" stroke-linecap="round" fill="none"/></svg>';
+
 function layout({ lang, title, description, paths, body, jsonld = [], keepQuery = false, active = '', ui }) {
   const t = ui[lang];
   const self = paths[lang];
@@ -287,9 +290,10 @@ function layout({ lang, title, description, paths, body, jsonld = [], keepQuery 
   <a class="skip" href="#main">${esc(t.skip)}</a>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="${ROUTES[lang].home}">
-        <span class="brand-mark">${svgIcon(ICONS.pin, 18)}</span>
-        <span class="brand-text"><strong>${esc(t.siteName)}</strong><small>${esc(t.siteTag)}</small></span>
+      <a class="brand" href="${ROUTES[lang].home}" aria-label="${esc(t.siteName)} – ${esc(t.footer.cityAlt)} × ${esc(t.footer.orgAlt)}">
+        <img class="brand-city" src="/assets/img/warszawa-logo.png" width="760" height="466" alt="" decoding="async">
+        ${XMARK}
+        <img class="brand-wyspa" src="/assets/img/wyspa-logo.svg" width="1215" height="341" alt="" decoding="async">
       </a>
       <nav class="nav" aria-label="${esc(t.siteName)}">
         <a href="${ROUTES[lang].home}"${active === 'home' ? ' aria-current="page"' : ''}>${esc(t.navMap)}</a>
@@ -299,21 +303,20 @@ function layout({ lang, title, description, paths, body, jsonld = [], keepQuery 
     </div>
   </header>
   ${body}
-  <section class="partners" aria-label="${esc(t.footer.partners)}">
-    <div class="container partners-inner">
-      <p class="partners-label">${esc(t.footer.partners)}</p>
-      <ul class="partner-logos">
-        <li><img class="logo-wyspa" src="/assets/img/wyspa-logo.svg" width="1215" height="341" alt="${esc(t.footer.orgAlt)}" loading="lazy" decoding="async"></li>
-        <li><img class="logo-city" src="/assets/img/warszawa-logo.png" width="760" height="466" alt="${esc(t.footer.cityAlt)}" loading="lazy" decoding="async"></li>
-      </ul>
-    </div>
-  </section>
   <footer class="site-footer">
+    <img class="foot-orn" src="/assets/img/orn-leaves.svg" width="209" height="213" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="container footer-inner">
-      <div>
-        <strong>${esc(t.siteName)}</strong>
-        <p>${esc(t.footer.blurb)}</p>
-        <nav class="footer-nav" aria-label="${esc(t.siteName)}"><a href="${ROUTES[lang].home}">${esc(t.navMap)}</a><a href="${ROUTES[lang].about}">${esc(t.navAbout)}</a></nav>
+      <div class="foot-main">
+        <p class="logo-card">
+          <img class="foot-city" src="/assets/img/warszawa-logo.png" width="760" height="466" alt="${esc(t.footer.cityAlt)}" loading="lazy" decoding="async">
+          ${XMARK}
+          <img class="foot-wyspa" src="/assets/img/wyspa-logo.svg" width="1215" height="341" alt="${esc(t.footer.orgAlt)}" loading="lazy" decoding="async">
+        </p>
+        <div class="foot-text">
+          <strong>${esc(t.siteName)}</strong>
+          <p>${esc(t.footer.blurb)}</p>
+          <nav class="footer-nav" aria-label="${esc(t.siteName)}"><a href="${ROUTES[lang].home}">${esc(t.navMap)}</a><a href="${ROUTES[lang].about}">${esc(t.navAbout)}</a></nav>
+        </div>
       </div>
       <div class="footer-meta">
         <span class="badge">${esc(t.demoBadge)}</span>
@@ -385,9 +388,12 @@ function homePage(lang, ctx) {
     )
     .join('');
   const body = `<main id="main">
-    <section class="intro container">
-      <h1>${esc(h.h1)}</h1>
-      <p class="lead">${esc(h.lead)}</p>
+    <section class="hero">
+      <img class="hero-orn" src="/assets/img/orn-star.svg" width="537" height="395" alt="" aria-hidden="true" decoding="async">
+      <div class="container hero-inner">
+        <h1>${esc(h.h1)}</h1>
+        <p class="lead">${esc(h.lead)}</p>
+      </div>
     </section>
     <section class="explorer container" aria-label="${esc(h.mapLabel)}">
       <div class="toolbar">
@@ -485,14 +491,20 @@ function placePage(lang, p, ctx) {
     .slice(0, 3)
     .map((s) => s.o);
   const pageTitle = `${x.name} – ${pt.titleSuffix}`;
-  const body = `<main id="main" class="place container">
-    <a class="back" href="${ROUTES[lang].home}">${svgIcon(ICONS.back, 16)}${esc(pt.back)}</a>
-    <header class="place-head">
-      <div class="tags">${tagList(p, lang, catMap)}</div>
-      <h1>${esc(x.name)}</h1>
-      ${p.address ? `<p class="place-addr">${svgIcon(ICONS.pin, 18)}<span>${esc(p.address)}</span></p>` : ''}
-      ${x.summary ? `<p class="lead">${esc(x.summary)}</p>` : ''}
-    </header>
+  const body = `<main id="main" class="place">
+    <div class="hero hero-place">
+      <img class="hero-orn" src="/assets/img/orn-cross.svg" width="270" height="153" alt="" aria-hidden="true" decoding="async">
+      <div class="container hero-inner">
+        <a class="back" href="${ROUTES[lang].home}">${svgIcon(ICONS.back, 16)}${esc(pt.back)}</a>
+        <header class="place-head">
+          <div class="tags">${tagList(p, lang, catMap)}</div>
+          <h1>${esc(x.name)}</h1>
+          ${p.address ? `<p class="place-addr">${svgIcon(ICONS.pin, 18)}<span>${esc(p.address)}</span></p>` : ''}
+          ${x.summary ? `<p class="lead">${esc(x.summary)}</p>` : ''}
+        </header>
+      </div>
+    </div>
+    <div class="container place-body">
     <section class="gallery n${shown.length}" aria-label="${esc(pt.gallery)}">${gallery}</section>
     ${creditsHtml}
     <div class="place-grid">
@@ -532,6 +544,7 @@ function placePage(lang, p, ctx) {
     </section>`
         : ''
     }
+  </div>
   </main>
   ${appData(lang, ctx)}`;
   const paths = { pl: ROUTES.pl.place(p.slug), en: ROUTES.en.place(p.slug) };
@@ -589,15 +602,18 @@ function aboutPage(lang, ctx) {
     })
     .join('\n      ');
   const body = `<main id="main" class="about">
-    <section class="container ab-hero">
-      <div class="ab-hero-text">
-        <p class="eyebrow">${esc(a.eyebrow)}</p>
-        <h1>${esc(a.h1)}</h1>
-        <p class="lead">${esc(a.lead)}</p>
-        <a class="btn" href="${ROUTES[lang].home}">${svgIcon(ICONS.map, 16)}${esc(a.cta)}</a>
-      </div>
-      <div class="ab-collage" aria-hidden="true">
-        ${hero.map((s, i) => `<img class="ab-c${i}" src="${s}" width="800" height="600" alt="" decoding="async">`).join('\n        ')}
+    <section class="hero hero-about">
+      <img class="hero-orn" src="/assets/img/orn-flower.svg" width="203" height="183" alt="" aria-hidden="true" decoding="async">
+      <div class="container ab-hero">
+        <div class="ab-hero-text">
+          <p class="eyebrow">${esc(a.eyebrow)}</p>
+          <h1>${esc(a.h1)}</h1>
+          <p class="lead">${esc(a.lead)}</p>
+          <a class="btn btn-mint" href="${ROUTES[lang].home}">${svgIcon(ICONS.map, 16)}${esc(a.cta)}</a>
+        </div>
+        <div class="ab-collage" aria-hidden="true">
+          ${hero.map((s, i) => `<img class="ab-c${i}" src="${s}" width="800" height="600" alt="" decoding="async">`).join('\n          ')}
+        </div>
       </div>
     </section>
     <section class="container" aria-label="${esc(a.h1)}">

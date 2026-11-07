@@ -114,17 +114,20 @@ placeholder illustrations. Photos from Wikimedia Commons (the demo set) must kee
 
 ## Branding and logos
 
-The look follows the Wyspa logo: purple/magenta (`--brand`, `--hot`), orange, yellow and teal (the five place
-categories and the colour ribbon under the header) and navy for headings (`--navy`). All colours are variables at
-the top of `src/style.css`; category (pin) colours are in `content/categories.json`; the editing panel uses the same
-colours in `admin/index.html`. The font is Montserrat, self-hosted from the `@fontsource-variable/montserrat` package
-(no request to Google Fonts).
+The look follows the Wyspa Instagram posts: deep magenta (`--brand`), pink, orange, yellow and mint on a mesh
+gradient (`--mesh`, used for the hero bands and the footer), navy for text, big black uppercase headings, and the
+leaf/flower ornaments (`src/img/orn-*.svg`, cut out of the posts). All colours are variables at the top of
+`src/style.css`; pin colours are in `content/categories.json`; the editing panel uses the same colours
+(`admin/index.html`). Body font: Montserrat, self-hosted from `@fontsource-variable/montserrat` (SIL OFL, no request
+to Google Fonts). Headings use the `--display` variable, currently also Montserrat Black; to use KyivType Sans add its
+web files under `src/fonts/`, an `@font-face` and set `--display` (check its licence first: the designer lists it as
+free, CC BY-ND 4.0, so use the files unmodified and credit Dmitry Rastvortsev).
 
-The "Partners" strip above the footer shows two logos: `src/img/wyspa-logo.svg` (Wyspa teen club) and
-`src/img/warszawa-logo.png` (City of Warsaw, "projekt finansuje miasto stołeczne Warszawa"). To replace one, overwrite
-the file (keep the name, or change it in `layout()` in `build.mjs`, together with the `width`/`height` attributes and the
-heights `.logo-wyspa` / `.logo-city` in `src/style.css`). Alt texts are in `content/ui.json` (`footer`). The city logo
-is a PNG with a transparent background; replace it with the official SVG/vector version when available.
+The City of Warsaw and Wyspa logos form a lock-up "City x Wyspa" in the header (small) and in a white card in the
+footer (large): `src/img/warszawa-logo.png` and `src/img/wyspa-logo.svg`. To replace one, overwrite the file (keep the
+name, or change it in `layout()` in `build.mjs`, with its `width`/`height`; sizes are `.brand-*` and `.foot-*` in
+`src/style.css`). Alt texts are in `content/ui.json` (`footer`). The city logo is a PNG with a transparent
+background; replace it with the official SVG when available.
 
 ## Publishing
 
