@@ -22,7 +22,7 @@
   --radius: 18px;
   --shadow: 0 1px 2px rgba(43, 43, 106, 0.06), 0 12px 30px rgba(43, 43, 106, 0.12);
   --max: 1200px;
-  --header-h: 76px;
+  --header-h: 82px;
   color-scheme: light;
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -321,8 +321,8 @@ h1, h2 { font-family: var(--display); }
 .site-header::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 4px; background: var(--ribbon); }
 .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; margin-right: auto; min-width: 0; }
 .brand img { width: auto; flex: none; }
-.brand-city { height: 58px; }
-.brand-wyspa { height: 44px; }
+.brand-city { height: 68px; }
+.brand-wyspa { height: 34px; }
 .x-mark { flex: none; width: 18px; height: 18px; }
 
 /* hero band: the brand's mesh gradient + ornament from the Instagram posts */
@@ -365,8 +365,8 @@ h1, h2 { font-family: var(--display); }
 .foot-main { display: flex; flex-wrap: wrap; gap: 28px 40px; align-items: center; }
 .logo-card { margin: 0; display: flex; align-items: center; gap: 22px; background: #fff; border-radius: 22px; padding: 22px 30px; box-shadow: 0 16px 40px rgba(40, 0, 60, 0.3); }
 .logo-card img { width: auto; }
-.foot-city { height: 84px; }
-.foot-wyspa { height: 56px; }
+.foot-city { height: 112px; }
+.foot-wyspa { height: 46px; }
 .foot-text strong { font-size: 1.15rem; font-weight: 900; letter-spacing: -0.01em; text-transform: uppercase; }
 .foot-text p { margin-top: 4px; color: rgba(255, 255, 255, 0.9); max-width: 34ch; }
 .footer-nav { display: flex; gap: 18px; margin-top: 14px; }
@@ -379,16 +379,16 @@ h1, h2 { font-family: var(--display); }
 }
 @media (max-width: 720px) {
   .brand { gap: 10px; }
-  .brand-city { height: 40px; }
-  .brand-wyspa { height: 30px; }
+  .brand-city { height: 52px; }
+  .brand-wyspa { height: 26px; }
   .x-mark { width: 14px; height: 14px; }
   .hero-inner { padding-block: 28px 48px; }
   .hero-orn { width: 300px; right: -90px; bottom: -80px; opacity: 0.85; }
   .ab-hero { padding-block: 28px 48px; }
   .hero + .explorer { padding-top: 20px; }
   .logo-card { gap: 14px; padding: 16px 18px; }
-  .foot-city { height: 64px; }
-  .foot-wyspa { height: 40px; }
+  .foot-city { height: 88px; }
+  .foot-wyspa { height: 36px; }
   .foot-orn { width: 130px; right: 2%; }
 }
 
