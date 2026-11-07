@@ -22,7 +22,7 @@
   --radius: 18px;
   --shadow: 0 1px 2px rgba(43, 43, 106, 0.06), 0 12px 30px rgba(43, 43, 106, 0.12);
   --max: 1200px;
-  --header-h: 82px;
+  --header-h: 88px;
   color-scheme: light;
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -324,6 +324,10 @@ h1, h2 { font-family: var(--display); }
 .brand-city { height: 72px; }
 .brand-wyspa { height: 32px; }
 .x-mark { flex: none; width: 18px; height: 18px; }
+/* Optical centring: each logo's visual centre of mass (measured from the artwork: City 56% from the top because of the
+   crown, Wyspa 45%) is moved onto the middle line, so both sit on one horizontal axis. Percentages follow the logo size. */
+.brand-city, .foot-city { transform: translateY(-6.4%); }
+.brand-wyspa, .foot-wyspa { transform: translateY(4.9%); }
 
 /* hero band: the brand's mesh gradient + ornament from the Instagram posts */
 .hero { position: relative; overflow: hidden; isolation: isolate; background: var(--mesh); color: #fff; }
