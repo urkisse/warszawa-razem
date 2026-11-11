@@ -109,6 +109,16 @@ The panel has no user database of its own: **people are GitHub accounts**, and G
   sign-in service in front of the panel (for example the city's single sign-on) or a CMS with its own server
   (Strapi, Directus and similar). That is a different hosting model than this static site.
 
+### Privacy policy and legal details
+
+The footer links to a short privacy page (`/polityka-prywatnosci/`, `/en/privacy/`; texts in `content/ui.json`, key
+`privacy`). It says the site has no cookies, analytics, forms or external requests, and that the hosting provider may
+log technical data. The organisation name, address, contact e-mail, hosting provider and date live in
+`content/legal.json`, editable in the panel under *Ustawienia / Settings*; empty fields are simply left out. **Fill in
+the owner and a contact e-mail before launch, and update "hosting" if the site moves** (a new host also means a new
+privacy-statement URL). Public-sector bodies in Poland may additionally need an accessibility statement
+(*deklaracja dostępności*); this is not included. The OpenStreetMap credit in the footer links to the ODbL licence.
+
 ### By hand
 
 Each place is one file, `content/places/<slug>.json`: `slug`, `status` (`draft` or `published`; missing counts as

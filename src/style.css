@@ -425,3 +425,17 @@ h1, h2 { font-family: var(--display); }
 .g-more { position: absolute; right: 12px; bottom: 12px; padding: 5px 12px; border-radius: 999px; background: rgba(34, 34, 79, 0.88); color: #fff; font-size: 0.8rem; font-weight: 800; }
 .pop-media { display: block; }
 @media (max-width: 720px) { .g-play { width: 52px; height: 52px; margin: -26px 0 0 -26px; } .g-play svg { width: 22px; height: 22px; } }
+
+/* privacy page and footer links */
+.footer-meta a { color: #fff; text-underline-offset: 3px; font-weight: 600; }
+.hero-legal .hero-inner { padding-block: 44px 56px; }
+.hero-legal h1 { font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; line-height: 1.04; font-size: clamp(2rem, 5vw, 3.4rem); max-width: 16ch; }
+.hero-legal .hero-orn { right: 6%; bottom: auto; top: 28px; width: 150px; }
+.legal { max-width: 800px; padding-block: 56px 80px; }
+.legal h2 { font-size: 1.35rem; margin: 2.2em 0 0.6em; color: var(--navy); }
+.legal h2:first-child { margin-top: 0; }
+.legal p { color: #2f2f58; font-size: 1.05rem; line-height: 1.75; }
+.legal p + p { margin-top: 0.9em; }
+.legal a { color: var(--brand); text-underline-offset: 3px; font-weight: 600; }
+.legal-date { margin-top: 2.2em !important; color: var(--muted) !important; font-size: 0.9rem !important; }
+@media (max-width: 720px) { .hero-legal .hero-orn { display: none; } .legal { padding-block: 36px 56px; } }

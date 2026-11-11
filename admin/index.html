@@ -59,6 +59,7 @@
           name: 'preSave',
           handler: function (args) {
             var data = args.entry.get('data');
+            if (!data.has('slug')) return; // only places carry the change history (not the settings file)
             var who = (args.author && (args.author.login || args.author.name)) || '';
             var now = nowLocal();
             var meta = data.get('meta');

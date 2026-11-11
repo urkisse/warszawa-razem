@@ -32,5 +32,7 @@ for (const sub of ['places', 'photos', 'videos']) {
   fs.symlinkSync(path.join(ROOT, 'content', sub), path.join(OUT, 'content', sub));
   for (const f of fs.readdirSync(path.join(ROOT, 'content', sub))) files.push(`content/${sub}/${f}`);
 }
+fs.symlinkSync(path.join(ROOT, 'content/legal.json'), path.join(OUT, 'content/legal.json'));
+files.push('content/legal.json');
 fs.writeFileSync(path.join(OUT, 'seed.json'), JSON.stringify({ files }));
 console.log(`.admin-test ready: ${files.length} files seeded. Serve it:  python3 -m http.server 4190 -d .admin-test`);

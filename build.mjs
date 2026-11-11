@@ -24,8 +24,8 @@ const LOCALE = { pl: 'pl_PL', en: 'en_GB' };
 // ---------------------------------------------------------------- URL scheme
 // PL is the primary language and lives at the root; EN lives under /en/.
 const ROUTES = {
-  pl: { home: '/', about: '/o-projekcie/', place: (s) => `/miejsca/${s}/` },
-  en: { home: '/en/', about: '/en/about/', place: (s) => `/en/places/${s}/` },
+  pl: { home: '/', about: '/o-projekcie/', privacy: '/polityka-prywatnosci/', place: (s) => `/miejsca/${s}/` },
+  en: { home: '/en/', about: '/en/about/', privacy: '/en/privacy/', place: (s) => `/en/places/${s}/` },
 };
 const otherLang = (l) => (l === 'pl' ? 'en' : 'pl');
 
@@ -213,7 +213,14 @@ async function loadContent() {
     places.push(p);
   }
   if (hidden.length) console.log(`Not published (${hidden.length}): ${hidden.join(', ')}`);
-  return { cats, ui, places };
+  // site owner / hosting details for the privacy page (content/legal.json, editable in the panel)
+  let legal = {};
+  try {
+    legal = await readJson(path.join(ROOT, 'content/legal.json'));
+  } catch {}
+  const l = (k) => String(legal[k] ?? '').trim();
+  legal = { controller: l('controller'), address: l('address'), email: l('email'), hosting: l('hosting') || 'GitHub Pages', hostingPolicyUrl: l('hostingPolicyUrl'), updated: l('updated') };
+  return { cats, ui, places, legal };
 }
 
 // Photos come from each place's "photos" list: [{ image, author, license, licenseUrl, source }].
@@ -355,11 +362,11 @@ function layout({ lang, title, description, paths, body, jsonld = [], keepQuery 
         <div class="foot-text">
           <strong>${esc(t.siteName)}</strong>
           <p>${esc(t.footer.blurb)}</p>
-          <nav class="footer-nav" aria-label="${esc(t.siteName)}"><a href="${ROUTES[lang].home}">${esc(t.navMap)}</a><a href="${ROUTES[lang].about}">${esc(t.navAbout)}</a></nav>
+          <nav class="footer-nav" aria-label="${esc(t.siteName)}"><a href="${ROUTES[lang].home}">${esc(t.navMap)}</a><a href="${ROUTES[lang].about}">${esc(t.navAbout)}</a><a href="${ROUTES[lang].privacy}">${esc(t.footer.privacy)}</a></nav>
         </div>
       </div>
       <div class="footer-meta">
-        <p>${esc(t.footer.tiles)}</p>
+        <p>${esc(t.footer.tilesPre)} <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">${esc(t.footer.tilesLink)}</a>, ${esc(t.footer.tilesLic)} <a href="https://opendatacommons.org/licenses/odbl/" target="_blank" rel="noopener">ODbL</a></p>
       </div>
     </div>
   </footer>
@@ -702,6 +709,40 @@ function aboutPage(lang, ctx) {
   out.push({ urlPath: paths[lang], html: layout({ lang, title: a.title, description: a.description, paths, body, active: 'about', ui }) });
 }
 
+function privacyPage(lang, ctx) {
+  const { ui, legal } = ctx;
+  const t = ui[lang];
+  const v = t.privacy;
+  const mail = legal.email ? `<p>${esc(v.s4contact)} <a href="mailto:${esc(legal.email)}">${esc(legal.email)}</a></p>` : '';
+  const owner = legal.controller ? `<h2>${esc(v.ctrlH)}</h2><p>${esc(legal.controller)}${legal.address ? `, ${esc(legal.address)}` : ''}</p>` : '';
+  const hostLink = legal.hostingPolicyUrl ? ` <a href="${esc(legal.hostingPolicyUrl)}" target="_blank" rel="noopener">${esc(v.s2link)}</a>.` : '';
+  const body = `<main id="main" class="legal-page">
+    <section class="hero hero-legal">
+      <img class="hero-orn" src="/assets/img/orn-flower.svg" width="203" height="183" alt="" aria-hidden="true" decoding="async">
+      <div class="container hero-inner">
+        <h1>${esc(v.h1)}</h1>
+        <p class="lead">${esc(v.lead)}</p>
+      </div>
+    </section>
+    <div class="container legal">
+      <h2>${esc(v.s1h)}</h2>
+      <p>${esc(v.s1p)}</p>
+      <h2>${esc(v.s2h)}</h2>
+      <p>${esc(v.s2p.replace('{hosting}', legal.hosting))}${hostLink}</p>
+      <h2>${esc(v.s3h)}</h2>
+      <p>${esc(v.s3p)}</p>
+      <h2>${esc(v.s4h)}</h2>
+      <p>${esc(v.s4p)}</p>
+      ${mail}
+      <p>${esc(v.s4uodo)} (<a href="https://uodo.gov.pl" target="_blank" rel="noopener">uodo.gov.pl</a>).</p>
+      ${owner}
+      ${legal.updated ? `<p class="legal-date">${esc(v.updated)}: ${esc(legal.updated)}</p>` : ''}
+    </div>
+  </main>`;
+  const paths = { pl: ROUTES.pl.privacy, en: ROUTES.en.privacy };
+  out.push({ urlPath: paths[lang], html: layout({ lang, title: v.title, description: v.description, paths, body, active: '', ui }) });
+}
+
 function notFoundPage(ctx) {
   const { ui } = ctx;
   const html = `<!doctype html>
@@ -728,7 +769,7 @@ function notFoundPage(ctx) {
 }
 
 function buildSitemap(ctx) {
-  const entries = [{ pl: ROUTES.pl.home, en: ROUTES.en.home }, { pl: ROUTES.pl.about, en: ROUTES.en.about }, ...ctx.places.map((p) => ({ pl: ROUTES.pl.place(p.slug), en: ROUTES.en.place(p.slug) }))];
+  const entries = [{ pl: ROUTES.pl.home, en: ROUTES.en.home }, { pl: ROUTES.pl.about, en: ROUTES.en.about }, { pl: ROUTES.pl.privacy, en: ROUTES.en.privacy }, ...ctx.places.map((p) => ({ pl: ROUTES.pl.place(p.slug), en: ROUTES.en.place(p.slug) }))];
   const today = new Date().toISOString().slice(0, 10);
   const urls = [];
   for (const e of entries)
@@ -779,6 +820,7 @@ async function build() {
   for (const lang of LANGS) {
     homePage(lang, ctx);
     aboutPage(lang, ctx);
+    privacyPage(lang, ctx);
     for (const p of ctx.places) placePage(lang, p, ctx);
   }
   notFoundPage(ctx);

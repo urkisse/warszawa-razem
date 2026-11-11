@@ -253,3 +253,19 @@ collections:
     table_columns: *columns
     bulk_edit: { fields: [archived] }
     fields: *place_fields
+
+  # ------------------------------------------------------------------ settings: privacy policy details
+  - name: settings
+    label: Ustawienia / Settings
+    files:
+      - name: legal
+        label: "Polityka prywatności – dane / Privacy policy details"
+        file: content/legal.json
+        description: "Dane widoczne na stronie Polityka prywatności (stopka). Puste pola są pomijane. / Shown on the Privacy policy page (footer link). Empty fields are left out."
+        fields:
+          - { label: "Administrator serwisu / Site owner", name: controller, widget: string, required: false, hint: "Nazwa instytucji lub organizacji odpowiedzialnej za stronę. / The organisation responsible for the site." }
+          - { label: "Adres / Address", name: address, widget: string, required: false }
+          - { label: "E-mail kontaktowy / Contact e-mail", name: email, widget: string, required: false }
+          - { label: "Hosting", name: hosting, widget: string, required: false, hint: "Zmień, jeśli strona zostanie przeniesiona na inny serwer. / Change it if the site moves to another host." }
+          - { label: "Adres polityki prywatności hostingu / Hosting privacy statement URL", name: hostingPolicyUrl, widget: string, required: false }
+          - { label: "Data ostatniej aktualizacji / Last updated", name: updated, widget: string, required: false, hint: "RRRR-MM-DD / YYYY-MM-DD" }

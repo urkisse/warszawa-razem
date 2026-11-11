@@ -88,15 +88,37 @@
     "footer": {
       "blurb": "Interaktywna mapa miejsc dla młodych mieszkańców Warszawy.",
       "map": "Mapa i filtry",
-      "tiles": "Mapa: © współtwórcy OpenStreetMap",
       "orgAlt": "Wyspa teen club",
-      "cityAlt": "Projekt finansuje miasto stołeczne Warszawa"
+      "cityAlt": "Projekt finansuje miasto stołeczne Warszawa",
+      "tilesPre": "Dane mapy: ©",
+      "tilesLink": "współtwórcy OpenStreetMap",
+      "tilesLic": "licencja",
+      "privacy": "Polityka prywatności"
     },
     "notFound": {
       "title": "Nie znaleziono strony – Warszawa Razem",
       "h1": "Nie znaleziono strony",
       "text": "Ta strona nie istnieje lub została przeniesiona.",
       "home": "Wróć na stronę główną"
+    },
+    "privacy": {
+      "title": "Polityka prywatności – Warszawa Razem",
+      "description": "Ta strona nie zbiera danych osobowych i nie używa plików cookies.",
+      "h1": "Polityka prywatności",
+      "lead": "W skrócie: ta strona nie zbiera danych osobowych, nie używa plików cookies i nie korzysta z narzędzi analitycznych ani reklamowych.",
+      "s1h": "Dane i pliki cookies",
+      "s1p": "Serwis nie ma formularzy, kont użytkowników, komentarzy ani newslettera. Nie ustawiamy plików cookies i nie używamy narzędzi analitycznych ani reklamowych, dlatego nie wyświetlamy banera z prośbą o zgodę na cookies.",
+      "s2h": "Hosting i dane techniczne",
+      "s2p": "Strona jest udostępniana przez {hosting}. Jak każdy serwer internetowy, dostawca hostingu może automatycznie przetwarzać techniczne dane wizyty, np. adres IP i czas połączenia, aby zapewnić działanie i bezpieczeństwo usługi. Zasady przetwarzania opisuje dostawca:",
+      "s2link": "oświadczenie o prywatności dostawcy",
+      "s3h": "Mapa, zdjęcia i linki zewnętrzne",
+      "s3p": "Mapa, zdjęcia, filmy i czcionki są przechowywane na tej samej stronie, więc ich wyświetlanie nie przekazuje Twoich danych podmiotom trzecim. Strona zawiera jednak linki do innych serwisów, np. przycisk „Wyznacz trasę” (Mapy Google), linki do stron miejsc i do źródeł zdjęć (Wikimedia Commons). Po kliknięciu obowiązują zasady prywatności tych serwisów.",
+      "s4h": "Twoje prawa i kontakt",
+      "s4p": "Serwis sam nie zbiera Twoich danych osobowych. W sprawach dotyczących prywatności możesz się z nami skontaktować.",
+      "s4contact": "Kontakt:",
+      "s4uodo": "Masz prawo złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych",
+      "ctrlH": "Administrator serwisu",
+      "updated": "Ostatnia aktualizacja"
     }
   },
   "en": {
@@ -186,15 +208,37 @@
     "footer": {
       "blurb": "An interactive map of places for young people in Warsaw.",
       "map": "Map and filters",
-      "tiles": "Map: © OpenStreetMap contributors",
       "orgAlt": "Wyspa teen club",
-      "cityAlt": "Project funded by the Capital City of Warsaw (projekt finansuje miasto stołeczne Warszawa)"
+      "cityAlt": "Project funded by the Capital City of Warsaw (projekt finansuje miasto stołeczne Warszawa)",
+      "tilesPre": "Map data: ©",
+      "tilesLink": "OpenStreetMap contributors",
+      "tilesLic": "licence",
+      "privacy": "Privacy policy"
     },
     "notFound": {
       "title": "Page not found – Warsaw Together",
       "h1": "Page not found",
       "text": "This page does not exist or has been moved.",
       "home": "Back to the home page"
+    },
+    "privacy": {
+      "title": "Privacy policy – Warsaw Together",
+      "description": "This website does not collect personal data and does not use cookies.",
+      "h1": "Privacy policy",
+      "lead": "In short: this website does not collect personal data, does not use cookies and does not use analytics or advertising tools.",
+      "s1h": "Data and cookies",
+      "s1p": "The site has no forms, user accounts, comments or newsletter. We do not set cookies and we do not use analytics or advertising tools, so there is no cookie banner asking for consent.",
+      "s2h": "Hosting and technical data",
+      "s2p": "The site is served by {hosting}. Like any web server, the hosting provider may automatically process technical data about a visit, such as the IP address and time of the connection, to keep the service running and secure. The provider describes how it does this in its",
+      "s2link": "privacy statement",
+      "s3h": "Map, photos and external links",
+      "s3p": "The map, photos, videos and fonts are stored on this same site, so showing them does not pass your data to third parties. The site does contain links to other services, for example the “Get directions” button (Google Maps), links to the places’ own websites and to photo sources (Wikimedia Commons). Once you click them, those services’ privacy rules apply.",
+      "s4h": "Your rights and contact",
+      "s4p": "The site itself does not collect your personal data. If you have a privacy question, you can contact us.",
+      "s4contact": "Contact:",
+      "s4uodo": "You have the right to lodge a complaint with the President of the Personal Data Protection Office (Poland)",
+      "ctrlH": "Site owner",
+      "updated": "Last updated"
     }
   }
 }
