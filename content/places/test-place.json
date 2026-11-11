@@ -1,0 +1,37 @@
+{
+  "slug": "test-place",
+  "status": "published",
+  "publishedAt": "2026-11-11T13:47:15",
+  "archived": false,
+  "categories": [],
+  "lat": null,
+  "lng": null,
+  "address": "",
+  "website": "",
+  "photos": [],
+  "videos": [],
+  "pl": {
+    "name": "Test place",
+    "summary": "",
+    "article": [],
+    "doHere": [],
+    "getThere": "",
+    "bestTime": "",
+    "tips": []
+  },
+  "en": {
+    "name": "Test place",
+    "summary": "",
+    "article": [],
+    "doHere": [],
+    "getThere": "",
+    "bestTime": "",
+    "tips": []
+  },
+  "meta": {
+    "createdAt": "2026-11-11T13:47:15",
+    "createdBy": "urkisse",
+    "updatedAt": "2026-11-11T13:47:15",
+    "updatedBy": "urkisse"
+  }
+}
