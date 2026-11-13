@@ -15,11 +15,11 @@
 
 backend:
   name: github
-  repo: urkisse/warszawa-razem # change to the new "owner/repo" after the repository is transferred
+  repo: wyspagithype/warszawa-razem # "owner/repo" of the GitHub repository; change it again if the repository moves
   branch: main
 
-site_url: https://urkisse.github.io/warszawa-razem/
-display_url: https://urkisse.github.io/warszawa-razem/
+site_url: https://wyspagithype.github.io/warszawa-razem/
+display_url: https://wyspagithype.github.io/warszawa-razem/
 logo:
   src: ./logo.svg
   show_in_header: true
